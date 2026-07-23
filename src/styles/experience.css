@@ -1,0 +1,327 @@
+/* ==========================================
+   EXPERIENCE SECTION
+========================================== */
+
+.experience {
+  padding: 100px 0;
+  background: #081c19;
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.experience .section-header {
+  max-width: 760px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.experience .section-header h2 {
+  font-size: 42px;
+  color: #ffffff;
+  margin: 18px 0;
+}
+
+.experience .section-header p {
+  color: #d1d5db;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #c9a84c;
+}
+
+/* ==========================================
+   TIMELINE ITEM
+========================================== */
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   DOT
+========================================== */
+
+.timeline-dot {
+  position: absolute;
+  left: -40px;
+  top: 30px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #c9a84c;
+
+  border: 4px solid #081c19;
+
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.25);
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.timeline-card {
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(201,168,76,.18);
+
+  border-radius: 22px;
+
+  padding: 32px;
+
+  backdrop-filter: blur(12px);
+
+  transition: .35s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #c9a84c;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,.35);
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.timeline-duration {
+  display: inline-block;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: rgba(201,168,76,.12);
+
+  color: #c9a84c;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+.timeline-card h3 {
+  font-size: 28px;
+
+  color: #ffffff;
+
+  margin-bottom: 8px;
+}
+
+.timeline-card h4 {
+  color: #c9a84c;
+
+  font-size: 20px;
+
+  margin-bottom: 10px;
+}
+
+.timeline-location {
+  display: inline-block;
+
+  color: #d1d5db;
+
+  margin-bottom: 20px;
+
+  font-size: 15px;
+}
+
+.timeline-card p {
+  color: #d1d5db;
+
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+/* ==========================================
+   TECHNOLOGIES
+========================================== */
+
+.timeline-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+.timeline-tech span {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: rgba(201,168,76,.12);
+
+  border: 1px solid rgba(201,168,76,.25);
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.timeline-tech span:hover {
+  background: #c9a84c;
+
+  color: #081c19;
+}
+
+/* ==========================================
+   ACHIEVEMENTS
+========================================== */
+
+.timeline-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-item {
+  color: #d1d5db;
+
+  line-height: 1.7;
+
+  font-size: 15px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.experience{
+
+padding:80px 0;
+
+}
+
+.experience .section-header h2{
+
+font-size:34px;
+
+}
+
+.experience .section-header p{
+
+font-size:16px;
+
+}
+
+.timeline{
+
+padding-left:30px;
+
+}
+
+.timeline::before{
+
+left:10px;
+
+}
+
+.timeline-dot{
+
+left:-20px;
+
+width:16px;
+height:16px;
+
+}
+
+.timeline-card{
+
+padding:24px;
+
+}
+
+.timeline-card h3{
+
+font-size:24px;
+
+}
+
+.timeline-card h4{
+
+font-size:18px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.timeline{
+
+padding-left:22px;
+
+}
+
+.timeline::before{
+
+left:8px;
+
+}
+
+.timeline-dot{
+
+left:-16px;
+
+width:14px;
+height:14px;
+
+}
+
+.timeline-card{
+
+padding:20px;
+
+}
+
+.timeline-tech{
+
+gap:8px;
+
+}
+
+.timeline-tech span{
+
+font-size:13px;
+
+padding:7px 12px;
+
+}
+
+}
