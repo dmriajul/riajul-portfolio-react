@@ -1,0 +1,208 @@
+/* ==========================================
+   TESTIMONIALS
+========================================== */
+
+.testimonials {
+  padding: 110px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 78, 59, 0.05) 0%,
+    transparent 100%
+  );
+}
+
+.testimonials .section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 70px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px;
+  backdrop-filter: blur(16px);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 168, 76, 0.08),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.testimonial-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.testimonial-user h3 {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.testimonial-user span {
+  display: block;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.testimonial-user p {
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.testimonial-rating {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 22px;
+}
+
+.testimonial-rating svg {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+/* ==========================================
+   REVIEW
+========================================== */
+
+.testimonial-review {
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.testimonial-card:hover .testimonial-avatar {
+  transform: rotate(6deg) scale(1.05);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover h3 {
+  color: var(--gold);
+  transition: var(--transition);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .testimonials {
+    padding: 90px 0;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .testimonial-user h3 {
+    font-size: 18px;
+  }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+  .testimonial-top {
+    align-items: flex-start;
+  }
+
+  .testimonial-review {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+}

@@ -6,6 +6,7 @@ import Certifications from "../components/home/Certifications";
 import Projects from "../components/home/Projects";
 import Services from "../components/home/Services";
 import Experience from "../components/home/Experience";
+import Testimonials from "../components/home/Testimonials";
 import Contact from "../components/home/Contact";
 import Footer from "../components/layout/Footer";
 
