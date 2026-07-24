@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://riajul-portfolio-lime.vercel.app/sitemap.xml
