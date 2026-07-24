@@ -21,6 +21,7 @@ function Home() {
       <Projects />
       <Services />
       <Experience />
+      <Testimonials />
       <Contact />
       <Footer />
     </>
