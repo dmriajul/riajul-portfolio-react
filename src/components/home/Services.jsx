@@ -54,9 +54,13 @@ function Services() {
                 {service.description}
               </p>
 
-              <button className="service-btn">
-                Learn More →
-              </button>
+              {/* CTA */}
+              <a
+                href="#contact"
+                className="service-btn"
+              >
+                Get Started →
+              </a>
             </motion.div>
           ))}
         </div>
