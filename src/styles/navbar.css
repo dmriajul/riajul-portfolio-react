@@ -1,82 +1,361 @@
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(6, 78, 59, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+
+  background:rgba(6,78,59,.92);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(201,168,76,.18);
+
+  transition:.35s;
 }
 
-.navbar .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+/* ==========================================
+   CONTAINER
+========================================== */
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
+.navbar .container{
+
+  max-width:1200px;
+  height:80px;
+
+  margin:auto;
+  padding:0 20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
 }
 
-/* Logo */
+/* ==========================================
+   LOGO
+========================================== */
 
-.logo {
-  display: flex;
-  align-items: center;
+.logo{
+
+  display:flex;
+  align-items:center;
+
 }
 
-.logo img {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #c9a84c;
+.logo img{
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  border:2px solid #c9a84c;
+
+  transition:.35s;
+
 }
 
-/* Navigation */
+.logo img:hover{
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
+  transform:scale(1.05);
+
 }
 
-.nav-links li {
-  list-style: none;
+/* ==========================================
+   NAV LINKS
+========================================== */
+
+.nav-links{
+
+  display:flex;
+  align-items:center;
+  gap:34px;
+
 }
 
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
+.nav-links li{
+
+  list-style:none;
+
 }
 
-.nav-links a:hover {
-  color: #c9a84c;
+.nav-links a{
+
+  position:relative;
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:600;
+
+  transition:.3s;
+
 }
 
-/* Book Button */
+.nav-links a:hover{
 
-.book-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  color:#c9a84c;
 
-  padding: 12px 24px;
-
-  border: 2px solid #c9a84c;
-  border-radius: 50px;
-
-  color: white;
-  text-decoration: none;
-
-  transition: 0.3s;
 }
 
-.book-btn:hover {
-  background: #c9a84c;
-  color: #081c19;
+.nav-links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0;
+  height:2px;
+
+  background:#c9a84c;
+
+  transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+/* ==========================================
+   BOOK BUTTON
+========================================== */
+
+.book-btn{
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  border:2px solid #c9a84c;
+
+  color:#fff;
+
+  font-weight:600;
+
+  transition:.35s;
+
+}
+
+.book-btn:hover{
+
+  background:#c9a84c;
+  color:#081c19;
+
+}
+
+/* ==========================================
+   HAMBURGER
+========================================== */
+
+.menu-toggle{
+
+  display:none;
+
+  width:48px;
+  height:48px;
+
+  border:none;
+  background:none;
+
+  color:#fff;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+}
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.mobile-menu{
+
+  position:fixed;
+
+  top:80px;
+  left:0;
+
+  width:100%;
+  height:calc(100vh - 80px);
+
+  background:#081c19;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:28px;
+
+  transform:translateX(100%);
+
+  transition:.35s;
+
+  z-index:9998;
+
+}
+
+.mobile-menu.active{
+
+  transform:translateX(0);
+
+}
+
+.mobile-menu a{
+
+  color:#fff;
+
+  font-size:22px;
+  font-weight:600;
+
+  transition:.3s;
+
+}
+
+.mobile-menu a:hover{
+
+  color:#c9a84c;
+
+}
+
+.mobile-book-btn{
+
+  margin-top:20px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:14px 28px;
+
+  border:2px solid #c9a84c;
+  border-radius:999px;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.nav-links{
+
+gap:22px;
+
+}
+
+.book-btn{
+
+padding:11px 18px;
+font-size:15px;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.navbar .container{
+
+height:72px;
+
+}
+
+.logo img{
+
+width:46px;
+height:46px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.book-btn{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+.mobile-menu{
+
+top:72px;
+height:calc(100vh - 72px);
+
+}
+
+.mobile-menu a{
+
+font-size:20px;
+
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.navbar .container{
+
+padding:0 16px;
+
+}
+
+.logo img{
+
+width:42px;
+height:42px;
+
+}
+
+.mobile-menu a{
+
+font-size:18px;
+
+}
+
+.mobile-book-btn{
+
+padding:12px 22px;
+
+font-size:15px;
+
+}
+
 }
