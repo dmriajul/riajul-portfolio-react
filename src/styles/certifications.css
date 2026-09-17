@@ -3,30 +3,8 @@
 ========================================== */
 
 .certifications {
-  padding: 100px 0;
-  background: #04110f;
-}
-
-/* ==========================================
-   SECTION HEADER
-========================================== */
-
-.certifications .section-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 70px;
-}
-
-.certifications .section-header h2 {
-  font-size: 42px;
-  color: #ffffff;
-  margin: 18px 0;
-}
-
-.certifications .section-header p {
-  color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.8;
+  padding: 95px 0;
+  background: var(--bg-main);
 }
 
 /* ==========================================
@@ -36,7 +14,7 @@
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 26px;
 }
 
 /* ==========================================
@@ -44,18 +22,21 @@
 ========================================== */
 
 .certification-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 168, 76, 0.18);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 22px;
-  padding: 32px;
+  padding: 28px;
   transition: all 0.35s ease;
   backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .certification-card:hover {
   transform: translateY(-8px);
-  border-color: #c9a84c;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
 }
 
 /* ==========================================
@@ -63,25 +44,21 @@
 ========================================== */
 
 .certification-logo {
-  width: 72px;
-  height: 72px;
-
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: rgba(255, 255, 255, 0.05);
-
-  border: 1px solid rgba(201, 168, 76, 0.18);
-
-  border-radius: 18px;
-
-  margin-bottom: 24px;
+  background: var(--tag-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .certification-logo img {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
 }
 
@@ -90,9 +67,10 @@
 ========================================== */
 
 .certification-card h3 {
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 14px;
+  color: var(--text-heading);
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 /* ==========================================
@@ -100,10 +78,11 @@
 ========================================== */
 
 .certification-card p {
-  color: #d1d5db;
-  line-height: 1.8;
-  margin-bottom: 24px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 22px;
   font-size: 15px;
+  flex: 1;
 }
 
 /* ==========================================
@@ -113,22 +92,23 @@
 .certification-skills {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  margin-top: auto;
 }
 
 .certification-skills li {
   display: flex;
   align-items: center;
-  gap: 12px;
-
-  color: #f3f4f6;
-  font-size: 15px;
+  gap: 10px;
+  color: var(--text-body);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .certification-skills svg {
-  color: #c9a84c;
+  color: var(--primary);
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* ==========================================
@@ -136,55 +116,38 @@
 ========================================== */
 
 @media (max-width: 1100px) {
-
   .certifications-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media (max-width: 768px) {
-
   .certifications {
-    padding: 80px 0;
-  }
-
-  .certifications .section-header h2 {
-    font-size: 34px;
-  }
-
-  .certifications .section-header p {
-    font-size: 16px;
+    padding: 60px 0;
   }
 
   .certifications-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .certification-card {
-    padding: 26px;
+    padding: 22px;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .certification-logo {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
   }
 
   .certification-logo img {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
   }
 
   .certification-card h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
-
-  .certification-skills li {
-    font-size: 14px;
-  }
-
 }

@@ -1,16 +1,11 @@
 const projectsData = [
   {
     id: 1,
-
     title: "Riajul Tech",
-
-    category: "Affiliate Website",
-
+    category: "Affiliate Website & SEO",
     image: "/projects/riajultech-homepage.jpg",
-
     description:
-      "A niche affiliate marketing website focused on ergonomic workspace products, technology reviews, buying guides, SEO, and content marketing.",
-
+      "A niche affiliate marketing website focused on ergonomic workspace setups, technology reviews, and in-depth buying guides. Engineered with clean site architecture, technical SEO, and schema markup to rank for high-intent search queries.",
     technologies: [
       "WordPress",
       "Elementor Pro",
@@ -20,189 +15,141 @@ const projectsData = [
       "Google Tag Manager",
       "Amazon Associates",
     ],
-
     results: [
-      "SEO Optimized Structure",
-      "Affiliate Marketing",
-      "Conversion Focused",
-      "Fast Performance",
+      "SEO-Optimized Site Structure",
+      "Ranked for 1,000+ Search Queries",
+      "Fast Core Web Vitals & LiteSpeed Caching",
+      "Affiliate Conversion Architecture",
     ],
-
     live: "https://riajultech.com",
-
     github: "",
-
     featured: true,
   },
 
   {
     id: 2,
-
     title: "Meta Ads Campaign",
-
     category: "Performance Marketing",
-
     image: "/projects/meta-ads-dashboard.jpg",
-
     description:
-      "Planned, launched, and optimized Meta advertising campaigns with audience targeting, conversion tracking, and performance optimization.",
-
+      "Full-funnel Facebook and Instagram advertising campaigns built to acquire qualified leads and drive sales. Combines detailed audience segmentation, continuous creative testing, and server-side tracking to keep cost per result low.",
     technologies: [
       "Meta Ads Manager",
       "Facebook Pixel",
       "Audience Research",
-      "Conversion API",
-      "Analytics",
+      "Conversion API (CAPI)",
+      "Looker Studio",
     ],
-
     results: [
-      "Higher CTR",
-      "Better ROAS",
-      "Audience Optimization",
-      "Lead Generation",
+      "Higher Click-Through Rates (CTR)",
+      "Profitable Return on Ad Spend (ROAS)",
+      "High-Value Custom & Lookalike Audiences",
+      "Consistent Lead Generation Flow",
     ],
-
     live: "",
-
     github: "",
-
     featured: true,
   },
 
   {
     id: 3,
-
     title: "Google Ads Campaign",
-
     category: "Google Ads",
-
     image: "/projects/google-ads-dashboard.jpg",
-
     description:
-      "Built and optimized Google Search campaigns with keyword research, conversion tracking, bidding strategies, and performance monitoring.",
-
+      "High-intent Google Search and Performance Max campaigns targeting buyers who are actively searching for solutions. Monitored with daily search term pruning and smart bidding to maximize quality leads while lowering cost per click.",
     technologies: [
       "Google Ads",
-      "Keyword Planner",
+      "Google Keyword Planner",
       "Google Analytics 4",
       "Google Tag Manager",
-      "Looker Studio",
+      "Smart Bidding",
     ],
-
     results: [
-      "Lower CPC",
-      "Higher CTR",
-      "Quality Score Improvement",
-      "Conversion Tracking",
+      "Lower Cost Per Click (CPC)",
+      "Improved Ad Quality Scores",
+      "Commercial Buyer-Intent Keyword Targeting",
+      "Accurate Conversion Tracking Setup",
     ],
-
     live: "",
-
     github: "",
-
     featured: true,
   },
 
   {
     id: 4,
-
     title: "SEO Growth Strategy",
-
-    category: "SEO",
-
+    category: "Search Engine Optimization",
     image: "/projects/riajultech-ubersuggest-audit.jpg",
-
     description:
-      "Performed technical SEO audits, keyword research, on-page optimization, and content improvements to increase search visibility.",
-
+      "Comprehensive search engine optimization strategy including technical website audits, commercial keyword research, on-page optimization, and internal linking to build sustainable organic search traffic.",
     technologies: [
-      "SEO",
+      "Technical SEO",
       "Ubersuggest",
       "Google Search Console",
-      "Technical SEO",
+      "On-Page SEO",
       "Content Strategy",
       "Schema Markup",
     ],
-
     results: [
-      "SEO Audit",
-      "Technical Improvements",
-      "Keyword Research",
-      "Organic Growth",
+      "Full Technical SEO Audit & Issue Resolution",
+      "Commercial Keyword Research & Topic Clustering",
+      "Optimized Meta Tags, Headings & Content Flow",
+      "Steady Growth in Organic Search Impressions",
     ],
-
     live: "",
-
     github: "",
-
     featured: false,
   },
 
   {
     id: 5,
-
     title: "Analytics & Tracking",
-
-    category: "Analytics",
-
+    category: "Analytics & Attribution",
     image: "/projects/riajultech-ga4-dashboard.jpg",
-
     description:
-      "Configured Google Analytics 4, Google Tag Manager, custom events, conversion tracking, and business reporting dashboards.",
-
+      "End-to-end measurement setup using Google Analytics 4 and Google Tag Manager. Designed to capture key user actions, form submissions, and conversion events with clean data attribution across all marketing channels.",
     technologies: [
-      "Google Analytics 4",
-      "Google Tag Manager",
+      "Google Analytics 4 (GA4)",
+      "Google Tag Manager (GTM)",
+      "Custom Event Tracking",
       "Looker Studio",
-      "Conversion Tracking",
+      "UTM Parameter Tracking",
     ],
-
     results: [
-      "Accurate Data",
-      "Custom Events",
-      "Business Dashboard",
-      "Performance Insights",
+      "100% Reliable Conversion Data",
+      "Custom Triggers for Forms, Clicks & Leads",
+      "Clear Looker Studio Executive Dashboards",
+      "Accurate Cross-Channel Marketing Attribution",
     ],
-
     live: "",
-
     github: "",
-
     featured: false,
   },
 
   {
     id: 6,
-
-    title: "Landing Page Optimization",
-
-    category: "CRO",
-
+    title: "WordPress CRO & High-Converting Landing Pages",
+    category: "Conversion Rate Optimization (CRO)",
     image: "/projects/portfolio-landing-page.jpg",
-
     description:
-      "Designed and optimized a conversion-focused landing page with responsive UI, fast loading speed, and modern user experience.",
-
+      "Designed and deployed high-converting, mobile-responsive landing pages using WordPress and Elementor Pro, augmented with modern AI workflows for rapid buyer-intent copywriting, headline testing, and conversion architecture. Engineered for fast load speeds, intuitive user journeys, and high-trust funnels that turn visitors into qualified inquiries.",
     technologies: [
-      "React",
-      "Vite",
-      "CSS",
-      "Responsive Design",
-      "Performance",
-      "Conversion Optimization",
+      "WordPress",
+      "Elementor Pro",
+      "AI-Assisted Workflows",
+      "Conversion Optimization (CRO)",
+      "Mobile UX & Page Speed",
+      "Lead Funnel Architecture",
     ],
-
     results: [
-      "Modern UI",
-      "Responsive Layout",
-      "Fast Loading",
-      "Better User Experience",
+      "Rapid WordPress & Elementor Deployment",
+      "AI-Augmented Buyer Intent Copywriting",
+      "Fast Mobile Core Web Vitals & UX",
+      "Frictionless Lead & Appointment Funnel",
     ],
-
     live: "",
-
     github: "",
-
     featured: false,
   },
 ];
