@@ -4,27 +4,29 @@ const personalData = {
   // =========================
   name: "Khandokar Riajul Islam",
 
-  title: "Performance Marketing Specialist",
+  title: "Performance Marketing Specialist & Social Media Manager",
 
-  subtitle: "Meta Ads | Google Ads | SEO | GA4 | GTM",
+  subtitle: "Social Media Manager | Meta Ads | Google Ads | SEO | GA4",
 
-  bio: "Helping businesses grow with Meta Ads, Google Ads, SEO, GA4, GTM and data-driven digital marketing strategies.",
+  bio: "Helping e-commerce & B2B brands in the USA, UK, Canada & Singapore scale profitably with Meta & Google Ads, and empowering practices in Australia & the UAE to dominate Google Maps 3-Pack and 5-star online reputation.",
 
   about:
-    "I'm a Performance Marketing Specialist with 5+ years of experience helping businesses grow through Meta Ads, Google Ads, SEO, Google Analytics 4 (GA4), Google Tag Manager (GTM), PPC, and conversion optimization. I focus on data-driven marketing strategies that increase traffic, generate quality leads, and maximize ROI.",
+    "Running and scaling a business is demanding when your marketing budget disappears into guesswork or vanity clicks. As a Performance Marketing Specialist & Social Media Manager with 5+ years of verified experience, I partner remotely with ambitious founders and business owners worldwide. For e-commerce and B2B brands across the USA, UK, Canada, and Singapore, I build high-ROAS paid media systems (Meta & Google Ads), full-funnel social media management, and server-side GA4 tracking. For localized practices and service businesses in Australia and the UAE, I engineer dominant Local SEO (Google Maps 3-Pack) and automated 5-star online reputation systems (ORM)—with the full capability to deploy paid media whenever your business is ready to scale. Every dollar is tracked, every hook is tested, and every campaign is built around your real bottom-line profit.",
 
   experience: "5+ Years",
 
   // =========================
-  // Contact Information
+  // Contact Information (Unified Single Number & Business Email)
   // =========================
-  location: "Khulna, Bangladesh",
+  location: "Khulna, Bangladesh (Global Remote: USA, UK, Canada, Singapore, AU & UAE)",
 
-  email: "khandokarriajulislam@gmail.com",
+  email: "service@riajultech.com",
 
-  phone: "+8801954447017",
+  phone: "+880 19544470117",
 
-  whatsapp: "+8801707302038",
+  whatsapp: "+880 19544470117",
+
+  phoneClean: "88019544470117",
 
   website: "https://riajultech.com/",
 
@@ -45,14 +47,16 @@ const personalData = {
   // Skills
   // =========================
   skills: [
-    "Meta Ads",
-    "Google Ads",
-    "SEO",
-    "Google Analytics 4",
-    "Google Tag Manager",
-    "PPC",
-    "Conversion Optimization",
-    "Analytics",
+    "Social Media Management",
+    "Meta Ads Management",
+    "Google Ads (Search & PMax)",
+    "Local SEO (Maps 3-Pack)",
+    "Online Reputation Management (ORM)",
+    "Canva Creative Design",
+    "SEO & Search Intent",
+    "Google Analytics 4 (GA4)",
+    "Google Tag Manager (GTM)",
+    "Conversion Rate Optimization (CRO)",
   ],
 
   // =========================
@@ -60,20 +64,20 @@ const personalData = {
   // =========================
   highlights: [
     {
-      number: "5+",
-      title: "Years Experience",
+      number: "5+ Years",
+      title: "Hands-on Experience",
     },
     {
-      number: "10+",
-      title: "Professional Certifications",
+      number: "72+",
+      title: "Campaigns Executed",
     },
     {
-      number: "ROI",
-      title: "Growth Focused",
+      number: "5.88%",
+      title: "Peak Campaign CTR",
     },
     {
       number: "100%",
-      title: "Data-Driven Marketing",
+      title: "Data-Driven Attribution",
     },
   ],
 
@@ -82,16 +86,20 @@ const personalData = {
   // =========================
   contactInfo: [
     {
-      label: "Location",
-      value: "Khulna, Bangladesh",
+      label: "Remote Base",
+      value: "Khulna, Bangladesh (Working Globally)",
+    },
+    {
+      label: "Primary Markets",
+      value: "USA, UK, Canada, Singapore, Australia & UAE",
     },
     {
       label: "Email",
-      value: "khandokarriajulislam@gmail.com",
+      value: "service@riajultech.com",
     },
     {
-      label: "WhatsApp",
-      value: "+8801707302038",
+      label: "Call & WhatsApp",
+      value: "+880 19544470117",
     },
     {
       label: "Website",
@@ -103,16 +111,15 @@ const personalData = {
   // Certifications
   // =========================
   certifications: [
-    "Google Analytics Certification",
+    "Google Analytics 4 (GA4) Certification",
     "Google Ads Video Certification",
-    "Meta Marketing and Advertising",
-    "HubSpot Digital Marketing",
-    "SEMrush Content Marketing",
-    "Google Analytics 4 (GA4)",
-    "Google Tag Manager (GTM)",
-    "Search Engine Optimization (SEO)",
-    "Pay-Per-Click (PPC)",
-    "Social Media Marketing (SMM)",
+    "Meta Certified Marketing & Advertising",
+    "HubSpot Digital Marketing Certification",
+    "SEMrush Content Marketing & SEO",
+    "Google Tag Manager (GTM) Server-Side",
+    "Technical Search Engine Optimization (SEO)",
+    "Pay-Per-Click (PPC) Campaign Strategy",
+    "Social Media Management & Strategy",
   ],
 };
 

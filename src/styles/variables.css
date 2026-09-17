@@ -1,7 +1,7 @@
 :root {
 
   /* ==========================================
-     COLORS
+     COLORS (Dark Mode Default)
   ========================================== */
 
   --primary: #c9a84c;
@@ -9,6 +9,7 @@
   --primary-dark: #9f8134;
 
   --secondary: #0f766e;
+  --secondary-light: #14b8a6;
 
   --black: #04110f;
   --surface: #081c19;
@@ -16,12 +17,44 @@
 
   --white: #ffffff;
 
+  --bg-main: #04110f;
+  --bg-surface: #081c19;
+  --bg-surface-alt: #0d2622;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(201, 168, 76, 0.18);
+  --card-border-hover: #c9a84c;
+  --card-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+  --card-shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.35);
+
   --text: #f9fafb;
   --text-light: #d1d5db;
   --text-muted: #9ca3af;
 
+  --text-heading: #ffffff;
+  --text-subheading: #e3c772;
+  --text-body: #d1d5db;
+  --text-body-secondary: #9ca3af;
+
   --border: rgba(201, 168, 76, 0.18);
   --border-hover: rgba(201, 168, 76, 0.35);
+
+  --tag-bg: rgba(201, 168, 76, 0.12);
+  --tag-border: rgba(201, 168, 76, 0.35);
+  --tag-text: #e3c772;
+
+  --badge-bg: rgba(15, 118, 110, 0.2);
+  --badge-border: rgba(15, 118, 110, 0.4);
+  --badge-text: #5eead4;
+
+  --input-bg: rgba(4, 17, 15, 0.6);
+  --input-border: rgba(201, 168, 76, 0.2);
+  --input-text: #ffffff;
+  --input-placeholder: #9ca3af;
+
+  --navbar-bg: rgba(6, 78, 59, 0.92);
+  --navbar-border: rgba(201, 168, 76, 0.18);
+  --navbar-link: #ffffff;
+  --navbar-link-hover: #c9a84c;
 
   /* ==========================================
      CONTAINER
@@ -68,22 +101,80 @@
      SECTION SPACING
   ========================================== */
 
-  --section-padding: 110px;
+  --section-padding: 95px;
 
   /* ==========================================
      TYPOGRAPHY
   ========================================== */
 
-  --h1: clamp(46px, 6vw, 72px);
+  --h1: clamp(34px, 4.4vw, 54px);
 
-  --h2: clamp(34px, 4vw, 48px);
+  --h2: clamp(28px, 3.5vw, 42px);
 
-  --h3: clamp(22px, 3vw, 28px);
+  --h3: clamp(20px, 2.5vw, 26px);
 
-  --body-lg: 19px;
+  --body-lg: 18px;
 
   --body: 16px;
 
   --small: 14px;
 
+}
+
+/* ==========================================
+   LIGHT MODE OVERRIDES FOR VARIABLES
+========================================== */
+[data-theme="light"],
+body.light-theme {
+  --primary: #0f766e;
+  --primary-light: #14b8a6;
+  --primary-dark: #044e45;
+
+  --secondary: #8c6d1f;
+  --secondary-light: #a17c24;
+
+  --black: #ffffff;
+  --surface: #ffffff;
+  --surface-light: #f8fafc;
+
+  --white: #04110f;
+
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f1f5f9;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-border-hover: #0f766e;
+  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 14px 35px rgba(15, 118, 110, 0.12);
+
+  --text: #091e17;
+  --text-light: #1e293b;
+  --text-muted: #475569;
+
+  --text-heading: #04110f;
+  --text-subheading: #064e3b;
+  --text-body: #1e293b;
+  --text-body-secondary: #334155;
+
+  --border: #e2e8f0;
+  --border-hover: #0f766e;
+
+  --tag-bg: rgba(15, 118, 110, 0.08);
+  --tag-border: rgba(15, 118, 110, 0.25);
+  --tag-text: #065f46;
+
+  --badge-bg: rgba(15, 118, 110, 0.1);
+  --badge-border: rgba(15, 118, 110, 0.25);
+  --badge-text: #065f46;
+
+  --input-bg: #f8fafc;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  --input-placeholder: #64748b;
+
+  --navbar-bg: rgba(255, 255, 255, 0.96);
+  --navbar-border: rgba(15, 118, 110, 0.18);
+  --navbar-link: #0f172a;
+  --navbar-link-hover: #0f766e;
 }
