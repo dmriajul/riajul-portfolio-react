@@ -231,7 +231,8 @@ body.light-theme .framework-cta-bar {
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1140px) and (min-width: 769px) {
+/* Laptop viewports (769px – 1440px): 2x2 grid so stage cards stay readable */
+@media (max-width: 1440px) and (min-width: 769px) {
   .framework-stages-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;

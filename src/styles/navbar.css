@@ -25,6 +25,85 @@
 }
 
 /* ==========================================
+   GOLDEN SCROLL PROGRESS BAR
+   (Stripe & Bloomberg style — thin reading
+   indicator that fills 0% → 100% on scroll)
+========================================== */
+
+.nav-scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(201, 168, 76, 0.1);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+.nav-scroll-progress-bar {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    #8a6d2b 0%,
+    #c9a84c 40%,
+    #e9cf7e 70%,
+    #fff7d6 100%
+  );
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.65),
+    0 0 22px rgba(201, 168, 76, 0.35);
+  transition: width 0.12s ease-out;
+  will-change: width;
+}
+
+/* Subtle animated sheen sweeping across the filled portion */
+.nav-scroll-progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: navProgressSheen 2.6s ease-in-out infinite;
+}
+
+@keyframes navProgressSheen {
+  0% {
+    transform: translateX(-100%);
+  }
+  60%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Crisper track on the light theme navbar */
+[data-theme="light"] .nav-scroll-progress,
+body.light-theme .nav-scroll-progress {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-scroll-progress-bar {
+    transition: none;
+  }
+
+  .nav-scroll-progress-bar::after {
+    animation: none;
+  }
+}
+
+/* ==========================================
    CONTAINER
 ========================================== */
 
