@@ -22,11 +22,11 @@ const personalData = {
 
   email: "service@riajultech.com",
 
-  phone: "+880 19544470117",
+  phone: "+880 1954 447017",
 
-  whatsapp: "+880 19544470117",
+  whatsapp: "+880 1954 447017",
 
-  phoneClean: "88019544470117",
+  phoneClean: "8801954447017",
 
   website: "https://riajultech.com/",
 
@@ -99,7 +99,7 @@ const personalData = {
     },
     {
       label: "Call & WhatsApp",
-      value: "+880 19544470117",
+      value: "+880 1954 447017",
     },
     {
       label: "Website",

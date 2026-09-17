@@ -92,7 +92,7 @@ function Contact() {
     } catch (error) {
       console.error(error);
       setResult(
-        "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 19544470117)."
+        "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 1954 447017)."
       );
     } finally {
       setLoading(false);
@@ -136,65 +136,76 @@ function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Business Email */}
-            <div className="info-card">
+            {/* Business Email — whole card clickable */}
+            <a
+              className="info-card"
+              href={`mailto:${personalData.email}`}
+              aria-label={`Email ${personalData.email}`}
+            >
               <FaEnvelope className="info-icon" />
               <div>
                 <h4>Business Email</h4>
-                <a href={`mailto:${personalData.email}`}>
-                  {personalData.email}
-                </a>
+                <span>{personalData.email}</span>
               </div>
-            </div>
+            </a>
 
-            {/* Direct Call & WhatsApp (Single Unified Number) */}
-            <div className="info-card">
+            {/* Direct Call (Single Unified Number) — whole card clickable */}
+            <a
+              className="info-card"
+              href={`tel:+${personalData.phoneClean}`}
+              aria-label={`Call ${personalData.phone}`}
+            >
               <FaPhoneAlt className="info-icon" />
               <div>
                 <h4>Direct Phone</h4>
-                <a href={`tel:+${personalData.phoneClean}`}>
-                  {personalData.phone}
-                </a>
+                <span>{personalData.phone}</span>
               </div>
-            </div>
+            </a>
 
-            <div className="info-card">
+            {/* WhatsApp — whole card clickable */}
+            <a
+              className="info-card"
+              href={`https://wa.me/${personalData.phoneClean}?text=Hi%20Riajul,%20I'm%20interested%20in%20your%20Performance%20Marketing%20and%20Social%20Media%20services.`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Chat on WhatsApp ${personalData.phone}`}
+            >
               <FaWhatsapp className="info-icon" />
               <div>
                 <h4>WhatsApp (Instant Response)</h4>
-                <a
-                  href={`https://wa.me/${personalData.phoneClean}?text=Hi%20Riajul,%20I'm%20interested%20in%20your%20Performance%20Marketing%20and%20Social%20Media%20services.`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {personalData.phone}
-                </a>
+                <span>{personalData.phone}</span>
               </div>
-            </div>
+            </a>
 
-            {/* Location & Global Remote Availability */}
-            <div className="info-card">
+            {/* Location & Global Remote Availability — whole card clickable */}
+            <a
+              className="info-card"
+              href="https://www.google.com/maps/search/?api=1&query=Khulna%2C%20Bangladesh"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Location: ${personalData.location}`}
+            >
               <FaMapMarkerAlt className="info-icon" />
               <div>
                 <h4>Location & Availability</h4>
                 <span>{personalData.location}</span>
               </div>
-            </div>
+            </a>
 
-            {/* Official Website */}
-            <div className="info-card">
+            {/* Official Website — whole card clickable */}
+            <a
+              className="info-card"
+              href={personalData.website}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Visit ${personalData.website}`}
+            >
               <FaGlobe className="info-icon" />
               <div>
                 <h4>Official Domain</h4>
-                <a
-                  href={personalData.website}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {personalData.website}
-                </a>
+                <span>{personalData.website}</span>
               </div>
-            </div>
+            </a>
           </motion.div>
 
           {/* Contact Form with Consultation Pre-fill Feature */}

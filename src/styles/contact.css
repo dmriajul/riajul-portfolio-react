@@ -35,6 +35,13 @@
   transition: all 0.35s ease;
 }
 
+/* Entire card is a clickable link (mailto / tel / wa.me / website) */
+a.info-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .info-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
@@ -73,7 +80,8 @@
   font-weight: 500;
 }
 
-.info-card a:hover {
+.info-card a:hover,
+a.info-card:hover span {
   color: var(--primary);
 }
 
