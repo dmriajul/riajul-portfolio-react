@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import profile from "../../assets/profile.jpeg";
 import ThemeToggle from "../common/ThemeToggle";
@@ -13,6 +13,7 @@ import {
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const progressBarRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,13 +24,34 @@ function Navbar() {
       } else {
         setScrolled(false);
       }
+
+      // Golden Scroll Progress Bar — fills 0% to 100% as the page is scrolled
+      const scrollTop =
+        window.scrollY || document.documentElement.scrollTop || 0;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const progress =
+        scrollHeight > 0
+          ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
+          : 0;
+
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${progress}%`;
+        progressBarRef.current.setAttribute(
+          "aria-valuenow",
+          String(Math.round(progress))
+        );
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -243,6 +265,18 @@ function Navbar() {
           <FaCalendarAlt />
           Book a Call
         </a>
+      </div>
+
+      {/* Golden Scroll Progress Bar (Stripe & Bloomberg style) */}
+      <div
+        className="nav-scroll-progress"
+        role="progressbar"
+        aria-label="Page scroll progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <div ref={progressBarRef} className="nav-scroll-progress-bar" />
       </div>
     </nav>
   );
