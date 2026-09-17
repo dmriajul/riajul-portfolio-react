@@ -351,9 +351,19 @@ body.light-theme .hero-tag svg {
 ===================================================== */
 [data-theme="light"] .navbar,
 body.light-theme .navbar {
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(16px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(190%) !important;
   border-bottom: 1px solid rgba(15, 118, 110, 0.18) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .navbar.scrolled,
+body.light-theme .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(190%) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
 }
 
 [data-theme="light"] .nav-links a,
@@ -1608,20 +1618,26 @@ body.light-theme .hero-status-pill {
 
 /* Floating Metric Badges in Light Mode */
 [data-theme="light"] .floating-metric-badge,
-body.light-theme .floating-metric-badge {
+body.light-theme .floating-metric-badge,
+[data-theme="light"] .hero-mobile-stat-chip,
+body.light-theme .hero-mobile-stat-chip {
   background: rgba(255, 255, 255, 0.95) !important;
   border-color: rgba(15, 118, 110, 0.3) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 [data-theme="light"] .floating-metric-badge strong,
-body.light-theme .floating-metric-badge strong {
+body.light-theme .floating-metric-badge strong,
+[data-theme="light"] .hero-mobile-stat-chip strong,
+body.light-theme .hero-mobile-stat-chip strong {
   color: #0f172a !important;
   -webkit-text-fill-color: #0f172a !important;
 }
 
 [data-theme="light"] .floating-metric-badge span,
-body.light-theme .floating-metric-badge span {
+body.light-theme .floating-metric-badge span,
+[data-theme="light"] .hero-mobile-stat-chip span,
+body.light-theme .hero-mobile-stat-chip span {
   color: #64748b !important;
   -webkit-text-fill-color: #64748b !important;
 }

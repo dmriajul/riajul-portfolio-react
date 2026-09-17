@@ -160,6 +160,18 @@ function Hero() {
               <span className="photo-tag-role">PERFORMANCE MARKETER</span>
             </div>
           </div>
+
+          {/* Mobile Stats Row - Shown under photo on <= 992px */}
+          <div className="hero-mobile-stats-row">
+            <div className="hero-mobile-stat-chip">
+              <strong>5.88% CTR</strong>
+              <span>Multi-channel program</span>
+            </div>
+            <div className="hero-mobile-stat-chip">
+              <strong>174K impressions</strong>
+              <span>Organic search growth</span>
+            </div>
+          </div>
         </motion.div>
       </div>
 
