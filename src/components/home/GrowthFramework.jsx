@@ -96,9 +96,13 @@ function GrowthFramework() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
                 <div className="stage-card-header">
-                  <span className="stage-num">{stage.num}</span>
-                  <div className="stage-icon">{stage.icon}</div>
-                  <span className="stage-highlight">{stage.highlight}</span>
+                  <div className="stage-header-top">
+                    <span className="stage-num">STAGE {stage.num}</span>
+                    <div className="stage-icon">{stage.icon}</div>
+                  </div>
+                  <div className="stage-header-bottom">
+                    <span className="stage-highlight">{stage.highlight}</span>
+                  </div>
                 </div>
                 <h3>{stage.title}</h3>
                 <p>{stage.desc}</p>

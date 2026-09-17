@@ -12,8 +12,26 @@ import {
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
@@ -58,7 +76,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         {/* Logo */}
         <a
