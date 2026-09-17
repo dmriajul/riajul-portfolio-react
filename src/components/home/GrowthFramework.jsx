@@ -52,8 +52,8 @@ function GrowthFramework() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">The Proven Methodology</span>
-          <h2>The Full-Funnel Performance Marketing Growth Engine</h2>
+          <span className="section-tag">Proven 4-Stage Operating System</span>
+          <h2>Full-Funnel Performance Growth Engine</h2>
           <p>
             High-ticket clients across the USA, UK, Canada, Singapore, Australia, and the UAE do not convert through isolated ads alone.
             Here is the complete, systematic 4-stage operating framework that turns cold visitors into high-ticket clients.
@@ -73,7 +73,7 @@ function GrowthFramework() {
             <div className="framework-image-glass">
               <img
                 src="/images/growth-ecosystem.png"
-                alt="Full-Funnel Performance Marketing Growth Engine Infographic Diagram"
+                alt="Full-Funnel Performance Growth Engine Infographic Diagram"
                 className="framework-infographic-img"
                 loading="lazy"
               />
