@@ -6,6 +6,7 @@ const skillsList = [
   "Meta Ads (Facebook & IG)",
   "Instagram Growth",
   "Google Ads (Search & PMax)",
+  "B2B & High-Ticket Lead Generation",
   "Local SEO (Maps 3-Pack)",
   "Online Reputation (ORM)",
   "GA4 & Server-Side GTM",

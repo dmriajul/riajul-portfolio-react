@@ -42,8 +42,8 @@ function Footer() {
               service@riajultech.com
             </a>
             <span className="footer-dot">•</span>
-            <a href="tel:+88019544470117" className="footer-phone-link">
-              +880 19544470117
+            <a href="tel:+8801954447017" className="footer-phone-link">
+              +880 1954 447017
             </a>
           </div>
         </div>

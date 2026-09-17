@@ -9,6 +9,7 @@ const skillsData = [
     technologies: [
       "Meta Ads (Full-Funnel)",
       "Google Search & PMax",
+      "B2B & High-Ticket Lead Generation",
       "Local SEO (Maps 3-Pack)",
       "Online Reputation (ORM)",
       "CPA & CAC Optimization",
