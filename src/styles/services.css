@@ -193,6 +193,13 @@
 }
 
 @media (max-width: 480px) {
+  /* Keep the slim short-form badges on a single line on small phones */
+  .service-badge {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    padding: 4px 10px;
+  }
+
   .service-icon {
     width: 52px;
     height: 52px;
