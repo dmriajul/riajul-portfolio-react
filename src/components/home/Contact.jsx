@@ -144,7 +144,7 @@ function Contact() {
             >
               <FaEnvelope className="info-icon" />
               <div>
-                <h4>Business Email</h4>
+                <h3>Business Email</h3>
                 <span>{personalData.email}</span>
               </div>
             </a>
@@ -157,7 +157,7 @@ function Contact() {
             >
               <FaPhoneAlt className="info-icon" />
               <div>
-                <h4>Direct Phone</h4>
+                <h3>Direct Phone</h3>
                 <span>{personalData.phone}</span>
               </div>
             </a>
@@ -172,7 +172,7 @@ function Contact() {
             >
               <FaWhatsapp className="info-icon" />
               <div>
-                <h4>WhatsApp (Instant Response)</h4>
+                <h3>WhatsApp (Instant Response)</h3>
                 <span>{personalData.phone}</span>
               </div>
             </a>
@@ -187,7 +187,7 @@ function Contact() {
             >
               <FaMapMarkerAlt className="info-icon" />
               <div>
-                <h4>Location & Availability</h4>
+                <h3>Location & Availability</h3>
                 <span>{personalData.location}</span>
               </div>
             </a>
@@ -202,7 +202,7 @@ function Contact() {
             >
               <FaGlobe className="info-icon" />
               <div>
-                <h4>Official Domain</h4>
+                <h3>Official Domain</h3>
                 <span>{personalData.website}</span>
               </div>
             </a>

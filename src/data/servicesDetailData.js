@@ -3,7 +3,7 @@ const servicesDetailData = {
     id: "smm",
     slug: "smm",
     aliases: ["social-media-marketing", "social-media-manager"],
-    badge: "Dedicated Social Media Manager",
+    badge: "ORGANIC & PAID",
     title: "Social Media Manager Services",
     heroTitle: "Reliable Organic Growth & High-ROI Meta Ads",
     tagline:
@@ -345,7 +345,7 @@ const servicesDetailData = {
     id: "meta-ads",
     slug: "meta-ads",
     aliases: [],
-    badge: "Facebook & Instagram Ads",
+    badge: "META & IG ADS",
     title: "Meta Ads Management",
     heroTitle: "High-ROAS Facebook & Instagram Ad Campaigns",
     tagline:
@@ -462,7 +462,7 @@ const servicesDetailData = {
     id: "google-ads",
     slug: "google-ads",
     aliases: [],
-    badge: "Search & Performance Max",
+    badge: "SEARCH & PMAX",
     title: "Google Ads Management",
     heroTitle: "High-Intent Google Ads for Leads & Sales",
     tagline:
@@ -548,7 +548,7 @@ const servicesDetailData = {
     id: "seo",
     slug: "seo",
     aliases: [],
-    badge: "Technical & On-Page SEO",
+    badge: "SEO & RANKINGS",
     title: "Search Engine Optimization (SEO)",
     heroTitle: "Organic Search Visibility That Compounds Over Time",
     tagline:
@@ -636,7 +636,7 @@ const servicesDetailData = {
     id: "analytics",
     slug: "analytics",
     aliases: [],
-    badge: "GA4, GTM & Conversions",
+    badge: "GA4 & GTM",
     title: "Analytics & Tracking",
     heroTitle: "Reliable Data Tracking With GA4 & Google Tag Manager",
     tagline:
@@ -722,7 +722,7 @@ const servicesDetailData = {
     id: "cro",
     slug: "cro",
     aliases: [],
-    badge: "Landing Pages & Funnels",
+    badge: "CRO & FUNNELS",
     title: "Conversion Optimization (CRO)",
     heroTitle: "Turn More Visitors Into Paying Customers",
     tagline:
@@ -808,7 +808,7 @@ const servicesDetailData = {
     id: "local-seo-orm",
     slug: "local-seo-orm",
     aliases: ["local-seo", "orm", "reputation-management", "google-business-profile"],
-    badge: "Local SEO & Online Reputation",
+    badge: "MAPS 3-PACK & ORM",
     title: "Local SEO & ORM (Online Reputation Management)",
     heroTitle: "Conquer Local Search, Google Maps 3-Pack & 5-Star Brand Reputation",
     tagline:

@@ -10,5 +10,25 @@ export default defineConfig({
     allowedHosts: true,
     cors: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Split large vendor libraries into cached, parallel-loadable chunks
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) return 'framer-motion'
+            if (id.includes('react-icons')) return 'react-icons'
+            if (
+              id.includes('/react/') ||
+              id.includes('/react-dom/') ||
+              id.includes('/react-router') ||
+              id.includes('/scheduler/')
+            ) {
+              return 'vendor'
+            }
+          }
+        },
+      },
+    },
+  },
 })
-

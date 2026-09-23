@@ -54,7 +54,7 @@ function ServiceDetail() {
     return (
       <div className="service-detail-page">
         <Navbar />
-        <div className="container" style={{ padding: "160px 20px 100px", textAlign: "center" }}>
+        <main id="main-content" className="container" style={{ padding: "160px 20px 100px", textAlign: "center" }}>
           <h1 style={{ fontSize: "40px", marginBottom: "20px" }}>Service Not Found</h1>
           <p style={{ color: "#d1d5db", marginBottom: "30px" }}>
             The requested service page does not exist or has moved.
@@ -62,7 +62,7 @@ function ServiceDetail() {
           <Link to="/#services" className="btn-primary" style={{ display: "inline-flex" }}>
             <FaArrowLeft /> View All Services
           </Link>
-        </div>
+        </main>
         <Footer />
       </div>
     );
@@ -82,7 +82,7 @@ function ServiceDetail() {
     <div className="service-detail-page">
       <Navbar />
 
-      <div className="service-detail-content">
+      <main id="main-content" className="service-detail-content">
         {/* ==========================================
             BREADCRUMB & BACK BUTTON
         ========================================== */}
@@ -706,7 +706,7 @@ function ServiceDetail() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
 
       <Footer />
     </div>

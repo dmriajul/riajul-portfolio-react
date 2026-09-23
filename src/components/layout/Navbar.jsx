@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import profile from "../../assets/profile.jpeg";
+import profile from "../../assets/profile.webp";
 import ThemeToggle from "../common/ThemeToggle";
 
 import {
@@ -18,7 +18,11 @@ function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+    let rafId = null;
+
+    const update = () => {
+      rafId = null;
       if (window.scrollY > 15) {
         setScrolled(true);
       } else {
@@ -43,6 +47,16 @@ function Navbar() {
           String(Math.round(progress))
         );
       }
+
+      ticking = false;
+    };
+
+    // requestAnimationFrame-throttled handler to avoid layout thrash on scroll
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        rafId = window.requestAnimationFrame(update);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -52,6 +66,7 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      if (rafId !== null) window.cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -271,7 +286,7 @@ function Navbar() {
       <div
         className="nav-scroll-progress"
         role="progressbar"
-        aria-label="Page scroll progress"
+        aria-label="Page reading progress"
         aria-valuemin="0"
         aria-valuemax="100"
         aria-valuenow="0"

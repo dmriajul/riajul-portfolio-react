@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import profile from "../../assets/profile.jpeg";
+// Optimized WebP (23 KiB) + JPEG fallback for broader browser support
+import profileWebp from "../../assets/profile.webp";
+import profileJpeg from "../../assets/profile.jpeg";
 import personalData from "../../data/personalData";
 
 import {
@@ -143,10 +145,17 @@ function Hero() {
               <span>Multi-channel program</span>
             </div>
 
-            <img
-              src={profile}
-              alt="Khandokar Riajul Islam — Performance Marketing Specialist & Social Media Manager"
-            />
+            <picture>
+              <source srcSet={profileWebp} type="image/webp" />
+              <img
+                src={profileJpeg}
+                alt="Khandokar Riajul Islam — Performance Marketing Specialist & Social Media Manager"
+                width="350"
+                height="400"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
 
             {/* Bottom-Right Floating Metric Badge */}
             <div className="floating-metric-badge float-bottom-right">

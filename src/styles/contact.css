@@ -62,7 +62,7 @@ a.info-card {
   border: 1px solid var(--tag-border);
 }
 
-.info-card h4 {
+.info-card h3 {
   color: var(--text-heading);
   font-size: 16px;
   margin-bottom: 4px;

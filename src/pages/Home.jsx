@@ -17,18 +17,20 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <SkillsTicker />
-      <About />
-      <Skills />
-      <Certifications />
-      <Projects />
-      <Services />
-      <GrowthFramework />
-      <Experience />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <SkillsTicker />
+        <About />
+        <Skills />
+        <Certifications />
+        <Projects />
+        <Services />
+        <GrowthFramework />
+        <Experience />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
     </>
   );
