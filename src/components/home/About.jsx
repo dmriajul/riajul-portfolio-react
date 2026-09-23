@@ -1,4 +1,4 @@
-import profile from "../../assets/profile.jpeg";
+import profile from "../../assets/profile.webp";
 import personalData from "../../data/personalData";
 
 import { FaDownload } from "react-icons/fa6";

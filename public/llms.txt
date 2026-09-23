@@ -1,0 +1,33 @@
+# Khandokar Riajul Islam — Performance Marketing Specialist & Social Media Manager
+
+> A human-readable, machine-friendly guide to this portfolio website for LLMs, AI assistants, and crawlers.
+
+Homepage: https://portfolio.riajultech.com/
+
+## About
+
+Khandokar Riajul Islam is a certified Performance Marketing Specialist & Social Media Manager with 5+ years of verified experience. He partners remotely with ambitious founders and business owners across the USA, UK, Canada, Singapore, Australia, and the UAE to scale revenue through high-ROAS Meta Ads, Google Ads, full-funnel social media management, Local SEO (Google Maps 3-Pack), and GA4/GTM server-side tracking.
+
+- Location: Khulna, Bangladesh (Global Remote)
+- Email: service@riajultech.com
+- Phone / WhatsApp: +880 1954 447017
+- Website: https://riajultech.com/
+- Booking: https://calendly.com/khandokarriajulislam/30min
+
+## Services
+
+- [Social Media Manager](/services/smm) — Full-funnel organic social management, Canva content creation, community engagement, and high-ROI Meta advertising.
+- [Meta Ads Management](/services/meta-ads) — High-ROAS Facebook and Instagram ad systems with precision targeting, creative testing, and Conversions API (CAPI) tracking.
+- [Google Ads Management](/services/google-ads) — High-intent Google Search and Performance Max campaigns with negative keyword pruning and Smart Bidding.
+- [Search Engine Optimization (SEO)](/services/seo) — Technical SEO, commercial keyword research, and on-page optimization for sustainable organic traffic.
+- [Analytics & Tracking (GA4 & GTM)](/services/analytics) — Server-side tracking, Conversions API, custom events, and Looker Studio executive dashboards.
+- [Conversion Optimization (CRO)](/services/cro) — Landing page UX audits, value proposition framing, A/B testing, and friction reduction.
+- [Local SEO & ORM](/services/local-seo-orm) — Google Business Profile optimization, Google Maps 3-Pack dominance, and automated 5-star review funnels for Australia & UAE practices.
+
+## Key Results
+
+- 72+ campaigns executed
+- 5.88% peak account-level CTR
+- 214K reach for a single brand
+- 344 sales in a 7-day launch
+- 174K+ organic search impressions

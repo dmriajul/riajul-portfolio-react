@@ -747,13 +747,13 @@ body.light-theme .service-card.featured-service {
 [data-theme="light"] .skill-card h3,
 [data-theme="light"] .certification-card h3,
 [data-theme="light"] .timeline-card h3,
-[data-theme="light"] .info-card h4,
+[data-theme="light"] .info-card h3,
 body.light-theme .service-card h3,
 body.light-theme .project-content h3,
 body.light-theme .skill-card h3,
 body.light-theme .certification-card h3,
 body.light-theme .timeline-card h3,
-body.light-theme .info-card h4 {
+body.light-theme .info-card h3 {
   color: #04110f !important;
   -webkit-text-fill-color: #04110f !important;
   font-weight: 700 !important;
