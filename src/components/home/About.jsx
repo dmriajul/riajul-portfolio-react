@@ -1,8 +1,16 @@
-import profile from "../../assets/profile.webp";
 import personalData from "../../data/personalData";
 
 import { FaDownload } from "react-icons/fa6";
-import { FaCalendarAlt, FaCheckCircle, FaRocket, FaShieldAlt } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaChartLine,
+  FaCheckCircle,
+  FaGithub,
+  FaGlobe,
+  FaLinkedin,
+  FaRocket,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 function About() {
   const handleConsultationClick = (e) => {
@@ -17,11 +25,60 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="container about-container">
-        {/* Left Side */}
+        {/* Left Side: Live GA4 Dashboard Card
+            (Replaces the duplicate profile photo — the hero already shows it) */}
         <div className="about-image">
-          <img src={profile} alt={personalData.name} />
+          <div className="about-dashboard-card">
+            <img
+              src="/projects/riajultech-ga4-dashboard.jpg"
+              alt="Live Google Analytics 4 (GA4) and server-side attribution dashboard built by Khandokar Riajul Islam"
+              width="1200"
+              height="750"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="about-dashboard-caption">
+              <FaChartLine /> Real GA4 & CAPI Attribution Dashboard
+            </div>
+          </div>
+
           <div className="about-trust-tag">
-            <FaShieldAlt /> 100% Data-Driven & Attribution-Verified
+            <FaShieldAlt /> 100% Data-Driven &amp; Attribution-Verified
+          </div>
+
+          {/* Live Authority Backlink Bar */}
+          <div className="about-backlinks">
+            <span className="about-backlinks-label">
+              Live Authority Backlinks
+            </span>
+            <div className="about-backlinks-row">
+              <a
+                href={personalData.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                title="Verified LinkedIn Profile"
+              >
+                <FaLinkedin /> LinkedIn
+              </a>
+
+              <a
+                href={personalData.github}
+                target="_blank"
+                rel="noreferrer"
+                title="Verified GitHub Profile"
+              >
+                <FaGithub /> GitHub
+              </a>
+
+              <a
+                href={personalData.website}
+                target="_blank"
+                rel="noreferrer"
+                title="Official Website"
+              >
+                <FaGlobe /> riajultech.com
+              </a>
+            </div>
           </div>
         </div>
 

@@ -39,6 +39,8 @@ const personalData = {
   // =========================
   linkedin: "https://www.linkedin.com/in/khandokarriajulislam/",
 
+  github: "https://github.com/dmriajul",
+
   facebook: "https://www.facebook.com/khandokarriajulislambappy/",
 
   twitter: "https://x.com/RiajulKhandoker",

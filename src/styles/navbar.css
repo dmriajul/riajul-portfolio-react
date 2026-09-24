@@ -430,10 +430,15 @@ body.light-theme .nav-scroll-progress {
     display: flex !important;
   }
 
+  /* Group the theme toggle with the hamburger on the RIGHT
+     instead of leaving it orphaned in the middle of the bar.
+     margin-left:auto pushes nav-actions (theme toggle) and the
+     hamburger together into one right-aligned cluster. */
   .nav-actions {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: auto;
   }
 
   .mobile-menu {
