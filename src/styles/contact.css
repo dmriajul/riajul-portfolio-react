@@ -200,16 +200,58 @@ a.info-card:hover span {
   box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
+/* ==========================================
+   SMALL LAPTOP & TABLET (769px - 1199px)
+   Keep the professional 2-column desktop
+   layout (info cards | form) — the old
+   <=992px rule collapsed this to one column
+   on real laptop screens.
+========================================== */
+@media (max-width: 1199px) and (min-width: 769px) {
   .contact-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .info-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 18px;
+  }
+
+  .info-card h3 {
+    font-size: 15px;
+  }
+
+  .contact-form {
+    padding: 22px 20px;
   }
 }
 
+@media (max-width: 899px) and (min-width: 769px) {
+  .contact-container {
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==========================================
+   MOBILE (<= 768px) — single column stack
+========================================== */
 @media (max-width: 768px) {
   .contact {
     padding: 60px 0;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
   }
 
   .contact-form {

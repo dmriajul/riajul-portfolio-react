@@ -152,6 +152,7 @@ body.light-theme .nav-scroll-progress {
   list-style: none;
 }
 
+/* Large laptops (1025px - 1240px): keep the full desktop nav, just tighten it */
 @media (max-width: 1240px) and (min-width: 1025px) {
   .nav-links {
     gap: 16px;
@@ -169,6 +170,48 @@ body.light-theme .nav-scroll-progress {
   .book-btn {
     padding: 8px 14px;
     font-size: 13px;
+  }
+}
+
+/* ==========================================
+   LAPTOP & LANDSCAPE TABLET (861px - 1024px)
+   IMPORTANT: this range must NEVER fall back
+   to the mobile hamburger. A 1366x768 screen
+   at 125% OS scaling renders at ~1092px, and
+   an iPad landscape at 1024px — both must keep
+   the full horizontal links + "Book a Call".
+========================================== */
+@media (max-width: 1024px) and (min-width: 861px) {
+  .navbar .container {
+    padding: 0 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  /* Drop the secondary CTA so the primary "Book a Call" always fits */
+  .consultation-nav-btn {
+    display: none;
+  }
+
+  .book-btn {
+    padding: 8px 12px;
+    font-size: 12.5px;
+    gap: 6px;
+  }
+
+  /* Compact theme switch (icon only) to free up horizontal space */
+  .theme-switch-btn .theme-switch-text {
+    display: none;
   }
 }
 
@@ -360,10 +403,13 @@ body.light-theme .nav-scroll-progress {
 }
 
 /* ==========================================
-   TABLET & MOBILE BREAKPOINTS
+   MOBILE BREAKPOINTS
+   The hamburger menu is used ONLY below 861px.
+   Laptop / landscape-tablet widths (861px+)
+   keep the full desktop navigation bar.
 ========================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 860px) {
   .navbar .container {
     height: 74px;
   }

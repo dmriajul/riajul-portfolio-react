@@ -255,10 +255,96 @@
 }
 
 /* ==========================================
-   TABLET
+   SMALL LAPTOP & TABLET (769px - 1199px)
+   Keep the professional 2-column desktop
+   layout — do NOT collapse to the mobile
+   stack the way the old <=992px rule did.
 ========================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1199px) and (min-width: 769px) {
+
+  .about-container {
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+    align-items: start;
+    text-align: left;
+  }
+
+  .about-image {
+    order: 0;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+    line-height: 1.28;
+  }
+
+  .about-content p {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .aeo-quick-summary {
+    padding: 12px 16px;
+    font-size: 13.5px;
+  }
+
+  .about-skills {
+    justify-content: flex-start;
+  }
+
+  .about-buttons {
+    justify-content: flex-start;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+}
+
+/* ==========================================
+   TABLET PORTRAIT (769px - 899px)
+   Tighter 2-column variant
+========================================== */
+
+@media (max-width: 899px) and (min-width: 769px) {
+
+  .about-container {
+    grid-template-columns: 260px 1fr;
+    gap: 26px;
+  }
+
+  .about-content h2 {
+    font-size: 26px;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+}
+
+/* ==========================================
+   MOBILE (<= 768px) — single column stack
+========================================== */
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 60px 0;
+  }
 
   .about-container {
     grid-template-columns: 1fr;
@@ -293,18 +379,6 @@
 
   .about-highlights {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-  .about {
-    padding: 60px 0;
   }
 
   .about-content h2 {

@@ -401,32 +401,182 @@
 }
 
 /* ==========================================
-   TABLET & MOBILE RESPONSIVE SPECS
+   LAPTOP (861px - 1199px) & TABLET (769px - 860px)
+   PROFESSIONAL 2-COLUMN DESKTOP LAYOUT
+   - Left column : headline, copy, buttons (LEFT-ALIGNED)
+   - Right column: gold-framed photo + floating
+     "5.88% CTR" / "174K impressions" badges
+   A 1366x768 screen at 125% OS scaling renders at
+   ~1092px — it must stay in this 2-column mode.
 ========================================== */
-@media (max-width: 992px) {
+@media (max-width: 1199px) and (min-width: 769px) {
   .hero {
-    padding: 30px 0 24px;
+    padding: 34px 0 30px;
   }
 
   .hero-container {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Keep the copy block left-aligned — never the centered mobile stack */
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-h1 {
+    font-size: clamp(30px, 3.6vw, 42px);
+    line-height: 1.2;
+  }
+
+  .hero-h2 {
+    font-size: clamp(15px, 1.6vw, 18px);
+    margin-bottom: 12px;
+  }
+
+  .hero-p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons,
+  .hero-secondary-buttons,
+  .hero-social,
+  .hero-trust-bar {
+    justify-content: flex-start;
+  }
+
+  /* Right column stays the visual: gold frame + photo + floating badges */
+  .hero-image-wrapper {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hero-image-frame {
+    max-width: 320px;
+  }
+
+  .hero-image-frame picture img {
+    height: 350px;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Floating metric badges stay visible on laptop & tablet */
+  .floating-metric-badge {
+    display: flex;
+    padding: 8px 13px;
+    border-radius: 12px;
+  }
+
+  .floating-metric-badge strong {
+    font-size: 16px;
+  }
+
+  .floating-metric-badge span {
+    font-size: 10px;
+  }
+
+  .float-top-left {
+    top: 14px;
+    left: -16px;
+  }
+
+  .float-bottom-right {
+    bottom: 20px;
+    right: -16px;
+  }
+
+  /* The mobile stat chips are only for the stacked phone layout */
+  .hero-mobile-stats-row {
+    display: none;
+  }
+
+  .hero-stats-container {
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: left;
+  }
+
+  .hero-stat-block .stat-number {
+    font-size: 27px;
+  }
+
+  .hero-stat-block .stat-label {
+    font-size: 11.5px;
+  }
+}
+
+/* Tablet portrait (769px - 860px): tighter two-column variant */
+@media (max-width: 860px) and (min-width: 769px) {
+  .hero-container {
+    grid-template-columns: 1fr 0.82fr;
+    gap: 18px;
+  }
+
+  .hero-image-frame {
+    max-width: 235px;
+  }
+
+  .hero-image-frame picture img {
+    height: 265px;
+  }
+
+  .floating-metric-badge strong {
+    font-size: 13.5px;
+  }
+
+  .floating-metric-badge span {
+    font-size: 9px;
+  }
+
+  .float-top-left {
+    top: 10px;
+    left: -8px;
+  }
+
+  .float-bottom-right {
+    bottom: 14px;
+    right: -8px;
+  }
+
+  .hero-stat-block .stat-number {
+    font-size: 23px;
+  }
+
+  .hero-stat-block .stat-label {
+    font-size: 10.5px;
+  }
+}
+
+/* ==========================================
+   MOBILE (<= 768px): single-column stack
+   This is the ONLY range that stacks the hero.
+========================================== */
+@media (max-width: 768px) {
+  .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 24px;
+    gap: 18px;
   }
 
   .hero-content {
     max-width: 100%;
   }
 
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-secondary-buttons {
-    justify-content: center;
-  }
-
-  .hero-social {
+  .hero-buttons,
+  .hero-secondary-buttons,
+  .hero-social,
+  .hero-trust-bar {
     justify-content: center;
   }
 
@@ -436,12 +586,12 @@
   }
 
   .hero-image-frame {
-    max-width: 280px;
+    max-width: 250px;
   }
 
   .hero-image-frame picture img {
-    height: 310px;
-    width: 270px;
+    height: 280px;
+    width: 240px;
     margin: 0 auto;
   }
 
@@ -500,13 +650,10 @@
   }
 }
 
+/* Mobile typography & compact controls (layout stacking is above) */
 @media (max-width: 768px) {
   .hero {
     padding: 22px 0 20px;
-  }
-
-  .hero-container {
-    gap: 18px;
   }
 
   .hero-status-pill {
@@ -563,21 +710,6 @@
     padding: 11px 10px;
     font-size: 12.5px;
     white-space: nowrap;
-  }
-
-  .hero-image-frame {
-    max-width: 250px;
-  }
-
-  .hero-image-frame picture img {
-    height: 280px;
-    width: 240px;
-    margin: 0 auto;
-  }
-
-  .hero-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px 10px;
   }
 
   .hero-stat-block .stat-number {

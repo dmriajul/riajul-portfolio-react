@@ -171,7 +171,9 @@
    RESPONSIVE
 ========================================== */
 
-@media (max-width: 1024px) {
+/* Projects stay 2-up on laptop & tablet — the old
+   <=1024px rule dropped them to a single phone column. */
+@media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
