@@ -134,39 +134,79 @@ img {
 }
 
 /* =====================================================
-   3. TABLETS (iPad Air, Pro, Mini: 769px - 1024px)
+   3. LAPTOPS & SCALED DISPLAYS (900px - 1139px)
+   PROFESSIONAL 2-COLUMN DESKTOP LAYOUT
+
+   Previously this file collapsed the WHOLE site into
+   mobile mode at <= 1024px. That broke real laptops —
+   a 1366x768 screen at 125% OS scaling renders at
+   ~1092px and got the phone layout. Mobile mode now
+   starts at 860px only.
 ===================================================== */
-@media (max-width: 1024px) {
-  body {
-    padding-top: 74px;
+@media (max-width: 1139px) and (min-width: 900px) {
+  /* Navbar stays in full desktop mode — never a hamburger */
+  .nav-links {
+    display: flex !important;
   }
 
-  .container {
-    width: min(92%, 880px);
-    padding-inline: 20px;
+  .book-btn {
+    display: flex !important;
   }
 
-  /* Navbar on Tablet: clean hamburger */
-  .nav-links,
-  .book-btn,
   .consultation-nav-btn {
-    display: none !important;
+    display: none;
   }
 
   .menu-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+    display: none !important;
   }
 
-  .navbar .container {
-    height: 74px;
-    padding: 0 20px;
+  .container {
+    width: min(94%, 1040px);
+    padding-inline: 20px;
+  }
+
+  /* Two-column desktop section layouts are preserved */
+  .hero-container {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    text-align: left;
+    align-items: center;
+  }
+
+  .about-container {
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+    text-align: left;
+    align-items: start;
+  }
+
+  .contact-container {
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .faq-container {
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .skills-grid,
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   /* Compact Balanced Section Padding */
   .hero {
-    padding: 32px 0 32px;
+    padding: 40px 0 36px;
   }
 
   .about,
@@ -178,115 +218,128 @@ img {
   .certifications,
   .faq-section-home,
   .contact {
-    padding: 50px 0;
+    padding: 56px 0;
   }
 
   .testimonials {
-    padding: 55px 0;
+    padding: 60px 0;
   }
 
   .section-header {
-    margin-bottom: 34px;
+    margin-bottom: 38px;
   }
 
   .section-header h2 {
-    font-size: 32px;
+    font-size: 34px;
     margin: 12px 0;
   }
 
   .section-header p {
     font-size: 15px;
   }
+}
 
-  /* Hero Section Tablet Layout */
+/* =====================================================
+   3b. TABLETS (iPad portrait / landscape: 769px - 899px)
+   Still a 2-column desktop layout — NOT mobile mode.
+===================================================== */
+@media (max-width: 899px) and (min-width: 769px) {
+  .container {
+    width: min(94%, 840px);
+    padding-inline: 18px;
+  }
+
   .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 24px;
-  }
-
-  .hero-content {
-    order: 2;
-    max-width: 100%;
-  }
-
-  .hero-h1 {
-    font-size: 38px;
-  }
-
-  .hero-image-wrapper {
-    order: 1;
-    margin: 0 auto;
-  }
-
-  .hero-image-frame img {
-    height: 280px;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-trust-bar {
-    justify-content: center;
-  }
-
-  .hero-social {
-    justify-content: center;
-  }
-
-  /* About Tablet Layout */
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .about-image {
-    order: -1;
-    margin: 0 auto;
-  }
-
-  .about-image img {
-    max-width: 260px;
-  }
-
-  .about-content {
-    width: 100%;
-  }
-
-  .about-content h2 {
-    font-size: 30px;
-  }
-
-  .about-skills,
-  .about-buttons {
-    justify-content: center;
-  }
-
-  /* 2-Column Responsive Card Grids */
-  .skills-grid,
-  .projects-grid,
-  .services-grid,
-  .certifications-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 0.82fr;
     gap: 20px;
+    text-align: left;
+  }
+
+  .about-container {
+    grid-template-columns: 260px 1fr;
+    gap: 26px;
+    text-align: left;
+    align-items: start;
   }
 
   .contact-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
   }
 
   .faq-container {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .faq-cta-box {
     position: static;
+  }
+
+  .skills-grid,
+  .services-grid,
+  .certifications-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .about,
+  .services,
+  .growth-framework-section,
+  .skills,
+  .projects,
+  .experience,
+  .certifications,
+  .faq-section-home,
+  .contact {
+    padding: 48px 0;
+  }
+
+  .testimonials {
+    padding: 52px 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-size: 30px;
+    margin: 12px 0;
+  }
+
+  .section-header p {
+    font-size: 15px;
+  }
+}
+
+/* Navbar stays in full desktop mode down to 861px.
+   NOTE: the override stops at 861px on purpose — from 860px down
+   navbar.css must win so the hamburger menu takes over. */
+@media (max-width: 899px) and (min-width: 861px) {
+  .nav-links {
+    display: flex !important;
+  }
+
+  .book-btn {
+    display: flex !important;
+  }
+
+  .consultation-nav-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Navbar switches to the hamburger at 860px and below */
+@media (max-width: 860px) {
+  body {
+    padding-top: 74px;
   }
 }
 

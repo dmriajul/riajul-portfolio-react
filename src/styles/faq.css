@@ -152,8 +152,21 @@
   flex-shrink: 0;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
+/* Responsive
+   The FAQ was collapsing to one column at <=992px, which
+   hit real laptops (1366x768 @125% scaling ≈ 1092px).
+   It now keeps the 2-column desktop layout down to 769px. */
+@media (max-width: 899px) and (min-width: 769px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-cta-box {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
   .faq-container {
     grid-template-columns: 1fr;
   }

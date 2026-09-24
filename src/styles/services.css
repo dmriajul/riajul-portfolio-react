@@ -129,9 +129,13 @@
 }
 
 /* ==========================================
-   FEATURED 7TH CARD (Desktop Banner Layout)
+   FEATURED 7TH CARD (Full-Width Banner)
+   Spans the whole grid on DESKTOP *and*
+   TABLET so no card is left orphaned in a
+   half-empty row. (Was min-width: 1025px,
+   which dropped to a normal card on laptops.)
 ========================================== */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .service-card.featured-service {
     grid-column: 1 / -1;
     display: grid;
@@ -177,6 +181,24 @@
   }
 }
 
+/* Tablet: tighten the full-width featured banner so it never overflows */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .service-card.featured-service {
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    padding: 24px 22px;
+  }
+
+  .service-card.featured-service .service-card-body p {
+    max-width: 100%;
+  }
+
+  .service-card.featured-service .service-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
 @media (max-width: 768px) {
   .services {
     padding: 60px 0;
@@ -189,6 +211,18 @@
 
   .service-card {
     padding: 22px;
+  }
+
+  /* Reset the banner grid — stacked card on phones */
+  .service-card.featured-service {
+    display: flex;
+    grid-column: auto;
+    padding: 22px;
+  }
+
+  .service-card.featured-service .service-card-top {
+    align-items: flex-start;
+    flex-direction: row;
   }
 }
 
