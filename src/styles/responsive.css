@@ -465,8 +465,17 @@ img {
     font-size: 26px;
   }
 
-  .about-image img {
-    max-width: 220px;
+  /* GA4 dashboard card (replaces the old profile photo rule) */
+  .about-dashboard-card {
+    max-width: 300px;
+  }
+
+  .about-dashboard-card img {
+    height: 190px;
+  }
+
+  .about-backlinks {
+    max-width: 300px;
   }
 
   .about-highlights {
@@ -574,8 +583,13 @@ img {
     font-size: 22px;
   }
 
-  .about-image img {
-    max-width: 190px;
+  /* GA4 dashboard card (replaces the old profile photo rule) */
+  .about-dashboard-card {
+    max-width: 100%;
+  }
+
+  .about-dashboard-card img {
+    height: 170px;
   }
 
   .about-highlights {
