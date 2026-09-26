@@ -10,6 +10,7 @@ import {
   FaPaperPlane,
   FaGift,
   FaCheckCircle,
+  FaDirections,
 } from "react-icons/fa";
 
 import personalData from "../../data/personalData";
@@ -180,10 +181,10 @@ function Contact() {
             {/* Location & Global Remote Availability — whole card clickable */}
             <a
               className="info-card"
-              href="https://www.google.com/maps/search/?api=1&query=Khulna%2C%20Bangladesh"
+              href={personalData.googleBusinessProfileUrl || "https://maps.google.com/?cid=13899933802905663969"}
               target="_blank"
               rel="noreferrer"
-              aria-label={`Location: ${personalData.location}`}
+              aria-label={`Verified Google Business Profile: ${personalData.location}`}
             >
               <FaMapMarkerAlt className="info-icon" />
               <div>
@@ -322,6 +323,52 @@ function Contact() {
             )}
           </motion.form>
         </div>
+
+        {/* Verified Google Business Profile Map */}
+        <motion.div
+          className="contact-map-wrapper"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <div className="contact-map-header">
+            <div className="contact-map-info">
+              <div className="contact-map-badge">
+                <FaCheckCircle className="badge-icon" />
+                <span>Verified Google Business Profile</span>
+              </div>
+              <h3>B2B Lead Generation &amp; Digital Marketing Services</h3>
+              <p>
+                <FaMapMarkerAlt className="location-pin-icon" />
+                <span>Khulna, Bangladesh • Serving Global Clients (USA, UK, Canada, Australia, UAE &amp; Singapore)</span>
+              </p>
+            </div>
+
+            <a
+              href="https://maps.google.com/?cid=13899933802905663969"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-map-directions"
+              aria-label="Open verified Google Business Profile in Google Maps"
+            >
+              <FaDirections /> Get Directions / View on Google Maps
+            </a>
+          </div>
+
+          <div className="contact-map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41605.733734233814!2d89.53163869478858!3d22.822388610168904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff9b256e6dec8d%3A0xc0e69d8a7712f9e1!2sB2B%20Lead%20Generation%20%26%20Digital%20Marketing%20Services!5e0!3m2!1sen!2sbd!4v1790445383646!5m2!1sen!2sbd"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Verified Google Business Profile - B2B Lead Generation & Digital Marketing Services"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

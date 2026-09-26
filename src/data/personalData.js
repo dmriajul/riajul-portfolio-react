@@ -34,6 +34,12 @@ const personalData = {
 
   resume: "/Khandokar_Riajul_Islam_Resume.pdf",
 
+  googleBusinessProfileUrl:
+    "https://maps.google.com/?cid=13899933802905663969",
+
+  googleMapsEmbed:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41605.733734233814!2d89.53163869478858!3d22.822388610168904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff9b256e6dec8d%3A0xc0e69d8a7712f9e1!2sB2B%20Lead%20Generation%20%26%20Digital%20Marketing%20Services!5e0!3m2!1sen!2sbd!4v1790445383646!5m2!1sen!2sbd",
+
   // =========================
   // Social Links
   // =========================
