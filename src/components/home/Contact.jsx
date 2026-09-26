@@ -253,6 +253,7 @@ function Contact() {
               id="contact-name"
               type="text"
               name="name"
+              aria-label="Your Full Name"
               placeholder="Your Full Name *"
               required
             />
@@ -260,6 +261,7 @@ function Contact() {
             <input
               type="email"
               name="email"
+              aria-label="Your Business Email"
               placeholder="Your Business Email *"
               required
             />
@@ -267,6 +269,7 @@ function Contact() {
             <input
               type="text"
               name="subject"
+              aria-label="Subject or Project Focus"
               placeholder="Subject / Project Focus *"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
@@ -276,6 +279,7 @@ function Contact() {
             <textarea
               rows="5"
               name="message"
+              aria-label="Project details or message"
               placeholder={
                 isConsultation
                   ? "Tell me about your business, current monthly ad spend (if any), and your primary goal (e.g., more leads, higher ROAS, organic growth)..."

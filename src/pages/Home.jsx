@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/home/Hero";
 import SkillsTicker from "../components/home/SkillsTicker";
@@ -14,6 +15,19 @@ import Contact from "../components/home/Contact";
 import Footer from "../components/layout/Footer";
 
 function Home() {
+  useEffect(() => {
+    document.title =
+      "Khandokar Riajul Islam | Performance Marketing Specialist & Social Media Manager | Meta Ads, Google Ads & SMM";
+
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://portfolio.riajultech.com/");
+  }, []);
+
   return (
     <>
       <Navbar />

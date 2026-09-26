@@ -50,6 +50,7 @@ body {
   color: var(--white);
   line-height: 1.7;
   overflow-x: hidden;
+  padding-top: 86px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

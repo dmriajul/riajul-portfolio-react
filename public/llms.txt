@@ -3,6 +3,7 @@
 > A human-readable, machine-friendly guide to this portfolio website for LLMs, AI assistants, and crawlers.
 
 Homepage: https://portfolio.riajultech.com/
+Manifest: https://portfolio.riajultech.com/.well-known/ai-catalog.json
 
 ## About
 
@@ -26,7 +27,30 @@ These are the canonical, independently verifiable identity references for Khando
 
 All key results on this page are "100% Data-Driven & Attribution-Verified" via live GA4 and Meta Conversions API (CAPI) server-side tracking dashboards.
 
-Machine-readable structured data (schema.org Person, ProfessionalService, and FAQPage JSON-LD, including the sameAs backlinks above) is embedded in the homepage `<head>` for SEO, AEO, and answer-engine consumption.
+Machine-readable structured data (schema.org Person, ProfessionalService, OfferCatalog, and FAQPage JSON-LD, including the sameAs backlinks above) is embedded in the homepage `<head>` for SEO, AEO, and answer-engine consumption.
+
+## Verified Live Analytics & Performance Metrics
+
+### Pinterest Analytics (Last 90 Days — Verified Attribution)
+- Impressions: 67.83K (+371% growth)
+- Total Audience Reach: 44.57K (+325% growth)
+- Total Engagements: 2.59K (+382% growth)
+- Saves / Repins: 151 (+435% growth)
+- Outbound Referral Clicks: 39 direct qualified visits
+
+### Google Analytics 4 (GA4 Last 30 Days — Server-Side Verified)
+- Active Users: 2.6K (+175.7% growth)
+- Engagement Rate: 80% (+15.6% lift)
+- Pageviews per User: 2.5 average pages / session
+- Top Geographic Markets: #1 United States, United Kingdom, and Singapore
+- Device Breakdown: 62.7% Desktop vs. 35.6% Mobile split
+
+### Historical Campaign Benchmarks
+- 72+ ad & growth campaigns executed
+- 5.88% peak account-level CTR (multi-channel program)
+- 214K organic and paid reach for a single brand launch
+- 344 sales generated during a 7-day product launch
+- 174K+ organic search impressions
 
 ## Services
 
@@ -37,11 +61,3 @@ Machine-readable structured data (schema.org Person, ProfessionalService, and FA
 - [Analytics & Tracking (GA4 & GTM)](/services/analytics) — Server-side tracking, Conversions API, custom events, and Looker Studio executive dashboards.
 - [Conversion Optimization (CRO)](/services/cro) — Landing page UX audits, value proposition framing, A/B testing, and friction reduction.
 - [Local SEO & ORM](/services/local-seo-orm) — Google Business Profile optimization, Google Maps 3-Pack dominance, and automated 5-star review funnels for Australia & UAE practices.
-
-## Key Results
-
-- 72+ campaigns executed
-- 5.88% peak account-level CTR
-- 214K reach for a single brand
-- 344 sales in a 7-day launch
-- 174K+ organic search impressions

@@ -50,6 +50,10 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  data-pin-nopin="true"
+                  data-pin-no-hover="true"
                 />
 
                 {project.featured && (

@@ -104,27 +104,27 @@ const projectsData = [
 
   {
     id: 5,
-    title: "Analytics & Tracking",
+    title: "Google Analytics 4 & Server-Side Attribution",
     category: "Analytics & Attribution",
     image: "/projects/riajultech-ga4-dashboard.jpg",
     description:
-      "End-to-end measurement setup using Google Analytics 4 and Google Tag Manager. Designed to capture key user actions, form submissions, and conversion events with clean data attribution across all marketing channels.",
+      "End-to-end measurement setup using Google Analytics 4, Google Tag Manager, and Meta Conversions API (CAPI). Built to eliminate iOS tracking loss, verify multi-channel conversions, and power real-time Looker Studio reporting.",
     technologies: [
       "Google Analytics 4 (GA4)",
       "Google Tag Manager (GTM)",
-      "Custom Event Tracking",
+      "Conversions API (CAPI)",
       "Looker Studio",
-      "UTM Parameter Tracking",
+      "Server-Side Attribution",
     ],
     results: [
-      "100% Reliable Conversion Data",
-      "Custom Triggers for Forms, Clicks & Leads",
-      "Clear Looker Studio Executive Dashboards",
-      "Accurate Cross-Channel Marketing Attribution",
+      "2.6K Active Users (+175.7% in 30 Days)",
+      "80% Engagement Rate (+15.6%) & 2.5 Pages/User",
+      "#1 Traffic Volume: USA, UK & Singapore",
+      "62.7% Desktop vs 35.6% Mobile Traffic Split",
     ],
     live: "",
     github: "",
-    featured: false,
+    featured: true,
   },
 
   {
@@ -151,6 +151,31 @@ const projectsData = [
     live: "",
     github: "",
     featured: false,
+  },
+
+  {
+    id: 7,
+    title: "Pinterest Organic Growth & Referral Engine",
+    category: "Visual Discovery & Traffic",
+    image: "/projects/pinterest-analytics-dashboard.jpg",
+    description:
+      "Organic Pinterest business engine designed for exponential brand discovery, high-intent repins, and long-tail referral traffic. Powered by strategic keyword board architecture, Canva creative systems, and automated scheduling.",
+    technologies: [
+      "Pinterest Business Analytics",
+      "Canva Pro",
+      "Visual Search Optimization",
+      "Pinterest SEO",
+      "Rich Pins Architecture",
+    ],
+    results: [
+      "67.83K Impressions (+371% in 90 Days)",
+      "44.57K Total Audience Reach (+325%)",
+      "2.59K Engagements (+382%) & 151 Saves (+435%)",
+      "39 Outbound Referral Clicks to Target Funnels",
+    ],
+    live: "",
+    github: "",
+    featured: true,
   },
 ];
 

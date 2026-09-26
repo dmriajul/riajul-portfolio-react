@@ -88,6 +88,8 @@ function FAQ() {
           <div className="faq-accordion-list">
             {homeFaqData.map((faq, index) => {
               const isOpen = openIndex === index;
+              const btnId = `faq-btn-${index}`;
+              const answerId = `faq-answer-${index}`;
               return (
                 <motion.div
                   key={faq.q}
@@ -98,9 +100,11 @@ function FAQ() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <button
+                    id={btnId}
                     className="home-faq-question"
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
                     aria-expanded={isOpen}
+                    aria-controls={answerId}
                   >
                     <span>{faq.q}</span>
                     <span className="home-faq-icon">
@@ -111,6 +115,9 @@ function FAQ() {
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
+                        id={answerId}
+                        role="region"
+                        aria-labelledby={btnId}
                         className="home-faq-answer"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}

@@ -96,6 +96,57 @@
   width: 100%;
   height: 240px;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================
+   LIVE ANALYTICS 4-STAT GRID
+   (Verified Pinterest & GA4 Dashboard Metrics)
+========================================== */
+
+.about-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.about-stat-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.about-stat-chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.about-stat-chip strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.about-stat-chip span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-body);
+  margin-top: 3px;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .about-dashboard-caption {
@@ -471,6 +522,10 @@
     height: 210px;
   }
 
+  .about-analytics-grid {
+    max-width: 340px;
+  }
+
   .about-backlinks {
     max-width: 340px;
   }
@@ -528,6 +583,10 @@
 
   .about-dashboard-card img {
     height: 190px;
+  }
+
+  .about-analytics-grid {
+    max-width: 100%;
   }
 
   .about-backlinks {

@@ -1,0 +1,105 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Khandokar Riajul Islam Portfolio",
+    "identifier": "did:web:portfolio.riajultech.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:portfolio.riajultech.com:services:performance-marketing",
+      "displayName": "Performance Marketing & Paid Media Consultation",
+      "type": "text/markdown",
+      "url": "https://portfolio.riajultech.com/llms.txt",
+      "description": "High-ROAS Meta and Google Ads strategy, campaign architecture, and full-funnel customer acquisition for e-commerce and B2B brands.",
+      "representativeQueries": [
+        "Hire performance marketing specialist for Meta ads",
+        "Scale Google Search and Performance Max campaigns",
+        "Full-funnel paid advertising strategy and ROAS optimization"
+      ],
+      "tags": [
+        "performance-marketing",
+        "meta-ads",
+        "google-ads",
+        "paid-media",
+        "roas"
+      ]
+    },
+    {
+      "identifier": "urn:ai:portfolio.riajultech.com:services:social-media-management",
+      "displayName": "Full-Funnel Social Media Management",
+      "type": "text/html",
+      "url": "https://portfolio.riajultech.com/services/smm",
+      "description": "End-to-end organic social media management, Canva visual content creation, community engagement, and brand trust building.",
+      "representativeQueries": [
+        "Social media manager for brand growth",
+        "Organic social content creation and scheduling",
+        "Canva creative design and social media strategy"
+      ],
+      "tags": [
+        "social-media",
+        "smm",
+        "canva",
+        "content-strategy",
+        "organic-growth"
+      ]
+    },
+    {
+      "identifier": "urn:ai:portfolio.riajultech.com:services:analytics-tracking",
+      "displayName": "GA4, GTM & Server-Side Attribution Tracking",
+      "type": "text/html",
+      "url": "https://portfolio.riajultech.com/services/analytics",
+      "description": "Server-side tracking, Google Analytics 4, Google Tag Manager, Meta Conversions API (CAPI), and Looker Studio executive dashboards.",
+      "representativeQueries": [
+        "Set up GA4 and Google Tag Manager server side",
+        "Fix iOS tracking loss with Meta Conversions API",
+        "E-commerce conversion tracking and attribution audit"
+      ],
+      "tags": [
+        "analytics",
+        "ga4",
+        "gtm",
+        "capi",
+        "attribution",
+        "tracking"
+      ]
+    },
+    {
+      "identifier": "urn:ai:portfolio.riajultech.com:services:local-seo-orm",
+      "displayName": "Local SEO & Online Reputation Management (ORM)",
+      "type": "text/html",
+      "url": "https://portfolio.riajultech.com/services/local-seo-orm",
+      "description": "Google Maps 3-Pack ranking dominance, Google Business Profile optimization, and automated 5-star review funnels.",
+      "representativeQueries": [
+        "Rank in Google Maps 3-Pack for local practice",
+        "Local SEO services for Australia and UAE",
+        "Automated 5-star review generation and ORM"
+      ],
+      "tags": [
+        "local-seo",
+        "google-maps-3pack",
+        "google-business-profile",
+        "orm",
+        "reputation-management"
+      ]
+    },
+    {
+      "identifier": "urn:ai:portfolio.riajultech.com:resources:llms-manifest",
+      "displayName": "LLM & AI Assistant Guidance File",
+      "type": "text/markdown",
+      "url": "https://portfolio.riajultech.com/llms.txt",
+      "description": "Verified background, services, case study metrics, and canonical authority backlinks for Khandokar Riajul Islam.",
+      "representativeQueries": [
+        "Who is Khandokar Riajul Islam",
+        "Verified case study results and portfolio metrics for Riajul",
+        "Performance marketing services and contact information"
+      ],
+      "tags": [
+        "llms.txt",
+        "ai-agents",
+        "portfolio-overview",
+        "eeat",
+        "attribution"
+      ]
+    }
+  ]
+}
