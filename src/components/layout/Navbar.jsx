@@ -205,6 +205,7 @@ function Navbar() {
         className={`mobile-menu ${
           menuOpen ? "active" : ""
         }`}
+        aria-hidden={!menuOpen}
       >
         <a
           href="/#hero"

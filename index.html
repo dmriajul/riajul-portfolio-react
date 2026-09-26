@@ -47,6 +47,22 @@
   />
 
   <!-- ==========================================
+       AGENTIC RESOURCE DISCOVERY (ARD SPEC 1.0)
+  =========================================== -->
+
+  <link
+    rel="ai-catalog"
+    type="application/json"
+    href="/.well-known/ai-catalog.json"
+  />
+
+  <link
+    rel="ard"
+    type="application/json"
+    href="/.well-known/ard.json"
+  />
+
+  <!-- ==========================================
        GEO & LOCALIZATION (GEO - Geographic Search Optimization)
   =========================================== -->
 
@@ -73,10 +89,7 @@
     content="Hire Performance Marketing Specialist, Social Media Manager, Meta Ads Expert, Facebook Ads Consultant, Social Media Marketing Manager, Google Ads Specialist, GA4 Server-Side Tracking, Google Tag Manager Expert, Canva Social Media Design, SEO Consultant, B2B Lead Generation, E-commerce ROAS, Khandokar Riajul Islam, Khulna Bangladesh"
   />
 
-  <link
-    rel="canonical"
-    href="https://portfolio.riajultech.com/"
-  />
+  <!-- Canonical link is dynamically managed per route in Home.jsx and ServiceDetail.jsx -->
 
   <!-- ==========================================
        FAVICON & ICONS
@@ -222,7 +235,8 @@
           "Google Analytics 4 (GA4)",
           "Google Tag Manager (GTM)",
           "Conversions API (CAPI)",
-          "Conversion Rate Optimization (CRO)"
+          "Conversion Rate Optimization (CRO)",
+          "Pinterest Organic Marketing & Growth"
         ],
         "description": "Performance Marketing Specialist & Social Media Manager with 5+ years of verified experience helping businesses scale revenue through Meta Ads, Google Ads, Full-Funnel Social Media Management, Local SEO, and GA4/GTM server-side tracking."
       },
@@ -260,6 +274,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Social Media Manager Services",
+                "url": "https://portfolio.riajultech.com/services/smm",
                 "description": "Full-funnel organic social management, Canva content creation, and paid Meta advertising."
               }
             },
@@ -268,6 +283,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Meta Ads Management",
+                "url": "https://portfolio.riajultech.com/services/meta-ads",
                 "description": "High-ROAS Facebook and Instagram ad campaigns."
               }
             },
@@ -276,6 +292,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Google Ads Management",
+                "url": "https://portfolio.riajultech.com/services/google-ads",
                 "description": "High-intent Google Search and Performance Max campaigns."
               }
             },
@@ -283,15 +300,8 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Local SEO & ORM",
-                "description": "Google Maps 3-Pack ranking dominance and automated 5-star online reputation management."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
                 "name": "Search Engine Optimization (SEO)",
+                "url": "https://portfolio.riajultech.com/services/seo",
                 "description": "Technical SEO, commercial keyword research, and on-page optimization."
               }
             },
@@ -300,6 +310,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Analytics & Tracking (GA4 & GTM)",
+                "url": "https://portfolio.riajultech.com/services/analytics",
                 "description": "Server-side tracking, Conversions API, and custom event attribution."
               }
             },
@@ -308,7 +319,17 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Conversion Rate Optimization (CRO)",
+                "url": "https://portfolio.riajultech.com/services/cro",
                 "description": "WordPress & Elementor high-converting landing pages, A/B testing, and friction reduction."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Local SEO & ORM",
+                "url": "https://portfolio.riajultech.com/services/local-seo-orm",
+                "description": "Google Maps 3-Pack ranking dominance and automated 5-star online reputation management."
               }
             }
           ]
@@ -418,6 +439,31 @@
 </head>
 
 <body>
+
+  <!-- ==========================================
+       NOSCRIPT FALLBACK FOR SEARCH ENGINES & A11Y
+       Ensures Googlebot discovers all 7 service URLs
+       immediately without requiring client-side JS.
+  =========================================== -->
+  <noscript>
+    <div style="background:#081c19;color:#ffffff;padding:24px;border-bottom:2px solid #c9a84c;font-family:sans-serif;">
+      <h2>Khandokar Riajul Islam — Performance Marketing Specialist &amp; Social Media Manager</h2>
+      <p>Dominant paid acquisition, full-funnel organic social, and server-side tracking for high-growth brands worldwide.</p>
+      <nav aria-label="Services Navigation">
+        <h3>Specialized Growth &amp; Marketing Services</h3>
+        <ul>
+          <li><a href="/services/smm" style="color:#e3c772;">Social Media Manager (SMM) &amp; Organic Growth</a></li>
+          <li><a href="/services/meta-ads" style="color:#e3c772;">Meta Ads Management (Facebook &amp; Instagram ROAS)</a></li>
+          <li><a href="/services/google-ads" style="color:#e3c772;">Google Ads Management (Search, Performance Max &amp; Shopping)</a></li>
+          <li><a href="/services/seo" style="color:#e3c772;">Search Engine Optimization (Technical &amp; Content Architecture)</a></li>
+          <li><a href="/services/analytics" style="color:#e3c772;">Analytics &amp; Server-Side Attribution Tracking (GA4 &amp; GTM)</a></li>
+          <li><a href="/services/cro" style="color:#e3c772;">Conversion Rate Optimization (CRO &amp; High-Converting Landing Pages)</a></li>
+          <li><a href="/services/local-seo-orm" style="color:#e3c772;">Local SEO &amp; Online Reputation Management (Google Maps 3-Pack)</a></li>
+        </ul>
+      </nav>
+      <p>Contact: <a href="mailto:service@riajultech.com" style="color:#e3c772;">service@riajultech.com</a> | WhatsApp: +880 1954 447017 | Khulna, Bangladesh (Global Remote)</p>
+    </div>
+  </noscript>
 
   <div id="root"></div>
 

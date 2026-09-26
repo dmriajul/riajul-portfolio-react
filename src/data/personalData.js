@@ -62,24 +62,52 @@ const personalData = {
   ],
 
   // =========================
+  // Verified Live Analytics (Pinterest & GA4 Dashboards)
+  // =========================
+  verifiedAnalytics: {
+    pinterest: {
+      period: "Last 90 Days",
+      impressions: "67.83K",
+      impressionsGrowth: "+371%",
+      totalAudienceReach: "44.57K",
+      reachGrowth: "+325%",
+      engagements: "2.59K",
+      engagementsGrowth: "+382%",
+      saves: "151",
+      savesGrowth: "+435%",
+      outboundReferrals: "39",
+    },
+    ga4: {
+      period: "Last 30 Days",
+      activeUsers: "2.6K",
+      activeUsersGrowth: "+175.7%",
+      engagementRate: "80%",
+      engagementRateGrowth: "+15.6%",
+      pageviewsPerUser: "2.5",
+      topMarkets: "USA, UK & Singapore",
+      deviceSplit: "62.7% Desktop vs 35.6% Mobile",
+    },
+  },
+
+  // =========================
   // Highlights
   // =========================
   highlights: [
     {
-      number: "5+ Years",
-      title: "Hands-on Experience",
+      number: "67.83K",
+      title: "Pinterest Impressions (+371%)",
     },
     {
-      number: "72+",
-      title: "Campaigns Executed",
+      number: "44.57K",
+      title: "Total Audience Reach (+325%)",
     },
     {
-      number: "5.88%",
-      title: "Peak Campaign CTR",
+      number: "2.6K",
+      title: "GA4 Active Users (+175.7%)",
     },
     {
-      number: "100%",
-      title: "Data-Driven Attribution",
+      number: "80%",
+      title: "Engagement Rate (+15.6%)",
     },
   ],
 

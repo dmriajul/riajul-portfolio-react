@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/layout/Navbar";
@@ -48,6 +48,23 @@ function ServiceDetail() {
   }
 
   const service = servicesDetailData[currentKey];
+
+  useEffect(() => {
+    if (service) {
+      document.title = `${service.title} | Khandokar Riajul Islam Portfolio`;
+      let canonical = document.querySelector("link[rel='canonical']");
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.setAttribute("rel", "canonical");
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute(
+        "href",
+        `https://portfolio.riajultech.com/services/${service.slug || currentKey}`
+      );
+    }
+    window.scrollTo(0, 0);
+  }, [service, currentKey]);
 
   // Fallback if an invalid service slug is entered
   if (!service) {
@@ -586,14 +603,19 @@ function ServiceDetail() {
               <div className="faq-list">
                 {service.faqs.map((faq, i) => {
                   const isOpen = openFaq === i;
+                  const btnId = `service-faq-btn-${i}`;
+                  const panelId = `service-faq-panel-${i}`;
                   return (
                     <div
                       key={faq.q}
                       className={`faq-item ${isOpen ? "active" : ""}`}
                     >
                       <button
+                        id={btnId}
                         className="faq-question"
                         onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
                       >
                         <span>{faq.q}</span>
                         <span className="faq-toggle-icon">
@@ -604,6 +626,9 @@ function ServiceDetail() {
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
+                            id={panelId}
+                            role="region"
+                            aria-labelledby={btnId}
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}

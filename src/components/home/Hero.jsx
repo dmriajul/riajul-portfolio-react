@@ -154,6 +154,8 @@ function Hero() {
                 height="400"
                 fetchPriority="high"
                 decoding="async"
+                data-pin-nopin="true"
+                data-pin-no-hover="true"
               />
             </picture>
 
@@ -184,24 +186,24 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* 4-Column Bottom Stats Counter Bar */}
+      {/* 4-Column Bottom Stats Counter Bar (Verified Live Analytics) */}
       <div className="container hero-stats-container">
         <div className="hero-stats-row">
           <div className="hero-stat-block">
-            <span className="stat-number">72+</span>
-            <span className="stat-label">Campaigns launched</span>
+            <span className="stat-number">67.83K</span>
+            <span className="stat-label">Pinterest Impressions (+371%)</span>
           </div>
           <div className="hero-stat-block">
-            <span className="stat-number">214K</span>
-            <span className="stat-label">Reach for a single brand</span>
+            <span className="stat-number">44.57K</span>
+            <span className="stat-label">Total Audience Reach (+325%)</span>
           </div>
           <div className="hero-stat-block">
-            <span className="stat-number">5.88%</span>
-            <span className="stat-label">Best account-level CTR</span>
+            <span className="stat-number">2.6K</span>
+            <span className="stat-label">GA4 Active Users (+175.7%)</span>
           </div>
           <div className="hero-stat-block">
-            <span className="stat-number">344</span>
-            <span className="stat-label">Sales in a 7-day launch</span>
+            <span className="stat-number">80%</span>
+            <span className="stat-label">GA4 Engagement Rate (+15.6%)</span>
           </div>
         </div>
       </div>

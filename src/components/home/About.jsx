@@ -25,8 +25,7 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="container about-container">
-        {/* Left Side: Live GA4 Dashboard Card
-            (Replaces the duplicate profile photo — the hero already shows it) */}
+        {/* Left Side: Live GA4 Dashboard Card & Verified Stats */}
         <div className="about-image">
           <div className="about-dashboard-card">
             <img
@@ -36,6 +35,8 @@ function About() {
               height="750"
               loading="lazy"
               decoding="async"
+              data-pin-nopin="true"
+              data-pin-no-hover="true"
             />
             <div className="about-dashboard-caption">
               <FaChartLine /> Real GA4 & CAPI Attribution Dashboard
@@ -44,6 +45,26 @@ function About() {
 
           <div className="about-trust-tag">
             <FaShieldAlt /> 100% Data-Driven &amp; Attribution-Verified
+          </div>
+
+          {/* Live Analytics 4-Stat Grid (Pinterest & GA4 Dashboards) */}
+          <div className="about-analytics-grid">
+            <div className="about-stat-chip">
+              <strong>67.83K</strong>
+              <span>Pinterest (+371%)</span>
+            </div>
+            <div className="about-stat-chip">
+              <strong>44.57K</strong>
+              <span>Audience (+325%)</span>
+            </div>
+            <div className="about-stat-chip">
+              <strong>2.6K</strong>
+              <span>GA4 Users (+175.7%)</span>
+            </div>
+            <div className="about-stat-chip">
+              <strong>80%</strong>
+              <span>Engagement (+15.6%)</span>
+            </div>
           </div>
 
           {/* Live Authority Backlink Bar */}

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://portfolio.riajultech.com/sitemap.xml
+Agentmap: https://portfolio.riajultech.com/.well-known/ai-catalog.json
