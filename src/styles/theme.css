@@ -702,6 +702,7 @@ body.light-theme .info-row strong {
 [data-theme="light"] .home-faq-card,
 [data-theme="light"] .testimonial-card,
 [data-theme="light"] .contact-form,
+[data-theme="light"] .contact-map-wrapper,
 [data-theme="light"] .faq-cta-box,
 body.light-theme .service-card,
 body.light-theme .project-card,
@@ -712,6 +713,7 @@ body.light-theme .info-card,
 body.light-theme .home-faq-card,
 body.light-theme .testimonial-card,
 body.light-theme .contact-form,
+body.light-theme .contact-map-wrapper,
 body.light-theme .faq-cta-box {
   background: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
@@ -724,12 +726,14 @@ body.light-theme .faq-cta-box {
 [data-theme="light"] .certification-card:hover,
 [data-theme="light"] .timeline-card:hover,
 [data-theme="light"] .info-card:hover,
+[data-theme="light"] .contact-map-wrapper:hover,
 body.light-theme .service-card:hover,
 body.light-theme .project-card:hover,
 body.light-theme .skill-card:hover,
 body.light-theme .certification-card:hover,
 body.light-theme .timeline-card:hover,
-body.light-theme .info-card:hover {
+body.light-theme .info-card:hover,
+body.light-theme .contact-map-wrapper:hover {
   border-color: #0f766e !important;
   box-shadow: 0 14px 35px rgba(15, 118, 110, 0.12) !important;
 }
@@ -1140,6 +1144,52 @@ body.light-theme .contact-form input::placeholder,
 body.light-theme .contact-form textarea::placeholder {
   color: #64748b !important;
   -webkit-text-fill-color: #64748b !important;
+}
+
+/* =====================================================
+   GOOGLE BUSINESS PROFILE MAP IN LIGHT MODE
+===================================================== */
+[data-theme="light"] .contact-map-info h3,
+body.light-theme .contact-map-info h3 {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+}
+
+[data-theme="light"] .contact-map-info p,
+body.light-theme .contact-map-info p {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .contact-map-badge,
+body.light-theme .contact-map-badge {
+  background: rgba(15, 118, 110, 0.1) !important;
+  border: 1px solid rgba(15, 118, 110, 0.25) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .contact-map-frame,
+body.light-theme .contact-map-frame {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .btn-map-directions,
+body.light-theme .btn-map-directions {
+  background: rgba(15, 118, 110, 0.1) !important;
+  border-color: rgba(15, 118, 110, 0.3) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .btn-map-directions:hover,
+body.light-theme .btn-map-directions:hover {
+  background: #0f766e !important;
+  border-color: #0f766e !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(15, 118, 110, 0.25) !important;
 }
 
 /* =====================================================
