@@ -18,57 +18,75 @@ function Skills() {
           </span>
 
           <h2>
-            Proven Skills Built for Predictable Business Growth
+            Primary Focus, Backed by Supporting Capabilities
           </h2>
 
           <p>
-            A balanced mix of technical tool mastery, analytical thinking,
-            creative direction, and disciplined execution to drive measurable marketing results.
+            At the top of the list: the work I deliver day to day — social media management,
+            Meta Ads, and Google Ads. Beneath it, the supporting capabilities that make those
+            channels measurable: SEO, Local SEO &amp; ORM, GA4/GTM tracking, and CRO.
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="skills-grid">
-          {skillsData.map((skill, index) => (
-            <motion.div
-              key={skill.id}
-              className="skill-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-            >
-              <div className="skill-card-top">
-                <div className="skill-icon">
-                  {skill.icon}
-                </div>
-                <span className="skill-category-badge">
-                  {skill.category}
-                </span>
+        {/* Skills Groups: Primary Focus → Supporting Capabilities */}
+        <div className="skills-groups">
+          {skillsData.map((group) => (
+            <div className="skills-group" key={group.tier}>
+              <div className="skills-group-header">
+                <h3 className="skills-group-title">{group.tier}</h3>
+                <p className="skills-group-note">{group.note}</p>
               </div>
 
-              <h3>
-                {skill.title}
-              </h3>
-
-              <p>
-                {skill.description}
-              </p>
-
-              <div className="skill-technologies">
-                {skill.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="tech-badge"
+              <div
+                className={`skills-grid ${
+                  group.tier === "Primary Focus"
+                    ? "skills-grid-primary"
+                    : "skills-grid-supporting"
+                }`}
+              >
+                {group.skills.map((skill, index) => (
+                  <motion.div
+                    key={skill.id}
+                    className="skill-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1,
+                    }}
                   >
-                    {tech}
-                  </span>
+                    <div className="skill-card-top">
+                      <div className="skill-icon">
+                        {skill.icon}
+                      </div>
+                      <span className="skill-category-badge">
+                        {skill.category}
+                      </span>
+                    </div>
+
+                    <h4>
+                      {skill.title}
+                    </h4>
+
+                    <p>
+                      {skill.description}
+                    </p>
+
+                    <div className="skill-technologies">
+                      {skill.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="tech-badge"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

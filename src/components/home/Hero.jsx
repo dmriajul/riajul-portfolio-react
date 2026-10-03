@@ -50,9 +50,16 @@ function Hero() {
             Clear Strategy, Honest Data, and Sustainable Revenue Growth for Your Business
           </h2>
 
-          {/* Human, Empathetic Description */}
+          {/* Human, Problem-Focused Description */}
           <p className="hero-p">
-            Hi, I'm <strong>Riajul</strong>. I partner remotely with ambitious founders and business owners across the <strong>USA, UK, Canada, Singapore, Australia, and the UAE</strong>. Whether scaling e-commerce & B2B brands with high-ROAS Meta & Google Ads, or helping Australian and UAE practices dominate Google Maps 3-Pack and 5-star online reputation—I build honest, data-driven systems that genuinely grow your revenue.
+            Hi, I'm <strong>Riajul</strong>. I work remotely with founders and business owners
+            across the <strong>USA, UK, Canada, Singapore, Australia, and the UAE</strong>, and most
+            of them arrive with the same bottlenecks: ads attracting clicks instead of qualified
+            buyers, budget spent without a clear return, social media that goes quiet between
+            launches, and tracking that cannot show which channel actually sells. That is the work
+            I take on — managing <strong>Meta &amp; Google Ads</strong>, keeping
+            <strong> social media consistent</strong>, setting up <strong>clean GA4/GTM
+            tracking</strong>, and improving the pages where conversions are won or lost.
           </p>
 
           {/* Conversion Action Buttons */}

@@ -23,12 +23,12 @@ function Projects() {
           </span>
 
           <h2>
-            Proven Campaign Results & Projects
+            Case Studies & Campaign Results
           </h2>
 
           <p>
-            A selection of performance marketing, SEO, analytics,
-            and website projects focused on measurable business growth.
+            Each project below is written the way the work actually happened:
+            the problem, the strategy, the execution, and the measured result.
           </p>
         </motion.div>
 
@@ -72,9 +72,28 @@ function Projects() {
                   {project.title}
                 </h3>
 
-                <p>
-                  {project.description}
-                </p>
+                {/* Problem → Strategy → Execution → Result */}
+                <div className="project-flow">
+                  <div className="project-flow-row">
+                    <span className="project-flow-label">Problem</span>
+                    <p>{project.problem}</p>
+                  </div>
+
+                  <div className="project-flow-row">
+                    <span className="project-flow-label">Strategy</span>
+                    <p>{project.strategy}</p>
+                  </div>
+
+                  <div className="project-flow-row">
+                    <span className="project-flow-label">Execution</span>
+                    <p>{project.execution}</p>
+                  </div>
+
+                  <div className="project-flow-row">
+                    <span className="project-flow-label">Result</span>
+                    <p>{project.result}</p>
+                  </div>
+                </div>
 
                 {/* Technologies */}
                 <div className="project-tech">

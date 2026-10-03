@@ -5,27 +5,27 @@ import { FaPlus, FaMinus, FaLightbulb, FaCheckCircle } from "react-icons/fa";
 const homeFaqData = [
   {
     q: "How do you ensure positive ROI and avoid burning my marketing budget?",
-    a: "Every dollar spent is guarded by data. Before scaling any budget, we run controlled low-budget creative and audience split-tests to identify winning hooks, low CAC (Customer Acquisition Cost), and high ROAS. We also implement server-side tracking (Meta CAPI & GA4) to guarantee zero wasted spend on duplicate or unverified clicks.",
+    a: "Every budget decision is backed by data. Before scaling any spend, we run controlled low-budget creative and audience split-tests to identify winning hooks, low CAC (Customer Acquisition Cost), and the strongest ROAS. I also implement server-side tracking (Meta CAPI & GA4) so duplicate and unattributed conversions are removed from your reporting.",
   },
   {
     q: "What is included in the Free 30-Min Strategy Consultation?",
-    a: "A 100% complimentary, zero-pressure audit of your existing Meta Ads, Google Ads, or social media channels. I will review your targeting, creative fatigue, landing page drop-offs, and tracking leaks, delivering a clear 3-step action plan you can implement immediately.",
+    a: "A complimentary, no-pressure audit of your existing Meta Ads, Google Ads, or social media channels. I review your targeting, creative fatigue, landing page drop-offs, and tracking leaks, then give you a clear 3-step action plan you can implement immediately.",
   },
   {
     q: "Do I need both Organic Social Media and Paid Meta Ads?",
     a: "Yes. Organic social builds brand credibility, trust, and community retention—without it, ad traffic often doesn't convert. Paid ads provide predictable reach, fast lead flow, and scalable revenue. Together, organic content tests your messaging for free, while paid campaigns scale your winners to ready-to-buy audiences.",
   },
   {
-    q: "Can you help my business or clinic dominate Google Maps in Australia or the UAE?",
-    a: "Yes. For practices and businesses in Australia (Sydney, Melbourne, Brisbane) and the UAE (Dubai, Abu Dhabi), I specialize in dominant Google Maps 3-Pack Local SEO and automated 5-star review acquisition (ORM). From Local Falcon geo-grid tracking to regional directory citations (TrueLocal, HiPages, 2GIS, Yello.ae), I turn local searches into booked phone calls and consultations. I also deliver the same Local SEO & reputation services for clients in North America and worldwide.",
+    q: "Can you help my business or clinic improve Google Maps visibility in Australia or the UAE?",
+    a: "Yes. For practices and businesses in Australia (Sydney, Melbourne, Brisbane) and the UAE (Dubai, Abu Dhabi), I work on Google Maps 3-Pack Local SEO and structured 5-star review acquisition (ORM). From Local Falcon geo-grid tracking to regional directory citations (TrueLocal, HiPages, 2GIS, Yello.ae), the aim is to turn local searches into booked phone calls and consultations. I deliver the same Local SEO & reputation work for clients in North America and worldwide.",
   },
   {
     q: "How do you overcome iOS14/17 tracking loss and verify attribution?",
-    a: "I deploy Meta Conversions API (CAPI) server-side tracking directly via Google Tag Manager (GTM) alongside Google Analytics 4 (GA4). This bypasses ad-blockers and browser cookie restrictions, achieving top-tier Event Match Quality (EMQ) and giving you transparent, verifiable data on every lead and purchase.",
+    a: "I deploy Meta Conversions API (CAPI) server-side tracking via Google Tag Manager (GTM) alongside Google Analytics 4 (GA4). This reduces the impact of ad-blockers and browser cookie restrictions, improves Event Match Quality (EMQ), and gives you clearer, verifiable data on leads and purchases.",
   },
   {
     q: "Which international markets do you work with remotely?",
-    a: "I partner remotely with clients across the USA, UK, Canada, Singapore, Australia, and the UAE. For North American and Singaporean brands, the core focus is high-ROAS Meta Ads, Google Ads, and full-funnel Social Media Management. For Australian and UAE clients, the primary focus is Local SEO (Maps 3-Pack) and Online Reputation (ORM), with full capability to scale paid ads whenever needed. Time zones are smoothly handled with flexible meeting slots, async WhatsApp/Loom updates, and live 24/7 Looker Studio dashboards.",
+    a: "I partner remotely with clients across the USA, UK, Canada, Singapore, Australia, and the UAE. For North American and Singaporean brands, the core focus is Meta Ads, Google Ads, and full-funnel Social Media Management. For Australian and UAE clients, the primary focus is Local SEO (Maps 3-Pack) and Online Reputation (ORM), with the full capability to scale paid ads whenever needed. Time zones are handled with flexible meeting slots, async WhatsApp/Loom updates, and live Looker Studio dashboards.",
   },
   {
     q: "How quickly can we launch campaigns after onboarding?",
@@ -142,14 +142,14 @@ function FAQ() {
             transition={{ duration: 0.6 }}
           >
             <div className="faq-cta-badge">
-              <FaLightbulb /> Zero-Risk Consultation
+              <FaLightbulb /> No-Pressure Consultation
             </div>
 
             <h3>Have a Specific Question About Your Accounts?</h3>
 
             <p>
-              I offer a free 30-minute growth audit for businesses ready to scale.
-              No generic sales pitches—just raw data, insights, and actionable fixes.
+              I offer a free 30-minute strategy audit for businesses ready to grow.
+              No sales pitch—just a look at your data, what stands out, and what to fix first.
             </p>
 
             <ul className="faq-cta-checklist">

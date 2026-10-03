@@ -22,8 +22,8 @@ function Experience() {
           </h2>
 
           <p>
-            A consistent history of launching, managing, and scaling high-impact marketing systems,
-            delivering measurable ROAS, qualified leads, and organic search compounding.
+            A consistent record of building, managing, and improving marketing systems,
+            with measurable gains in ad efficiency, qualified leads, and organic search visibility.
           </p>
         </motion.div>
 

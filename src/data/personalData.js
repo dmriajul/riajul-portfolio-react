@@ -8,10 +8,10 @@ const personalData = {
 
   subtitle: "Social Media Manager | Meta Ads | Google Ads | SEO | GA4",
 
-  bio: "Helping e-commerce & B2B brands in the USA, UK, Canada & Singapore scale profitably with Meta & Google Ads, and empowering practices in Australia & the UAE to dominate Google Maps 3-Pack and 5-star online reputation.",
+  bio: "Performance marketing and social media management for e-commerce, B2B, and service businesses across the USA, UK, Canada, Singapore, Australia, and the UAE — Meta Ads, Google Ads, consistent social media, and GA4/GTM tracking that shows what is actually working.",
 
   about:
-    "Running and scaling a business is demanding when your marketing budget disappears into guesswork or vanity clicks. As a Performance Marketing Specialist & Social Media Manager with 5+ years of verified experience, I partner remotely with ambitious founders and business owners worldwide. For e-commerce and B2B brands across the USA, UK, Canada, and Singapore, I build high-ROAS paid media systems (Meta & Google Ads), full-funnel social media management, and server-side GA4 tracking. For localized practices and service businesses in Australia and the UAE, I engineer dominant Local SEO (Google Maps 3-Pack) and automated 5-star online reputation systems (ORM)—with the full capability to deploy paid media whenever your business is ready to scale. Every dollar is tracked, every hook is tested, and every campaign is built around your real bottom-line profit.",
+    "Most businesses don't have a traffic problem as much as a clarity problem. Ad budgets leak into clicks that never convert, social media goes quiet for weeks at a time, and the reporting never quite explains which channel paid for itself. As a Performance Marketing Specialist & Social Media Manager with 5+ years of hands-on experience, that is the gap I close. I work remotely with founders and business owners across the USA, UK, Canada, Singapore, Australia, and the UAE — managing Meta and Google Ads, running consistent social media, setting up GA4 and server-side tracking that matches reality, and improving the landing pages where traffic either converts or leaves. For practices and service businesses in Australia and the UAE, I also strengthen Local SEO, Google Maps 3-Pack visibility, and online reputation. You get plain-language reporting, honest recommendations, and a clear view of what your marketing investment actually returns.",
 
   experience: "5+ Years",
 
@@ -55,16 +55,18 @@ const personalData = {
   // Skills
   // =========================
   skills: [
+    // Primary focus
     "Social Media Management",
     "Meta Ads Management",
     "Google Ads (Search & PMax)",
+    // Supporting capabilities
+    "SEO & Search Intent",
     "Local SEO (Maps 3-Pack)",
     "Online Reputation Management (ORM)",
-    "Canva Creative Design",
-    "SEO & Search Intent",
     "Google Analytics 4 (GA4)",
     "Google Tag Manager (GTM)",
     "Conversion Rate Optimization (CRO)",
+    "Canva Creative Design",
   ],
 
   // =========================

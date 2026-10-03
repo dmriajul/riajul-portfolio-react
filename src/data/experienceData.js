@@ -99,7 +99,7 @@ const experienceData = [
   {
     id: 4,
 
-    position: "Digital Marketing Learner",
+    position: "Digital Marketing — Self-Learning & Early Projects",
 
     company: "Self Learning",
 
@@ -108,7 +108,7 @@ const experienceData = [
     location: "Bangladesh",
 
     description:
-      "Started learning SEO, Google Ads, Meta Ads, analytics, website optimization, and digital marketing through practical projects and professional certifications.",
+      "Learned SEO, Google Ads, Meta Ads, analytics, and website optimization through structured self-study, professional certifications, and early hands-on projects.",
 
     technologies: [
       "SEO",

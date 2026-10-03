@@ -16,11 +16,11 @@ function Services() {
         >
           <span className="section-tag">Revenue Growth Services</span>
 
-          <h2>Data-Driven Solutions Built to Scale Your Business</h2>
+          <h2>Marketing Services Built Around Real Business Problems</h2>
 
           <p>
-            Every solution integrates precision audience targeting, psychological buyer-intent copy,
-            systematic creative testing, and transparent GA4 server-side attribution.
+            Each service is structured the same way: the problem it solves, what I actually do
+            about it, and the business outcome you can expect from the work.
           </p>
         </motion.div>
 
@@ -47,7 +47,23 @@ function Services() {
 
               <div className="service-card-body">
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+
+                <div className="service-flow">
+                  <div className="service-flow-row">
+                    <span className="service-flow-label">Problem</span>
+                    <p>{service.problem}</p>
+                  </div>
+
+                  <div className="service-flow-row">
+                    <span className="service-flow-label">What I Do</span>
+                    <p>{service.action}</p>
+                  </div>
+
+                  <div className="service-flow-row">
+                    <span className="service-flow-label">Business Outcome</span>
+                    <p>{service.outcome}</p>
+                  </div>
+                </div>
               </div>
 
               {/* CTA Link to Dedicated Service Detail Page */}

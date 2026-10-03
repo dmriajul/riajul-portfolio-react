@@ -282,8 +282,8 @@ function ServiceDetail() {
                   <h4>{isSMM ? "The Organic + Paid Synergy Advantage" : "The Maps + 5-Star Reputation Flywheel"}</h4>
                   <p>
                     {isSMM
-                      ? "Organic content acts as our rapid testing ground to uncover high-resonance angles, hooks, and content pillars without ad spend. Once an angle proves its engagement organically, we immediately inject it into our Meta Ads engine to scale qualified leads and sales with maximum ROAS and lower customer acquisition costs (CAC)."
-                      : "Higher Google Maps rankings generate more high-ticket local customer interactions. Automated review funnels convert those happy customers into authentic 5-star reviews on Google and regional directories. As review velocity and positive sentiment surge, Google's algorithm rewards your business with wider geo-radius visibility across surrounding suburbs and commercial districts, outranking competitors permanently."}
+                      ? "Organic content acts as our rapid testing ground to uncover high-resonance angles, hooks, and content pillars without ad spend. Once an angle proves its engagement organically, we immediately inject it into our Meta Ads engine to scale qualified leads and sales with a stronger return on ad spend (ROAS) and support lower customer acquisition costs (CAC)."
+                      : "Higher Google Maps rankings generate more local customer interactions. Structured review funnels turn those happy customers into authentic 5-star reviews on Google and regional directories. As review velocity and positive sentiment build, Maps visibility typically widens across surrounding suburbs and commercial districts."}
                   </p>
                 </div>
               </motion.div>
@@ -350,10 +350,10 @@ function ServiceDetail() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="section-tag">Proven Results</span>
+                <span className="section-tag">Campaign Results</span>
                 <h2>Real Campaign Metrics & Case Studies</h2>
                 <p>
-                  Verified campaign performance figures across e-commerce, lead generation,
+                  Actual campaign performance figures from e-commerce, lead generation,
                   and brand awareness projects.
                 </p>
               </motion.div>
@@ -481,8 +481,8 @@ function ServiceDetail() {
                 <span className="section-tag">How It Works</span>
                 <h2>A Structured, Data-Driven Execution Framework</h2>
                 <p>
-                  From onboarding to continuous optimization, this transparent 4-stage process
-                  ensures consistent momentum and measurable ROI.
+                  From onboarding to continuous optimization, this four-stage process keeps the
+                  work transparent, measured, and easy to follow.
                 </p>
               </motion.div>
 
