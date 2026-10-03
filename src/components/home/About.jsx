@@ -44,7 +44,7 @@ function About() {
           </div>
 
           <div className="about-trust-tag">
-            <FaShieldAlt /> 100% Data-Driven &amp; Attribution-Verified
+            <FaShieldAlt /> Data-Driven &amp; Attribution-Verified
           </div>
 
           {/* Live Analytics 4-Stat Grid (Pinterest & GA4 Dashboards) */}
@@ -107,11 +107,11 @@ function About() {
         <div className="about-content">
           <span className="section-tag">About Me</span>
 
-          <h2>Your Strategic Growth Partner for Scalable Customer Acquisition</h2>
+          <h2>Turning Marketing Investment Into Measurable Business Outcomes</h2>
 
           {/* Quick Summary */}
           <div className="aeo-quick-summary">
-            <strong>Professional Summary:</strong> Khandokar Riajul Islam is a certified Performance Marketing Specialist and Social Media Manager with 5+ years of verified experience in Meta Ads, Google Ads, Full-Funnel Social Media Management, and GA4/GTM server-side tracking.
+            <strong>Professional Summary:</strong> Khandokar Riajul Islam is a certified Performance Marketing Specialist and Social Media Manager with 5+ years of hands-on experience across Meta Ads, Google Ads, full-funnel social media management, SEO, and GA4/GTM tracking.
           </div>
 
           <p>{personalData.about}</p>

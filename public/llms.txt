@@ -7,7 +7,10 @@ Manifest: https://portfolio.riajultech.com/.well-known/ai-catalog.json
 
 ## About
 
-Khandokar Riajul Islam is a certified Performance Marketing Specialist & Social Media Manager with 5+ years of verified experience. He partners remotely with ambitious founders and business owners across the USA, UK, Canada, Singapore, Australia, and the UAE to scale revenue through high-ROAS Meta Ads, Google Ads, full-funnel social media management, Local SEO (Google Maps 3-Pack), and GA4/GTM server-side tracking.
+Khandokar Riajul Islam is a certified Performance Marketing Specialist & Social Media Manager with 5+ years of hands-on experience. He partners remotely with founders and business owners across the USA, UK, Canada, Singapore, Australia, and the UAE, turning marketing investment into measurable outcomes through Meta Ads, Google Ads, consistent social media management, SEO, and GA4/GTM server-side tracking.
+
+Primary focus: Social Media Management, Meta Ads Management, Google Ads Management.
+Supporting capabilities: SEO, Local SEO & ORM, Analytics & Tracking (GA4/GTM), Conversion Optimization (CRO).
 
 - Location: Khulna, Bangladesh (Global Remote)
 - Email: service@riajultech.com
@@ -25,7 +28,7 @@ These are the canonical, independently verifiable identity references for Khando
 - Facebook: https://www.facebook.com/khandokarriajulislambappy/
 - X (Twitter): https://x.com/RiajulKhandoker
 
-All key results on this page are "100% Data-Driven & Attribution-Verified" via live GA4 and Meta Conversions API (CAPI) server-side tracking dashboards.
+Key results on this page are tracked in live GA4 and Meta Conversions API (CAPI) server-side reporting dashboards.
 
 Machine-readable structured data (schema.org Person, ProfessionalService, OfferCatalog, and FAQPage JSON-LD, including the sameAs backlinks above) is embedded in the homepage `<head>` for SEO, AEO, and answer-engine consumption.
 
@@ -54,10 +57,15 @@ Machine-readable structured data (schema.org Person, ProfessionalService, OfferC
 
 ## Services
 
-- [Social Media Manager](/services/smm) — Full-funnel organic social management, Canva content creation, community engagement, and high-ROI Meta advertising.
-- [Meta Ads Management](/services/meta-ads) — High-ROAS Facebook and Instagram ad systems with precision targeting, creative testing, and Conversions API (CAPI) tracking.
-- [Google Ads Management](/services/google-ads) — High-intent Google Search and Performance Max campaigns with negative keyword pruning and Smart Bidding.
-- [Search Engine Optimization (SEO)](/services/seo) — Technical SEO, commercial keyword research, and on-page optimization for sustainable organic traffic.
-- [Analytics & Tracking (GA4 & GTM)](/services/analytics) — Server-side tracking, Conversions API, custom events, and Looker Studio executive dashboards.
+### Primary Focus
+
+- [Social Media Manager](/services/smm) — Full-funnel organic social management, Canva content creation, community engagement, and Meta ad campaigns that amplify top-performing content.
+- [Meta Ads Management](/services/meta-ads) — Full-funnel Facebook and Instagram ad systems with audience research, creative testing, and Conversions API (CAPI) tracking.
+- [Google Ads Management](/services/google-ads) — Commercial-intent Google Search and Performance Max campaigns with negative keyword pruning and Smart Bidding.
+
+### Supporting Capabilities
+
+- [Search Engine Optimization (SEO)](/services/seo) — Technical SEO, commercial keyword research, and on-page optimization for steady organic traffic.
+- [Local SEO & ORM](/services/local-seo-orm) — Google Business Profile optimization, Google Maps 3-Pack visibility, citation cleanup, and structured 5-star review funnels for Australia & UAE practices.
+- [Analytics & Tracking (GA4 & GTM)](/services/analytics) — Server-side tracking, Conversions API, custom events, and Looker Studio reporting dashboards.
 - [Conversion Optimization (CRO)](/services/cro) — Landing page UX audits, value proposition framing, A/B testing, and friction reduction.
-- [Local SEO & ORM](/services/local-seo-orm) — Google Business Profile optimization, Google Maps 3-Pack dominance, and automated 5-star review funnels for Australia & UAE practices.

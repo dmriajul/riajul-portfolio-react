@@ -5,8 +5,12 @@ const servicesData = [
     icon: "📱",
     badge: "ORGANIC & PAID",
     title: "Social Media Manager",
-    description:
-      "Tired of content burnout and inconsistent posting? As your dedicated Social Media Manager, I handle your monthly content calendar, design eye-catching Canva visuals, craft engaging Reels, reply to your community, and run high-ROI Meta ad campaigns.",
+    problem:
+      "Posting is inconsistent, content ideas run dry, and there is no time to keep up with comments and DMs.",
+    action:
+      "I run social end to end: monthly content calendar, Canva visuals, Reels scripts, captions, community replies, and Meta ad campaigns that amplify the posts already performing.",
+    outcome:
+      "A consistent, on-brand presence that keeps your audience warm and turns attention into enquiries and sales.",
   },
 
   {
@@ -15,8 +19,12 @@ const servicesData = [
     icon: "📢",
     badge: "META & IG ADS",
     title: "Meta Ads Management",
-    description:
-      "Stop wasting budget on boosted posts that bring zero sales. I build full-funnel Facebook and Instagram ad systems with precision audience targeting, creative testing, and server-side tracking to acquire real customers profitably.",
+    problem:
+      "Boosted posts and scattered ad sets spend budget without a predictable cost per lead or sale.",
+    action:
+      "I build full-funnel Facebook and Instagram campaigns with structured audience research, continuous creative testing, retargeting, and Conversions API tracking.",
+    outcome:
+      "More qualified leads and sales at a cost per result you can forecast and scale from.",
   },
 
   {
@@ -25,8 +33,12 @@ const servicesData = [
     icon: "🔍",
     badge: "SEARCH & PMAX",
     title: "Google Ads Management",
-    description:
-      "Capture high-intent buyers who are already searching for your services on Google. I manage search and Performance Max campaigns with daily negative keyword pruning so you only pay for high-value clicks.",
+    problem:
+      "Search budget leaks into broad, low-intent queries that rarely turn into enquiries.",
+    action:
+      "I build Search and Performance Max campaigns around commercial intent, prune search terms consistently, and connect conversion tracking to the numbers that matter.",
+    outcome:
+      "Spend concentrated on people who are already searching for what you sell.",
   },
 
   {
@@ -35,8 +47,12 @@ const servicesData = [
     icon: "📈",
     badge: "SEO & RANKINGS",
     title: "Search Engine Optimization",
-    description:
-      "Want sustainable, free traffic from Google? I fix technical website errors, target high-intent commercial keywords, and optimize your on-page content so your business ranks where buyers look first.",
+    problem:
+      "Useful pages are not ranking, and organic traffic is not compounding the way it should.",
+    action:
+      "I fix technical issues, research commercial keywords, and optimise on-page content, headings, internal links, and schema so search engines understand every page.",
+    outcome:
+      "Steadier organic impressions and clicks from buyers researching your service.",
   },
 
   {
@@ -45,8 +61,12 @@ const servicesData = [
     icon: "📊",
     badge: "GA4 & GTM",
     title: "Analytics & Tracking",
-    description:
-      "Confused about which marketing channel is actually making you money? I set up Google Analytics 4 and Google Tag Manager with server-side tracking so you get 100% clear data on every lead and purchase.",
+    problem:
+      "Every platform takes credit for the same sale, and nobody can say which channel actually produced the lead.",
+    action:
+      "I implement GA4 and Google Tag Manager with server-side tracking, custom conversion events, and one consistent UTM naming convention across channels.",
+    outcome:
+      "A single reporting source you can trust when deciding where the next dollar goes.",
   },
 
   {
@@ -55,8 +75,12 @@ const servicesData = [
     icon: "🎯",
     badge: "CRO & FUNNELS",
     title: "Conversion Optimization",
-    description:
-      "Getting website visitors but not enough leads or sales? I audit your landing page friction, rewrite value propositions, and optimize user flows to turn more existing traffic into paying clients.",
+    problem:
+      "Traffic arrives, but too few visitors enquire, book, or buy from the pages they land on.",
+    action:
+      "I audit landing pages, sharpen the value proposition, remove friction from forms and flows, then A/B test the changes that matter.",
+    outcome:
+      "More enquiries and sales from the traffic you already have — without extra ad spend.",
   },
 
   {
@@ -65,8 +89,12 @@ const servicesData = [
     icon: "📍",
     badge: "MAPS 3-PACK & ORM",
     title: "Local SEO & ORM (Online Reputation)",
-    description:
-      "Targeting high-value local clients across Australia, UAE, and global markets? I optimize your Google Business Profile (GBP) to dominate Maps 3-Pack rankings and deploy automated 5-star review funnels—turning local searchers into booked appointments, calls, and foot traffic.",
+    problem:
+      "Nearby customers searching on Google Maps find competitors first, and a thin review profile does not help.",
+    action:
+      "I optimise your Google Business Profile, track suburb-level geo-grid rankings, clean up local citations, and set up review request funnels that follow Google's guidelines.",
+    outcome:
+      "Stronger Maps 3-Pack visibility and a growing base of verified reviews that turn local searches into calls and bookings.",
     featured: true,
   },
 ];

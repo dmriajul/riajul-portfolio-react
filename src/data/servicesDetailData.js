@@ -9,7 +9,7 @@ const servicesDetailData = {
     tagline:
       "I take daily content planning, Canva graphics, Reels, community engagement, and paid Meta Ads completely off your plate so your business grows consistently.",
     description:
-      "Running a business leaves you with little time to create daily posts, design graphics, reply to messages, and manage ad budgets. As your dedicated Social Media Manager, I step in to solve content burnout and stop wasted ad spend. I handle your 30-day content calendar, design clean Canva visuals, craft engaging Reels, nurture your community, and run profitable Meta ad funnels.",
+      "Running a business leaves you with little time to create daily posts, design graphics, reply to messages, and manage ad budgets. As your dedicated Social Media Manager, I take that off your plate and keep the channel consistent. I handle your 30-day content calendar, design clean Canva visuals, craft engaging Reels, nurture your community, and manage Meta ad campaigns with clear reporting on cost per result.",
     
     // Key Stats / Highlights
     stats: [
@@ -184,7 +184,7 @@ const servicesDetailData = {
           { label: "Cost Per Lead", value: "$0.13 - $0.34" },
         ],
         description:
-          "Multi-channel paid campaigns delivering high engagement, exceptional 5.88% CTR, and lead acquisition costs as low as $0.13.",
+          "Multi-channel paid campaigns delivering a 5.88% account CTR and lead acquisition costs between $0.13 and $0.34.",
       },
       {
         client: "ZR Fashion",
@@ -197,7 +197,7 @@ const servicesDetailData = {
           { label: "Channel", value: "Direct Messenger" },
         ],
         description:
-          "Direct conversational commerce campaigns converting apparel shoppers straight into customer service and orders for just $0.05 per conversation.",
+          "Conversational commerce campaigns that turned apparel shoppers into 860+ direct Messenger conversations at $0.05 per result.",
       },
       {
         client: "Salient Shop",
@@ -210,7 +210,7 @@ const servicesDetailData = {
           { label: "Launch Window", value: "First Week" },
         ],
         description:
-          "Rapid-traction e-commerce campaign securing 344 orders within the very first week with high click-through and under-$1 acquisition cost.",
+          "E-commerce launch that produced 344 orders in its first week, with a 2.28% CTR at under $1 cost per result.",
       },
       {
         client: "Rong Bahari",
@@ -222,7 +222,7 @@ const servicesDetailData = {
           { label: "Engagement", value: "High ROI" },
         ],
         description:
-          "Ultra-efficient conversational ads driving buyer inquiries at an unprecedented $0.027 per qualified conversation.",
+          "Conversational ads that generated 347 messaging leads at $0.027 per result.",
       },
       {
         client: "Spreka",
@@ -235,7 +235,7 @@ const servicesDetailData = {
           { label: "Visit Cost", value: "€0.23 / visit" },
         ],
         description:
-          "Massive European brand awareness drive reaching 214K potential customers at €1.40 CPM and generating steady profile visits.",
+          "European brand awareness campaign that reached 214,000 people at a €1.40 CPM and drove steady profile visits.",
       },
       {
         client: "DmandFly",
@@ -247,7 +247,7 @@ const servicesDetailData = {
           { label: "Lead Inflow", value: "Consistent" },
         ],
         description:
-          "Omnichannel digital marketing combining organic social authority, targeted Facebook Ads, and analytics-based CRO.",
+          "Integrated organic social, targeted Facebook Ads, and analytics-based CRO work that kept lead inflow consistent.",
       },
     ],
 
@@ -384,7 +384,7 @@ const servicesDetailData = {
         icon: "⚡",
         title: "Conversions API (CAPI) & Pixel Setup",
         description:
-          "Implementing server-side tracking to capture post-iOS14 event data with 100% reliability and high event match quality.",
+          "Implementing server-side tracking to recover post-iOS14 event data with high event match quality.",
         tags: ["CAPI Integration", "Event Match Quality", "Domain Verification"],
       },
       {
@@ -413,7 +413,7 @@ const servicesDetailData = {
           { label: "Cost Per Lead", value: "$0.13 - $0.34" },
         ],
         description:
-          "Generated continuous qualified leads at industry-leading cost per result.",
+          "Generated a steady flow of qualified leads at a cost per result between $0.13 and $0.34.",
       },
       {
         client: "Salient Shop",
@@ -424,19 +424,19 @@ const servicesDetailData = {
           { label: "Cost / Result", value: "$0.98" },
         ],
         description:
-          "Drove 344 instant e-commerce purchases within the first 7 days of campaign launch.",
+          "Drove 344 e-commerce purchases within the first 7 days of the campaign.",
       },
     ],
     process: [
       { step: "01", title: "Audit & Tracking Setup", desc: "Pixel verification, CAPI setup, domain verification, and historical account audit." },
       { step: "02", title: "Strategy & Creative Briefing", desc: "Funnel blueprint, audience segments, creative angles, and copywriting." },
       { step: "03", title: "Campaign Launch & Testing", desc: "Setting up TOFU/MOFU/BOFU campaigns with dynamic creative tests." },
-      { step: "04", title: "Scaling & Optimization", desc: "Aggressive budget reallocation into winning ad sets, scaling ROAS." },
+      { step: "04", title: "Scaling & Optimization", desc: "Shifting budget gradually into the ad sets and creatives with the best cost per result." },
     ],
     deliverables: [
       { title: "Custom Campaign Architecture", desc: "Tailored to your specific business model and conversion goals." },
       { title: "Ad Creative & Copy Testing", desc: "Multi-angle visual variations and direct-response ad copy." },
-      { title: "CAPI & Server-Side Tracking", desc: "Reliable tracking setup to conquer iOS14 attribution loss." },
+      { title: "CAPI & Server-Side Tracking", desc: "Server-side tracking setup that reduces iOS14 attribution loss." },
       { title: "Bi-Weekly & Monthly Reports", desc: "Crystal-clear reporting on CPA, ROAS, and key takeaways." },
     ],
     tools: [
@@ -494,7 +494,7 @@ const servicesDetailData = {
         icon: "🛡️",
         title: "Negative Keyword Pruning",
         description:
-          "Constant query monitoring to eliminate wasteful ad spend and drive down Cost Per Click (CPC).",
+          "Ongoing search-term monitoring to cut irrelevant spend and lower Cost Per Click (CPC).",
         tags: ["Query Sculpting", "Waste Reduction", "Lower CPC"],
       },
       {
@@ -511,11 +511,11 @@ const servicesDetailData = {
         category: "Google Search Campaigns",
         platforms: ["Google Ads"],
         metrics: [
-          { label: "CPC", value: "Extremely Low" },
+          { label: "Campaign Type", value: "Google Search" },
           { label: "Lead Intent", value: "Commercial" },
         ],
         description:
-          "Captured high-intent search queries with lower cost per click and qualified commercial inquiries.",
+          "Captured high-intent search queries at a lower cost per click, producing qualified commercial inquiries.",
       },
     ],
     process: [
@@ -603,7 +603,7 @@ const servicesDetailData = {
           { label: "Ranked Queries", value: "1,000+" },
         ],
         description:
-          "Scaled organic visibility from zero to over 174K impressions with top 10 positions across hundreds of commercial technology keywords.",
+          "Grew organic visibility to over 174K impressions at an average position of 8.5, ranking across hundreds of commercial technology keywords.",
       },
     ],
     process: [
@@ -685,11 +685,11 @@ const servicesDetailData = {
         category: "Analytics & Conversion Tracking",
         platforms: ["GA4", "GTM", "Looker Studio"],
         metrics: [
-          { label: "Data Accuracy", value: "100%" },
+          { label: "Tracking Type", value: "Server & Client" },
           { label: "Custom Events", value: "Forms & Clicks" },
         ],
         description:
-          "Eliminated duplicate events and built reliable cross-platform marketing attribution dashboards.",
+          "Resolved duplicate event issues and built cross-platform marketing attribution dashboards in Looker Studio.",
       },
     ],
     process: [
@@ -810,11 +810,11 @@ const servicesDetailData = {
     aliases: ["local-seo", "orm", "reputation-management", "google-business-profile"],
     badge: "MAPS 3-PACK & ORM",
     title: "Local SEO & ORM (Online Reputation Management)",
-    heroTitle: "Conquer Local Search, Google Maps 3-Pack & 5-Star Brand Reputation",
+    heroTitle: "Local Search, Google Maps 3-Pack & 5-Star Brand Reputation",
     tagline:
-      "Engineered for high-intent clinics, professional practices, and premium local service businesses across Australia (Sydney, Melbourne, Brisbane) and the UAE (Dubai, Abu Dhabi) seeking dominant Maps rankings and automated review acquisition.",
+      "Built for high-intent clinics, professional practices, and premium local service businesses across Australia (Sydney, Melbourne, Brisbane) and the UAE (Dubai, Abu Dhabi) that want stronger Maps 3-Pack visibility and a reliable review process.",
     description:
-      "When ready-to-buy customers search for premium local services 'near me', do they choose you or your local competitors? Winning local search requires two synchronized engines: dominating the Google Maps 3-Pack and building overwhelming 5-star social proof. I optimize your Google Business Profile (GBP), conquer geo-grid search rankings, build automated review collection funnels, and protect your brand's digital reputation against unfair feedback.",
+      "When ready-to-buy customers search for premium local services 'near me', do they choose you or your local competitors? Local search usually comes down to two things working together: visible Google Maps 3-Pack placement and consistent 5-star social proof. I optimize your Google Business Profile (GBP), work the geo-grid rankings step by step, build structured review collection funnels that follow Google's guidelines, and respond to unfair feedback before it costs you enquiries.",
     
     // Key Stats / Highlights
     stats: [
@@ -827,14 +827,14 @@ const servicesDetailData = {
     // Dual Pillar Engine
     twoPillars: {
       tag: "The Dual Growth Engine",
-      headline: "Local Search Dominance & Brand Trust: Working as One",
+      headline: "Local Search Visibility & Brand Trust, Working as One",
       description:
-        "Ranking on Google Maps without reviews won't convert visitors, and having good reviews without Maps ranking won't get you discovered. Here is how both pillars synchronize to flood your business with high-ticket phone calls, driving directions, and booked appointments across Australia and the UAE.",
+        "Ranking on Google Maps without reviews rarely converts, and good reviews without Maps visibility rarely get found. Here is how both pillars work together to turn searches into phone calls, direction requests, and booked appointments across Australia and the UAE.",
       organic: {
         title: "Pillar 01: Google Maps 3-Pack & Local SEO",
         subtitle: "Capturing High-Intent 'Near Me' Searches in AU & UAE",
         points: [
-          "Google Business Profile (GBP) 100% complete audit, category selection & attributes",
+          "Complete Google Business Profile (GBP) audit, category selection & attributes",
           "Local Falcon & BrightLocal geo-grid pinpoint ranking tracking across suburbs & districts",
           "LocalBusiness Schema markup & location-specific landing page optimization",
           "NAP (Name, Address, Phone) consistency across premier AU & UAE directory ecosystems",
@@ -873,7 +873,7 @@ const servicesDetailData = {
         icon: "🗺️",
         title: "Local Geo-Grid Rank Tracking (Local Falcon)",
         description:
-          "Pinpoint rank tracking across targeted postal codes, suburbs, and surrounding commercial zones (Sydney CBD, Eastern Suburbs, Dubai Marina, Downtown, etc.) to eliminate visibility blindspots.",
+          "Pinpoint rank tracking across targeted postal codes, suburbs, and surrounding commercial zones (Sydney CBD, Eastern Suburbs, Dubai Marina, Downtown, etc.) to surface visibility blindspots.",
         tags: ["Local Falcon", "Geo-Grid Maps", "Suburb Tracking"],
       },
       {
@@ -894,7 +894,7 @@ const servicesDetailData = {
         icon: "🛡️",
         title: "Search Engine Reputation Management (SERM)",
         description:
-          "Taking complete control over your brand's Google Page 1. Optimizing positive PR, case studies, verified profiles, and interviews to suppress and outrank negative or competitor search results.",
+          "Strengthening your brand's Google Page 1 by optimizing positive PR, case studies, verified profiles, and interviews so negative or competitor results are pushed further down.",
         tags: ["SERM Defense", "Page 1 Control", "Crisis Mitigation"],
       },
       {
@@ -919,7 +919,7 @@ const servicesDetailData = {
           { label: "Direction Requests", value: "+92%" },
         ],
         description:
-          "Transformed a premium localized clinic from page 2 obscurity into the dominant top 3 Google Maps pack across a 15km suburban radius. Deployed an automated SMS review funnel after patient visits, increasing verified 5-star reviews from 11 to 85+ and generating consistent high-ticket consultations.",
+          "Moved a premium local clinic from page 2 into the top 3 Google Maps pack across a 15km suburban radius. An automated SMS review funnel after appointments grew verified 5-star reviews from 11 to 85+ and increased consultation enquiries.",
       },
     ],
 
@@ -942,7 +942,7 @@ const servicesDetailData = {
       },
       {
         step: "04",
-        title: "Suburb Domination & Ongoing Reputation Defense",
+        title: "Suburb Expansion & Ongoing Reputation Defense",
         desc: "Publishing weekly geo-targeted GBP updates, monitoring sentiment across Google & directory platforms, and expanding ranking radius across adjacent suburbs.",
       },
     ],
@@ -955,11 +955,11 @@ const servicesDetailData = {
       },
       {
         title: "Suburb Geo-Grid Ranking Heatmap Report",
-        desc: "Visual Local Falcon geo-grid showing your exact Google Maps rank across every surrounding postal code and commercial district.",
+        desc: "Visual Local Falcon geo-grid showing your Google Maps rank across the surrounding postal codes and commercial districts.",
       },
       {
         title: "Turnkey Review Request Funnel & Templates",
-        desc: "Custom high-converting SMS, email, and printed QR-code templates designed to trigger spontaneous 5-star reviews from happy clients.",
+        desc: "Custom SMS, email, and printed QR-code templates designed to make it easy for satisfied clients to leave a 5-star review.",
       },
       {
         title: "Local Citations & Directory Distribution Sheet",
@@ -985,7 +985,7 @@ const servicesDetailData = {
       },
       {
         q: "How do you generate genuine reviews without violating Google or Australian ACCC review guidelines?",
-        a: "We never buy fake reviews or engage in illegal review-gating that blocks negative feedback. Instead, we implement automated timing sequences (via SMS, email, or physical QR touchpoints) asking satisfied customers to share their authentic feedback on Google immediately following a completed appointment or purchase. This builds 100% compliant, verified, permanent social proof.",
+        a: "We never buy fake reviews or engage in review-gating that blocks negative feedback. Instead, we implement timed request sequences (via SMS, email, or physical QR touchpoints) asking satisfied customers to share their honest feedback on Google after a completed appointment or purchase. That keeps review collection aligned with Google's guidelines and builds verified social proof you can rely on.",
       },
       {
         q: "What is your strategy if my business receives an unfair, fake, or competitor-generated 1-star review?",
@@ -997,7 +997,7 @@ const servicesDetailData = {
       },
       {
         q: "How do Local SEO and ORM work together with Paid Google and Meta Ads?",
-        a: "They form the ultimate compounding loop: When paid ads drive traffic to your business, 70%+ of prospective buyers cross-check your Google Business Profile and reviews before booking. High 5-star ratings and top Maps placement dramatically lower your Customer Acquisition Cost (CAC) and increase ad conversion rates by up to 2.5x.",
+        a: "They reinforce each other. When paid ads drive traffic, most prospective buyers check your Google Business Profile and reviews before booking. Strong ratings and visible Maps placement make that decision easier, which supports a lower Customer Acquisition Cost (CAC) and better ad conversion rates.",
       },
     ],
   },

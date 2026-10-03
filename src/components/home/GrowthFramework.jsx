@@ -15,29 +15,29 @@ function GrowthFramework() {
       num: "01",
       icon: <FaUsers />,
       title: "Multi-Channel Traffic Discovery",
-      desc: "Capturing high-intent buyers through synchronized Meta Ads (Facebook & Instagram), Google Search intent, and Google Maps 3-Pack dominance.",
+      desc: "Capturing high-intent buyers through coordinated Meta Ads (Facebook & Instagram), Google Search intent, and Google Maps 3-Pack visibility.",
       highlight: "Meta Ads & Maps 3-Pack",
     },
     {
       num: "02",
       icon: <FaShieldAlt />,
       title: "5-Star Social Proof & Reputation (ORM)",
-      desc: "Building unbreakable brand trust via automated review funnels on Google, TrueLocal, and 2GIS to remove pre-purchase hesitation.",
+      desc: "Building consistent brand trust through structured review funnels on Google, TrueLocal, and 2GIS to reduce pre-purchase hesitation.",
       highlight: "5-Star Reviews & Trust",
     },
     {
       num: "03",
       icon: <FaRocket />,
       title: "High-Converting CRO & Lead Funnel",
-      desc: "Directing high-intent traffic into frictionless landing pages and booking systems engineered for maximum qualified consultations.",
-      highlight: "Frictionless Booking",
+      desc: "Directing high-intent traffic into landing pages and booking flows with less friction, so more qualified visitors take the next step.",
+      highlight: "Lower-Friction Booking",
     },
     {
       num: "04",
       icon: <FaChartLine />,
       title: "GA4 Attribution & Continuous Scaling",
-      desc: "Leveraging server-side tracking and multi-touch attribution to systematically slash Customer Acquisition Cost (CAC) while scaling ROAS.",
-      highlight: "+340% ROAS & -42% CAC",
+      desc: "Using server-side tracking and multi-touch attribution to see which channels actually return revenue, then shifting budget toward what works.",
+      highlight: "Transparent CAC & ROAS",
     },
   ];
 
@@ -52,11 +52,13 @@ function GrowthFramework() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">Proven 4-Stage Operating System</span>
-          <h2>Full-Funnel Performance Growth Engine</h2>
+          <span className="section-tag">Practical 4-Stage Problem-Solving System</span>
+          <h2>Full-Funnel Performance Growth System</h2>
           <p>
-            High-ticket clients across the USA, UK, Canada, Singapore, Australia, and the UAE do not convert through isolated ads alone.
-            Here is the complete, systematic 4-stage operating framework that turns cold visitors into high-ticket clients.
+            Growth rarely fails for one dramatic reason. It usually leaks in small, fixable places —
+            weak offers, inconsistent content, unclear tracking, or pages that don't convert.
+            This is the four-stage system I use to find and fix those leaks in order, then scale
+            what is already working for businesses across the USA, UK, Canada, Singapore, Australia, and the UAE.
           </p>
         </motion.div>
 
@@ -73,7 +75,7 @@ function GrowthFramework() {
             <div className="framework-image-glass">
               <img
                 src="/images/growth-ecosystem.png"
-                alt="Full-Funnel Performance Growth Engine Infographic Diagram"
+                alt="Full-Funnel Performance Growth System infographic diagram"
                 className="framework-infographic-img"
                 loading="lazy"
               />
@@ -120,11 +122,11 @@ function GrowthFramework() {
           transition={{ duration: 0.6 }}
         >
           <div className="cta-bar-text">
-            <h4>Ready to install this growth engine in your business?</h4>
-            <p>Get a comprehensive full-funnel audit and a 90-day growth roadmap tailored to your target market.</p>
+            <h4>Want this system applied to your business?</h4>
+            <p>I'll review your ad accounts, funnel, and tracking, then map out a practical 90-day plan for your market.</p>
           </div>
           <a href="#contact" onClick={handleScrollToContact} className="btn-primary">
-            Claim Your Free Strategy Audit →
+            Request a Free Strategy Audit →
           </a>
         </motion.div>
       </div>

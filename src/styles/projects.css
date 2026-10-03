@@ -109,6 +109,39 @@
 }
 
 /* ==========================================
+   PROBLEM → STRATEGY → EXECUTION → RESULT FLOW
+========================================== */
+
+.project-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.project-flow-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 2px solid var(--tag-border);
+}
+
+.project-flow-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--primary);
+}
+
+.project-content .project-flow p {
+  margin-bottom: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ==========================================
    TECHNOLOGIES
 ========================================== */
 

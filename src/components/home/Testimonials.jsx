@@ -76,12 +76,12 @@ function Testimonials() {
           </span>
 
           <h2>
-            Endorsed by Founders & Business Owners Worldwide
+            What Clients Say About Working With Me
           </h2>
 
           <p>
-            Real feedback from business owners, agency leads, and founders
-            I have partnered with across Australia, the UAE, the United States, Europe, and Bangladesh.
+            Real feedback from business owners and teams I’ve worked
+            with across different markets.
           </p>
         </motion.div>
       </div>

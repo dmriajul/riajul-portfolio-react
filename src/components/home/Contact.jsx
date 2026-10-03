@@ -243,8 +243,8 @@ function Contact() {
                 <div>
                   <strong>Free 30-Min Strategy Consultation Active:</strong>
                   <p>
-                    Includes ad account audit, tracking leakage check, and a 3-step growth plan.
-                    Zero obligation.
+                    Includes an ad account audit, a tracking leakage check, and a 3-step growth plan.
+                    No obligation.
                   </p>
                 </div>
               </div>
@@ -338,7 +338,7 @@ function Contact() {
                 <FaCheckCircle className="badge-icon" />
                 <span>Verified Google Business Profile</span>
               </div>
-              <h3>B2B Lead Generation &amp; Digital Marketing Services</h3>
+              <h3>Performance Marketing &amp; Digital Marketing Services</h3>
               <p>
                 <FaMapMarkerAlt className="location-pin-icon" />
                 <span>Khulna, Bangladesh • Serving Global Clients (USA, UK, Canada, Australia, UAE &amp; Singapore)</span>
@@ -365,7 +365,7 @@ function Contact() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
-              title="Verified Google Business Profile - B2B Lead Generation & Digital Marketing Services"
+              title="Verified Google Business Profile - Performance Marketing & Digital Marketing Services"
             />
           </div>
         </motion.div>

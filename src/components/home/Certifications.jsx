@@ -23,8 +23,8 @@ function Certifications() {
           </h2>
 
           <p>
-            Formally certified across Google, Meta, HubSpot, and SEMrush platforms,
-            ensuring your campaigns are built with proven best practices.
+            Certified across Google, Meta, HubSpot, and SEMrush platforms —
+            so your campaigns are built on current platform best practices.
           </p>
         </motion.div>
 

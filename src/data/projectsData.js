@@ -4,8 +4,14 @@ const projectsData = [
     title: "Riajul Tech",
     category: "Affiliate Website & SEO",
     image: "/projects/riajultech-homepage.jpg",
-    description:
-      "A niche affiliate marketing website focused on ergonomic workspace setups, technology reviews, and in-depth buying guides. Engineered with clean site architecture, technical SEO, and schema markup to rank for high-intent search queries.",
+    problem:
+      "A new affiliate site with no organic visibility in a technology niche already crowded with established review sites.",
+    strategy:
+      "Target buyer-intent product queries with clean site architecture, topical content clusters, and supporting schema markup.",
+    execution:
+      "Built on WordPress with Rank Math SEO and LiteSpeed caching, published structured buying guides, and tracked everything in GA4 and GTM.",
+    result:
+      "The site now ranks for 1,000+ search queries at an average position of 8.5, with 174K+ organic impressions.",
     technologies: [
       "WordPress",
       "Elementor Pro",
@@ -31,8 +37,14 @@ const projectsData = [
     title: "Meta Ads Campaign",
     category: "Performance Marketing",
     image: "/projects/meta-ads-dashboard.jpg",
-    description:
-      "Full-funnel Facebook and Instagram advertising campaigns built to acquire qualified leads and drive sales. Combines detailed audience segmentation, continuous creative testing, and server-side tracking to keep cost per result low.",
+    problem:
+      "Paid social was producing reach and engagement, but lead quality and cost per result were unpredictable.",
+    strategy:
+      "Structure the account around full-funnel objectives — qualified leads and purchases first, with dedicated retargeting for warm audiences.",
+    execution:
+      "Segmented cold, warm, and retargeting audiences, ran continuous hook and creative A/B tests, and connected the Meta Pixel with the Conversions API.",
+    result:
+      "A 5.88% peak account CTR and lead costs between $0.13 and $0.34, with a consistent lead flow month to month.",
     technologies: [
       "Meta Ads Manager",
       "Facebook Pixel",
@@ -56,8 +68,14 @@ const projectsData = [
     title: "Google Ads Campaign",
     category: "Google Ads",
     image: "/projects/google-ads-dashboard.jpg",
-    description:
-      "High-intent Google Search and Performance Max campaigns targeting buyers who are actively searching for solutions. Monitored with daily search term pruning and smart bidding to maximize quality leads while lowering cost per click.",
+    problem:
+      "Budget was being spread across broad search terms that rarely turned into qualified enquiries.",
+    strategy:
+      "Concentrate spend on commercial-intent keywords, then keep the account clean with disciplined search-term pruning.",
+    execution:
+      "Built single-theme ad groups with responsive search ads, linked GA4 conversion imports, and reviewed query reports on a weekly cycle.",
+    result:
+      "Lower cost per click on commercially qualified queries, with conversion tracking verified end to end.",
     technologies: [
       "Google Ads",
       "Google Keyword Planner",
@@ -81,8 +99,14 @@ const projectsData = [
     title: "SEO Growth Strategy",
     category: "Search Engine Optimization",
     image: "/projects/riajultech-ubersuggest-audit.jpg",
-    description:
-      "Comprehensive search engine optimization strategy including technical website audits, commercial keyword research, on-page optimization, and internal linking to build sustainable organic search traffic.",
+    problem:
+      "Technical issues and unmapped content were limiting indexation, so useful pages were not earning search visibility.",
+    strategy:
+      "Fix crawl, indexation, and Core Web Vitals problems first, then map commercial keywords to dedicated pages.",
+    execution:
+      "Ran a full technical audit, restructured internal linking, optimised metadata and heading hierarchy, and monitored progress in Search Console.",
+    result:
+      "Steady growth in organic impressions and clicks, with every target keyword mapped to a page and a measurement plan.",
     technologies: [
       "Technical SEO",
       "Ubersuggest",
@@ -107,8 +131,14 @@ const projectsData = [
     title: "Google Analytics 4 & Server-Side Attribution",
     category: "Analytics & Attribution",
     image: "/projects/riajultech-ga4-dashboard.jpg",
-    description:
-      "End-to-end measurement setup using Google Analytics 4, Google Tag Manager, and Meta Conversions API (CAPI). Built to eliminate iOS tracking loss, verify multi-channel conversions, and power real-time Looker Studio reporting.",
+    problem:
+      "After iOS14, conversions were being missed and the platforms each reported different numbers for the same sale.",
+    strategy:
+      "Rebuild measurement around server-side events with one shared naming convention across channels.",
+    execution:
+      "Configured GA4, GTM, and the Meta Conversions API, standardised UTM parameters, and built Looker Studio reporting on top.",
+    result:
+      "2.6K active users (+175.7%) at an 80% engagement rate (+15.6%) and 2.5 pages per user, with duplicate events resolved.",
     technologies: [
       "Google Analytics 4 (GA4)",
       "Google Tag Manager (GTM)",
@@ -132,8 +162,14 @@ const projectsData = [
     title: "WordPress CRO & High-Converting Landing Pages",
     category: "Conversion Rate Optimization (CRO)",
     image: "/projects/portfolio-landing-page.jpg",
-    description:
-      "Designed and deployed high-converting, mobile-responsive landing pages using WordPress and Elementor Pro, augmented with modern AI workflows for rapid buyer-intent copywriting, headline testing, and conversion architecture. Engineered for fast load speeds, intuitive user journeys, and high-trust funnels that turn visitors into qualified inquiries.",
+    problem:
+      "Ad traffic was landing on pages where the offer was unclear and the next step was easy to miss on mobile.",
+    strategy:
+      "Rewrite the offer around one primary action and remove friction from the enquiry path.",
+    execution:
+      "Deployed mobile-responsive WordPress and Elementor pages with faster load times, clearer CTAs, and AI-assisted copy variations for headline testing.",
+    result:
+      "Faster rollout of new landing pages, with a shorter, clearer path from click to enquiry.",
     technologies: [
       "WordPress",
       "Elementor Pro",
@@ -158,8 +194,14 @@ const projectsData = [
     title: "Pinterest Organic Growth & Referral Engine",
     category: "Visual Discovery & Traffic",
     image: "/projects/pinterest-analytics-dashboard.jpg",
-    description:
-      "Organic Pinterest business engine designed for exponential brand discovery, high-intent repins, and long-tail referral traffic. Powered by strategic keyword board architecture, Canva creative systems, and automated scheduling.",
+    problem:
+      "Pinterest content was being published without keyword structure, so pins were reaching very few people.",
+    strategy:
+      "Rebuild boards around real search demand and use a consistent Canva creative system with rich pins.",
+    execution:
+      "Restructured boards by keyword theme, scheduled a steady publishing cadence, and tracked saves, engagement, and outbound referral clicks.",
+    result:
+      "67.83K impressions (+371%), 44.57K reach (+325%), 151 saves (+435%) and 39 outbound referral clicks in 90 days.",
     technologies: [
       "Pinterest Business Analytics",
       "Canva Pro",
