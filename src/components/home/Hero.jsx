@@ -57,7 +57,7 @@ function Hero() {
             of them arrive with the same bottlenecks: ads attracting clicks instead of qualified
             buyers, budget spent without a clear return, social media that goes quiet between
             launches, and tracking that cannot show which channel actually sells. That is the work
-            I take on — managing <strong>Meta &amp; Google Ads</strong>, keeping
+            I take on: managing <strong>Meta &amp; Google Ads</strong>, keeping
             <strong> social media consistent</strong>, setting up <strong>clean GA4/GTM
             tracking</strong>, and improving the pages where conversions are won or lost.
           </p>
@@ -156,7 +156,7 @@ function Hero() {
               <source srcSet={profileWebp} type="image/webp" />
               <img
                 src={profileJpeg}
-                alt="Khandokar Riajul Islam — Performance Marketing Specialist & Social Media Manager"
+                alt="Khandokar Riajul Islam: Performance Marketing Specialist & Social Media Manager"
                 width="350"
                 height="400"
                 fetchPriority="high"

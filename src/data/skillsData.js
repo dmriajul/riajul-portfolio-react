@@ -2,7 +2,7 @@ const skillsData = [
   {
     tier: "Primary Focus",
     note:
-      "The services I sell and deliver day to day — where most of my client hours go.",
+      "The services I sell and deliver day to day, where most of my client hours go.",
     skills: [
       {
         id: 1,
@@ -27,9 +27,9 @@ const skillsData = [
         title: "Meta Ads Management",
         icon: "📢",
         description:
-          "Full-funnel Facebook and Instagram advertising: audience research, creative and hook testing, retargeting, and server-side Conversions API tracking — managed against a target cost per lead or sale.",
+          "Full-funnel Facebook and Instagram advertising: audience research, creative and hook testing, retargeting, and server-side Conversions API tracking, managed against a target cost per lead or sale.",
         technologies: [
-          "TOFU–MOFU–BOFU Structure",
+          "TOFU, MOFU, BOFU Structure",
           "Custom & Lookalike Audiences",
           "Creative A/B Testing",
           "Meta Conversions API (CAPI)",
@@ -119,7 +119,7 @@ const skillsData = [
         title: "Conversion Optimization (CRO)",
         icon: "🎯",
         description:
-          "Landing page and funnel improvements — clearer offers, less friction, and structured A/B tests — that raise the share of visitors who enquire or buy.",
+          "Landing page and funnel improvements, clearer offers, less friction, and structured A/B tests, that raise the share of visitors who enquire or buy.",
         technologies: [
           "Landing Page UX Audits",
           "Offer & Value Proposition Framing",

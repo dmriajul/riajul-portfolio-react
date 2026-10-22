@@ -80,7 +80,7 @@ const servicesData = [
     action:
       "I audit landing pages, sharpen the value proposition, remove friction from forms and flows, then A/B test the changes that matter.",
     outcome:
-      "More enquiries and sales from the traffic you already have — without extra ad spend.",
+      "More enquiries and sales from the traffic you already have, without extra ad spend.",
   },
 
   {

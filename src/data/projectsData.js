@@ -40,7 +40,7 @@ const projectsData = [
     problem:
       "Paid social was producing reach and engagement, but lead quality and cost per result were unpredictable.",
     strategy:
-      "Structure the account around full-funnel objectives — qualified leads and purchases first, with dedicated retargeting for warm audiences.",
+      "Structure the account around full-funnel objectives: qualified leads and purchases first, with dedicated retargeting for warm audiences.",
     execution:
       "Segmented cold, warm, and retargeting audiences, ran continuous hook and creative A/B tests, and connected the Meta Pixel with the Conversions API.",
     result:

@@ -22,7 +22,7 @@ function Skills() {
           </h2>
 
           <p>
-            At the top of the list: the work I deliver day to day — social media management,
+            At the top of the list: the work I deliver day to day, social media management,
             Meta Ads, and Google Ads. Beneath it, the supporting capabilities that make those
             channels measurable: SEO, Local SEO &amp; ORM, GA4/GTM tracking, and CRO.
           </p>

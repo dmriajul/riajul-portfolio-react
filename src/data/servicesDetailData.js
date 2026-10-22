@@ -143,7 +143,7 @@ const servicesDetailData = {
         icon: "🎯",
         title: "Retargeting & Lookalike Audiences",
         description:
-          "Maximize conversions by re-engaging profile visitors, video watchers, website shoppers, and building 1%–5% Lookalikes based on high-value buyers.",
+          "Maximize conversions by re-engaging profile visitors, video watchers, website shoppers, and building 1% to 5% Lookalikes based on high-value buyers.",
         tags: ["Custom Audiences", "Lookalike Scaling", "Warm Retargeting"],
       },
       {
@@ -282,7 +282,7 @@ const servicesDetailData = {
         desc: "Ready-to-publish schedule with topics, hooks, design briefs, copy, and posting times.",
       },
       {
-        title: "15–25 Branded Creatives",
+        title: "15 to 25 Branded Creatives",
         desc: "Custom high-retention carousels, scroll-stopping static designs, and Reels video scripts.",
       },
       {
@@ -319,7 +319,7 @@ const servicesDetailData = {
     faqs: [
       {
         q: "Why do I need both Organic and Paid social media?",
-        a: "Organic builds trust, brand credibility, and customer loyalty — without it, people who see your ads have no reason to believe in your brand. Paid social provides predictable reach, immediate lead generation, and scalable sales. Combining both creates a compounding flywheel where organic validates winning content, and paid scales it to buyers.",
+        a: "Organic builds trust, brand credibility, and customer loyalty. Without it, people who see your ads have no reason to believe in your brand. Paid social provides predictable reach, immediate lead generation, and scalable sales. Combining both creates a compounding flywheel where organic validates winning content, and paid scales it to buyers.",
       },
       {
         q: "What does the monthly content calendar process look like?",
@@ -335,7 +335,7 @@ const servicesDetailData = {
       },
       {
         q: "How quickly can we start working together?",
-        a: "After an initial 30-minute discovery call and receiving access to your Meta Business Suite and ad account, I typically complete the channel audit and deliver the first 30-day strategy and calendar within 4–7 business days.",
+        a: "After an initial 30-minute discovery call and receiving access to your Meta Business Suite and ad account, I typically complete the channel audit and deliver the first 30-day strategy and calendar within 4 to 7 business days.",
       },
     ],
   },
@@ -370,7 +370,7 @@ const servicesDetailData = {
         icon: "👥",
         title: "Audience Targeting & Lookalikes",
         description:
-          "Developing custom audiences from website traffic, video viewers, and customer lists, expanded with 1%–5% Lookalike scaling.",
+          "Developing custom audiences from website traffic, video viewers, and customer lists, expanded with 1% to 5% Lookalike scaling.",
         tags: ["Custom Audiences", "Lookalike Scaling", "Exclusion Rules"],
       },
       {
