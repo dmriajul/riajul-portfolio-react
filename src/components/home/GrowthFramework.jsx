@@ -55,7 +55,7 @@ function GrowthFramework() {
           <span className="section-tag">Practical 4-Stage Problem-Solving System</span>
           <h2>Full-Funnel Performance Growth System</h2>
           <p>
-            Growth rarely fails for one dramatic reason. It usually leaks in small, fixable places —
+            Growth rarely fails for one dramatic reason. It usually leaks in small, fixable places:
             weak offers, inconsistent content, unclear tracking, or pages that don't convert.
             This is the four-stage system I use to find and fix those leaks in order, then scale
             what is already working for businesses across the USA, UK, Canada, Singapore, Australia, and the UAE.

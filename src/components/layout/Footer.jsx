@@ -34,7 +34,7 @@ function Footer() {
           <span className="footer-role">Performance Marketing Specialist & Social Media Manager</span>
 
           <p className="footer-bio">
-            Performance marketing and social media management for businesses worldwide — Meta Ads,
+            Performance marketing and social media management for businesses worldwide: Meta Ads,
             Google Ads, consistent social content, and GA4/GTM tracking that shows what actually converts.
           </p>
 

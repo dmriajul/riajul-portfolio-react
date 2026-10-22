@@ -1,4 +1,4 @@
-# Khandokar Riajul Islam — Performance Marketing Specialist & Social Media Manager
+# Khandokar Riajul Islam: Performance Marketing Specialist & Social Media Manager
 
 > A human-readable, machine-friendly guide to this portfolio website for LLMs, AI assistants, and crawlers.
 
@@ -34,14 +34,14 @@ Machine-readable structured data (schema.org Person, ProfessionalService, OfferC
 
 ## Verified Live Analytics & Performance Metrics
 
-### Pinterest Analytics (Last 90 Days — Verified Attribution)
+### Pinterest Analytics (Last 90 Days, Verified Attribution)
 - Impressions: 67.83K (+371% growth)
 - Total Audience Reach: 44.57K (+325% growth)
 - Total Engagements: 2.59K (+382% growth)
 - Saves / Repins: 151 (+435% growth)
 - Outbound Referral Clicks: 39 direct qualified visits
 
-### Google Analytics 4 (GA4 Last 30 Days — Server-Side Verified)
+### Google Analytics 4 (GA4 Last 30 Days, Server-Side Verified)
 - Active Users: 2.6K (+175.7% growth)
 - Engagement Rate: 80% (+15.6% lift)
 - Pageviews per User: 2.5 average pages / session
@@ -59,13 +59,13 @@ Machine-readable structured data (schema.org Person, ProfessionalService, OfferC
 
 ### Primary Focus
 
-- [Social Media Manager](/services/smm) — Full-funnel organic social management, Canva content creation, community engagement, and Meta ad campaigns that amplify top-performing content.
-- [Meta Ads Management](/services/meta-ads) — Full-funnel Facebook and Instagram ad systems with audience research, creative testing, and Conversions API (CAPI) tracking.
-- [Google Ads Management](/services/google-ads) — Commercial-intent Google Search and Performance Max campaigns with negative keyword pruning and Smart Bidding.
+- [Social Media Manager](/services/smm): Full-funnel organic social management, Canva content creation, community engagement, and Meta ad campaigns that amplify top-performing content.
+- [Meta Ads Management](/services/meta-ads): Full-funnel Facebook and Instagram ad systems with audience research, creative testing, and Conversions API (CAPI) tracking.
+- [Google Ads Management](/services/google-ads): Commercial-intent Google Search and Performance Max campaigns with negative keyword pruning and Smart Bidding.
 
 ### Supporting Capabilities
 
-- [Search Engine Optimization (SEO)](/services/seo) — Technical SEO, commercial keyword research, and on-page optimization for steady organic traffic.
-- [Local SEO & ORM](/services/local-seo-orm) — Google Business Profile optimization, Google Maps 3-Pack visibility, citation cleanup, and structured 5-star review funnels for Australia & UAE practices.
-- [Analytics & Tracking (GA4 & GTM)](/services/analytics) — Server-side tracking, Conversions API, custom events, and Looker Studio reporting dashboards.
-- [Conversion Optimization (CRO)](/services/cro) — Landing page UX audits, value proposition framing, A/B testing, and friction reduction.
+- [Search Engine Optimization (SEO)](/services/seo): Technical SEO, commercial keyword research, and on-page optimization for steady organic traffic.
+- [Local SEO & ORM](/services/local-seo-orm): Google Business Profile optimization, Google Maps 3-Pack visibility, citation cleanup, and structured 5-star review funnels for Australia & UAE practices.
+- [Analytics & Tracking (GA4 & GTM)](/services/analytics): Server-side tracking, Conversions API, custom events, and Looker Studio reporting dashboards.
+- [Conversion Optimization (CRO)](/services/cro): Landing page UX audits, value proposition framing, A/B testing, and friction reduction.

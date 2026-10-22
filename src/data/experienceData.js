@@ -99,7 +99,7 @@ const experienceData = [
   {
     id: 4,
 
-    position: "Digital Marketing — Self-Learning & Early Projects",
+    position: "Digital Marketing: Self-Learning & Early Projects",
 
     company: "Self Learning",
 

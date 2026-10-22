@@ -13,7 +13,7 @@ const homeFaqData = [
   },
   {
     q: "Do I need both Organic Social Media and Paid Meta Ads?",
-    a: "Yes. Organic social builds brand credibility, trust, and community retention—without it, ad traffic often doesn't convert. Paid ads provide predictable reach, fast lead flow, and scalable revenue. Together, organic content tests your messaging for free, while paid campaigns scale your winners to ready-to-buy audiences.",
+    a: "Yes. Organic social builds brand credibility, trust, and community retention. Without it, ad traffic often doesn't convert. Paid ads provide predictable reach, fast lead flow, and scalable revenue. Together, organic content tests your messaging for free, while paid campaigns scale your winners to ready-to-buy audiences.",
   },
   {
     q: "Can you help my business or clinic improve Google Maps visibility in Australia or the UAE?",
@@ -149,7 +149,7 @@ function FAQ() {
 
             <p>
               I offer a free 30-minute strategy audit for businesses ready to grow.
-              No sales pitch—just a look at your data, what stands out, and what to fix first.
+              No sales pitch, just a look at your data, what stands out, and what to fix first.
             </p>
 
             <ul className="faq-cta-checklist">
