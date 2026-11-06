@@ -40,6 +40,12 @@
   box-shadow: 0 25px 60px rgba(16, 185, 129, 0.15);
 }
 
+/* <picture> wrapper added for the WebP source: keep it block-level so the
+   element introduces no inline baseline gap above the image. */
+.framework-image-glass picture {
+  display: block;
+}
+
 .framework-infographic-img {
   width: 100%;
   height: auto;

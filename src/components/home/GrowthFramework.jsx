@@ -73,12 +73,22 @@ function GrowthFramework() {
             transition={{ duration: 0.7 }}
           >
             <div className="framework-image-glass">
-              <img
-                src="/images/growth-ecosystem.png"
-                alt="Full-Funnel Performance Growth System infographic diagram"
-                className="framework-infographic-img"
-                loading="lazy"
-              />
+              {/* WebP first (131 KB); optimised PNG8 fallback (532 KB) for older browsers */}
+              <picture>
+                <source
+                  srcSet="/images/growth-ecosystem.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/images/growth-ecosystem.png"
+                  alt="Full-Funnel Performance Growth System infographic diagram"
+                  className="framework-infographic-img"
+                  width="1376"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="framework-image-badge">
                 <span className="badge-pulse"></span>
                 <span>Live Acquisition Architecture</span>
