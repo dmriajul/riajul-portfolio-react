@@ -336,10 +336,12 @@ img {
   }
 }
 
-/* Navbar switches to the hamburger at 860px and below */
+/* Navbar switches to the hamburger at 860px and below.
+   Each offset clears the fixed navbar plus its 1px bottom border (75px here,
+   71px below 769px) with a 1px margin, so no content can sit under the bar. */
 @media (max-width: 860px) {
   body {
-    padding-top: 74px;
+    padding-top: 76px;
   }
 }
 
@@ -348,7 +350,7 @@ img {
 ===================================================== */
 @media (max-width: 768px) {
   body {
-    padding-top: 70px;
+    padding-top: 72px;
   }
 
   .container {
@@ -356,9 +358,10 @@ img {
     padding-inline: 18px;
   }
 
+  /* No inset here: the navbar takes .container's width and gutter, so it
+     stays on the same left edge as the page content at this width. */
   .navbar .container {
     height: 70px;
-    padding: 0 16px;
   }
 
   .logo img {

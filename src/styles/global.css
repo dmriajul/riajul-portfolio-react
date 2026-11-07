@@ -52,7 +52,10 @@ body {
   color: var(--white);
   line-height: 1.7;
   overflow-x: hidden;
-  padding-top: 86px;
+  /* The offset for the fixed navbar lives in responsive.css, which carries the
+     per-breakpoint values (86px, then 76px below 861px, 72px below 769px).
+     A flat 86px here loads after those imports and silently overrode both
+     mobile values, leaving ~15px of dead space under the navbar on phones. */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

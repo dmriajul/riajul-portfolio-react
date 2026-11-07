@@ -112,11 +112,14 @@ body.light-theme .nav-scroll-progress {
    CONTAINER
 ========================================== */
 
+/* Width and gutter come from .container so the navbar shares the exact same
+   left edge as the page sections, the breadcrumb and the footer at every
+   breakpoint. This block used to set its own 1200px cap plus a 20px inner
+   inset, which put the logo 40px inside the content edge at 1440px and
+   14-20px inside it on phones and laptops. */
 .navbar .container {
-  max-width: 1200px;
   height: 80px;
   margin: auto;
-  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -187,10 +190,6 @@ body.light-theme .nav-scroll-progress {
    the full horizontal links + "Book a Call".
 ========================================== */
 @media (max-width: 1024px) and (min-width: 861px) {
-  .navbar .container {
-    padding: 0 16px;
-  }
-
   .nav-links {
     gap: 12px;
   }
@@ -393,7 +392,7 @@ body.light-theme .nav-scroll-progress {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
   max-width: 280px;
   padding: 12px 24px;
@@ -409,6 +408,17 @@ body.light-theme .nav-scroll-progress {
 .mobile-book-btn:hover {
   background: #c9a84c;
   color: #081c19;
+}
+
+/* `.mobile-menu a` is one class plus one element and therefore outranks the
+   class alone, so it forced `display: block` and the calendar icon and label
+   fell back to inline — no gap, the glyph touching the "B". Restore the flex
+   row (and the 8px gap) at the higher specificity. */
+.mobile-menu .mobile-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 /* ==========================================
@@ -459,7 +469,6 @@ body.light-theme .nav-scroll-progress {
 @media (max-width: 768px) {
   .navbar .container {
     height: 70px;
-    padding: 0 16px;
   }
 
   .logo img {
@@ -488,10 +497,6 @@ body.light-theme .nav-scroll-progress {
 }
 
 @media (max-width: 480px) {
-  .navbar .container {
-    padding: 0 14px;
-  }
-
   .logo img {
     width: 40px;
     height: 40px;
