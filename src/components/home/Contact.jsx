@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -14,18 +14,23 @@ import {
 } from "react-icons/fa";
 
 import personalData from "../../data/personalData";
+import { submitLead, CONSULTATION_SUBJECT } from "../../lib/web3forms";
 
 function Contact() {
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [isConsultation, setIsConsultation] = useState(false);
   const [subject, setSubject] = useState("");
+  // Hard guard against duplicate submissions (double click / repeated Enter).
+  // A ref is used instead of the loading state so the lock applies even before
+  // React has re-rendered with the disabled button.
+  const submittingRef = useRef(false);
 
   // Listen to external consultation triggers (e.g. from Hero, FAQ, or Service pages)
   useEffect(() => {
     const handleConsultationTrigger = () => {
       setIsConsultation(true);
-      setSubject("Free Strategy Consultation Request (Audit & 3-Step Growth Plan)");
+      setSubject(CONSULTATION_SUBJECT);
       const nameEl = document.getElementById("contact-name");
       if (nameEl) {
         nameEl.focus();
@@ -41,7 +46,7 @@ function Contact() {
   const toggleConsultationMode = (mode) => {
     setIsConsultation(mode);
     if (mode) {
-      setSubject("Free Strategy Consultation Request (Audit & 3-Step Growth Plan)");
+      setSubject(CONSULTATION_SUBJECT);
     } else {
       setSubject("");
     }
@@ -50,52 +55,39 @@ function Contact() {
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    // Exactly one request per submission: ignore any additional submit event
+    // that arrives while this one is still in flight.
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+
+    const form = event.target;
+
     setLoading(true);
     setResult("Sending message...");
 
-    const formData = new FormData(event.target);
-
-    // If consultation mode is active, append consultation tag
-    if (isConsultation) {
-      formData.set("subject", "🎯 FREE CONSULTATION: " + (subject || "Strategy Request"));
-    }
-
-    formData.append(
-      "access_key",
-      "cb93d925-55e6-4c5f-a580-094dffaf02cf"
-    );
-
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const outcome = await submitLead(new FormData(form), { isConsultation });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (outcome.ok) {
         setResult(
           isConsultation
             ? "✅ Consultation request sent! I will review your business & ad accounts within 24 hours."
             : "✅ Message sent successfully! I will reply to you shortly."
         );
-        event.target.reset();
+        form.reset();
         setSubject("");
-      } else {
-        console.error(data);
+      } else if (outcome.reason === "api") {
         setResult(
-          data.message || "❌ Failed to send message. Please reach out via WhatsApp or email directly."
+          outcome.message ||
+            "❌ Failed to send message. Please reach out via WhatsApp or email directly."
+        );
+      } else {
+        setResult(
+          "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 1954 447017)."
         );
       }
-    } catch (error) {
-      console.error(error);
-      setResult(
-        "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 1954 447017)."
-      );
     } finally {
+      submittingRef.current = false;
       setLoading(false);
     }
   };
@@ -213,11 +205,23 @@ function Contact() {
           <motion.form
             className={`contact-form ${isConsultation ? "consultation-highlight" : ""}`}
             onSubmit={onSubmit}
+            aria-busy={loading}
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            {/* Anti-spam honeypot (Web3Forms "botcheck"): hidden from users and assistive tech */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              id="contact-botcheck"
+              className="hp-field"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
             {/* Consultation Mode Selector */}
             <div className="form-mode-tabs">
               <button
@@ -250,37 +254,50 @@ function Contact() {
               </div>
             )}
 
+            <label htmlFor="contact-name" className="sr-only">
+              Your Full Name
+            </label>
             <input
               id="contact-name"
               type="text"
               name="name"
-              aria-label="Your Full Name"
               placeholder="Your Full Name *"
+              autoComplete="name"
               required
             />
 
+            <label htmlFor="contact-email" className="sr-only">
+              Your Business Email
+            </label>
             <input
+              id="contact-email"
               type="email"
               name="email"
-              aria-label="Your Business Email"
               placeholder="Your Business Email *"
+              autoComplete="email"
               required
             />
 
+            <label htmlFor="contact-subject" className="sr-only">
+              Subject or Project Focus
+            </label>
             <input
+              id="contact-subject"
               type="text"
               name="subject"
-              aria-label="Subject or Project Focus"
               placeholder="Subject / Project Focus *"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
             />
 
+            <label htmlFor="contact-message" className="sr-only">
+              Project details or message
+            </label>
             <textarea
+              id="contact-message"
               rows="5"
               name="message"
-              aria-label="Project details or message"
               placeholder={
                 isConsultation
                   ? "Tell me about your business, current monthly ad spend (if any), and your primary goal (e.g., more leads, higher ROAS, organic growth)..."
@@ -305,6 +322,8 @@ function Contact() {
 
             {result && (
               <p
+                role="status"
+                aria-live="polite"
                 style={{
                   marginTop: "16px",
                   fontWeight: "600",

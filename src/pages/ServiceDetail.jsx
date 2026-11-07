@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import servicesDetailData from "../data/servicesDetailData";
 import personalData from "../data/personalData";
+import useSeo, { SITE_URL } from "../hooks/useSeo";
 
 import {
   FaCalendarAlt,
@@ -16,6 +17,36 @@ import {
   FaShareAlt,
   FaRocket,
 } from "react-icons/fa";
+
+/**
+ * Builds a unique meta description for a service page.
+ * Uses the tagline when it already reads as a complete, concise sentence;
+ * otherwise falls back to the opening sentences of the fuller description.
+ */
+function buildServiceDescription(service) {
+  const LIMIT = 165;
+  const tagline = (service.tagline || "").trim();
+
+  if (tagline && tagline.length <= LIMIT) return tagline;
+
+  const source = (service.description || tagline || "").trim();
+  if (!source) return undefined;
+  if (source.length <= LIMIT) return source;
+
+  const sentences = source.match(/[^.!?]+[.!?]+/g) || [];
+  let trimmed = "";
+
+  for (const sentence of sentences) {
+    if ((trimmed + sentence).trim().length > LIMIT) break;
+    trimmed += sentence;
+  }
+
+  trimmed = trimmed.trim();
+  if (trimmed) return trimmed;
+
+  const cut = source.lastIndexOf(" ", 150);
+  return `${source.slice(0, cut > 60 ? cut : 150).trim()}…`;
+}
 
 // Service keys list for quick navigation
 const serviceNavList = [
@@ -30,6 +61,7 @@ const serviceNavList = [
 
 function ServiceDetail() {
   const { serviceId } = useParams();
+  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState(0);
 
   // Normalize slug / handle aliases like social-media-marketing or social-media-manager -> smm
@@ -49,20 +81,22 @@ function ServiceDetail() {
 
   const service = servicesDetailData[currentKey];
 
+  // Route-specific metadata: title, description, canonical, social tags.
+  // Unknown slugs are marked noindex and lose their canonical tag.
+  useSeo({
+    title: service
+      ? `${service.title} | Khandokar Riajul Islam Portfolio`
+      : "Service Not Found | Khandokar Riajul Islam Portfolio",
+    description: service
+      ? buildServiceDescription(service)
+      : "The requested service page does not exist or has moved. Browse the full list of performance marketing services instead.",
+    canonical: service
+      ? `${SITE_URL}/services/${service.slug || currentKey}`
+      : null,
+    noindex: !service,
+  });
+
   useEffect(() => {
-    if (service) {
-      document.title = `${service.title} | Khandokar Riajul Islam Portfolio`;
-      let canonical = document.querySelector("link[rel='canonical']");
-      if (!canonical) {
-        canonical = document.createElement("link");
-        canonical.setAttribute("rel", "canonical");
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute(
-        "href",
-        `https://portfolio.riajultech.com/services/${service.slug || currentKey}`
-      );
-    }
     window.scrollTo(0, 0);
   }, [service, currentKey]);
 
@@ -89,7 +123,9 @@ function ServiceDetail() {
 
   const handleConsultationClick = (e) => {
     e.preventDefault();
-    window.location.href = "/#contact";
+    // Navigate client-side so the prefill event fires on the mounted homepage
+    // form. Matches the behaviour of the navbar consultation button.
+    navigate("/#contact");
     setTimeout(() => {
       window.dispatchEvent(new CustomEvent("prefill-consultation"));
     }, 300);

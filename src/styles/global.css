@@ -264,6 +264,33 @@ section {
 }
 
 /* ==========================================
+   UTILITIES (visually hidden / anti-spam)
+========================================== */
+
+/* Screen-reader-only text: present in the accessibility tree, invisible on screen */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Honeypot field for form bots: removed from view and from the tab order */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==========================================
    FLOATING WHATSAPP BUTTON
 ========================================== */
 .whatsapp-sticky-btn {
