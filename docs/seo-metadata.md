@@ -1,5 +1,16 @@
 # Route metadata: current behaviour and known limitation
 
+## Status (read this first)
+
+- **Googlebot rendering/indexing: NOT TESTED.** No Googlebot fetch, Search Console URL Inspection,
+  or indexing experiment has been run for any route. Per-route indexing is *expected*, not verified.
+- **Social scraper behaviour: NOT TESTED.** LinkedIn, X, Slack, WhatsApp and Facebook scrapers are
+  expected to receive **the initial HTML metadata** (the single `index.html` shell) for every URL,
+  because they do not execute JavaScript. They are expected **not** to see per-route tags.
+- **The DOM stub assertions are code-level tests only.** They verify that `applySeoMetadata()`
+  mutates a simulated `<head>` object in Node. They are **not** browser verification and **not**
+  search-engine verification.
+
 ## Short version
 
 Route-specific `<title>`, `description`, canonical, `og:*` and `twitter:*` tags are applied
