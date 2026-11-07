@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -21,6 +21,10 @@ function Contact() {
   const [loading, setLoading] = useState(false);
   const [isConsultation, setIsConsultation] = useState(false);
   const [subject, setSubject] = useState("");
+  // Hard guard against duplicate submissions (double click / repeated Enter).
+  // A ref is used instead of the loading state so the lock applies even before
+  // React has re-rendered with the disabled button.
+  const submittingRef = useRef(false);
 
   // Listen to external consultation triggers (e.g. from Hero, FAQ, or Service pages)
   useEffect(() => {
@@ -51,33 +55,41 @@ function Contact() {
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    // Exactly one request per submission: ignore any additional submit event
+    // that arrives while this one is still in flight.
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+
     const form = event.target;
 
     setLoading(true);
     setResult("Sending message...");
 
-    const outcome = await submitLead(new FormData(form), { isConsultation });
+    try {
+      const outcome = await submitLead(new FormData(form), { isConsultation });
 
-    if (outcome.ok) {
-      setResult(
-        isConsultation
-          ? "✅ Consultation request sent! I will review your business & ad accounts within 24 hours."
-          : "✅ Message sent successfully! I will reply to you shortly."
-      );
-      form.reset();
-      setSubject("");
-    } else if (outcome.reason === "api") {
-      setResult(
-        outcome.message ||
-          "❌ Failed to send message. Please reach out via WhatsApp or email directly."
-      );
-    } else {
-      setResult(
-        "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 1954 447017)."
-      );
+      if (outcome.ok) {
+        setResult(
+          isConsultation
+            ? "✅ Consultation request sent! I will review your business & ad accounts within 24 hours."
+            : "✅ Message sent successfully! I will reply to you shortly."
+        );
+        form.reset();
+        setSubject("");
+      } else if (outcome.reason === "api") {
+        setResult(
+          outcome.message ||
+            "❌ Failed to send message. Please reach out via WhatsApp or email directly."
+        );
+      } else {
+        setResult(
+          "❌ Something went wrong. Please connect with me directly on WhatsApp (+880 1954 447017)."
+        );
+      }
+    } finally {
+      submittingRef.current = false;
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (

@@ -3,10 +3,16 @@ import { useEffect } from "react";
 /**
  * Per-route SEO metadata.
  *
- * The SPA shell (index.html) ships a single static set of head tags, which is
- * correct for the homepage only. This hook lets each route declare its own
- * title, description, canonical and social tags so service pages no longer
- * inherit the homepage metadata on share/social previews.
+ * ⚠️ CLIENT-SIDE ONLY. These tags are written to <head> in a useEffect after
+ * React mounts. That is enough for rendered crawlers (Googlebot) and for the
+ * tab title, but it is NOT enough for:
+ *   - social/link scrapers that do not execute JavaScript (LinkedIn, X, Slack,
+ *     Facebook, WhatsApp) — they read whatever index.html shipped;
+ *   - the initial HTML response, which always carries the homepage tags.
+ *
+ * The permanent fix is prerendering / SSG (one static HTML file per route with
+ * its own <head>). That is deliberately out of scope for this PR. See
+ * docs/seo-metadata.md for the limitation and the migration note.
  *
  * NOTE: tags are still applied client-side. This is a correctness fix for
  * rendered crawlers and share previews, not a substitute for prerendering.
@@ -31,42 +37,96 @@ export const siteSeo = {
   image: DEFAULT_OG_IMAGE,
 };
 
-function upsertMeta(attribute, key, content) {
+function findMeta(doc, attribute, key) {
+  return doc.head.querySelector(`meta[${attribute}="${key}"]`);
+}
+
+function upsertMeta(doc, attribute, key, content) {
   if (!content) return;
 
-  let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  let element = findMeta(doc, attribute, key);
 
   if (!element) {
-    element = document.createElement("meta");
+    element = doc.createElement("meta");
     element.setAttribute(attribute, key);
-    document.head.appendChild(element);
+    doc.head.appendChild(element);
   }
 
   element.setAttribute("content", content);
 }
 
-function setCanonical(href) {
-  let canonical = document.head.querySelector("link[rel='canonical']");
+function removeMeta(doc, attribute, key) {
+  const element = findMeta(doc, attribute, key);
+  if (element) element.remove();
+}
+
+function findCanonical(doc) {
+  return doc.head.querySelector("link[rel='canonical']");
+}
+
+function setCanonical(doc, href) {
+  let canonical = findCanonical(doc);
 
   if (!canonical) {
-    canonical = document.createElement("link");
+    canonical = doc.createElement("link");
     canonical.setAttribute("rel", "canonical");
-    document.head.appendChild(canonical);
+    doc.head.appendChild(canonical);
   }
 
   canonical.setAttribute("href", href);
 }
 
-function removeCanonical() {
-  const canonical = document.head.querySelector("link[rel='canonical']");
+function removeCanonical(doc) {
+  const canonical = findCanonical(doc);
   if (canonical) canonical.remove();
+}
+
+/**
+ * Applies a route's metadata to a document. Exported separately from the hook
+ * so the exact DOM mutations can be unit-tested without a browser.
+ *
+ * Passing `canonical: null` means "this route has no canonical" (e.g. the
+ * unknown-service fallback): the canonical link AND og:url are removed so the
+ * page never advertises another route's URL.
+ */
+export function applySeoMetadata(
+  doc,
+  { title, description, canonical, image, noindex = false } = {}
+) {
+  if (title) {
+    doc.title = title;
+    upsertMeta(doc, "property", "og:title", title);
+    upsertMeta(doc, "name", "twitter:title", title);
+  }
+
+  if (description) {
+    upsertMeta(doc, "name", "description", description);
+    upsertMeta(doc, "property", "og:description", description);
+    upsertMeta(doc, "name", "twitter:description", description);
+  }
+
+  const resolvedImage = image || DEFAULT_OG_IMAGE;
+  upsertMeta(doc, "property", "og:image", resolvedImage);
+  upsertMeta(doc, "name", "twitter:image", resolvedImage);
+
+  if (canonical === null) {
+    // No self-referencing URL exists for this route: drop both tags rather
+    // than leaving a stale homepage/previous-route URL behind.
+    removeCanonical(doc);
+    removeMeta(doc, "property", "og:url");
+  } else if (canonical) {
+    setCanonical(doc, canonical);
+    upsertMeta(doc, "property", "og:url", canonical);
+  }
+
+  upsertMeta(doc, "name", "robots", noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX);
 }
 
 /**
  * @param {object} options
  * @param {string} [options.title]
  * @param {string} [options.description]
- * @param {string|null} [options.canonical] Pass null to remove the canonical tag.
+ * @param {string|null} [options.canonical] Pass null to remove canonical + og:url.
  * @param {string} [options.image]
  * @param {boolean} [options.noindex]
  */
@@ -77,30 +137,9 @@ export default function useSeo({
   image,
   noindex = false,
 } = {}) {
+  // Re-runs on every client-side navigation because all deps are primitives:
+  // the router re-renders the target route, which passes new values here.
   useEffect(() => {
-    if (title) {
-      document.title = title;
-      upsertMeta("property", "og:title", title);
-      upsertMeta("name", "twitter:title", title);
-    }
-
-    if (description) {
-      upsertMeta("name", "description", description);
-      upsertMeta("property", "og:description", description);
-      upsertMeta("name", "twitter:description", description);
-    }
-
-    const resolvedImage = image || DEFAULT_OG_IMAGE;
-    upsertMeta("property", "og:image", resolvedImage);
-    upsertMeta("name", "twitter:image", resolvedImage);
-
-    if (canonical === null) {
-      removeCanonical();
-    } else if (canonical) {
-      setCanonical(canonical);
-      upsertMeta("property", "og:url", canonical);
-    }
-
-    upsertMeta("name", "robots", noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX);
+    applySeoMetadata(document, { title, description, canonical, image, noindex });
   }, [title, description, canonical, image, noindex]);
 }
