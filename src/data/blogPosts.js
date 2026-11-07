@@ -49,14 +49,14 @@
  *
  * BODY BLOCKS (no raw HTML is accepted anywhere):
  *   { type: "h2", text: "..." }
- *   { type: "h3", text: "..." }
+ *   { type: "h3", text: "...", faq: true }        faq: styles the heading as an FAQ question
  *   { type: "p",  text: "..." }                        supports [link](/path), **bold**, `code`
  *   { type: "ul", items: ["...", "..."] }
  *   { type: "ol", items: ["...", "..."] }
  *   { type: "blockquote", text: "...", cite: "..." }
  *   { type: "callout", variant: "note" | "warning", title: "...", text: "..." }
  *   { type: "table", head: ["Col A", "Col B"], rows: [["a", "b"]], caption: "..." }
- *   { type: "figure", src: "/images/x.webp", alt: "...", caption: "..." }
+ *   { type: "figure", src: "/images/x.webp", alt: "...", width, height, caption: "..." }
  *   { type: "cta", heading: "...", text: "...", label: "...", href: "..." }
  *
  * Internal links inside `p` text use [label](/path) and become <Link>,

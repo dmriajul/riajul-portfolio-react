@@ -30,12 +30,21 @@ export default function ArticleBody({ blocks }) {
               </h2>
             );
 
-          case "h3":
+          case "h3": {
+            // `faq: true` marks the question headings of an FAQ list so they
+            // can be styled as a separated editorial list. The heading stays a
+            // real <h3> in the HTML: crawlable, anchorable, and visible without
+            // JavaScript.
+            const className = block.faq
+              ? "article-h3 is-faq-question"
+              : "article-h3";
+
             return (
-              <h3 key={key} id={headingIds[index] || undefined} className="article-h3">
+              <h3 key={key} id={headingIds[index] || undefined} className={className}>
                 {block.text}
               </h3>
             );
+          }
 
           case "p":
             return (
@@ -167,6 +176,8 @@ export default function ArticleBody({ blocks }) {
                 <img
                   src={block.src}
                   alt={block.alt || ""}
+                  width={block.width || undefined}
+                  height={block.height || undefined}
                   loading="lazy"
                   decoding="async"
                 />

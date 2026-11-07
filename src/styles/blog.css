@@ -739,7 +739,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .article-figure {
-  margin: 28px 0;
+  margin: 32px 0 34px;
 }
 
 .article-figure img {
@@ -749,10 +749,58 @@ body.light-theme .blog-breadcrumb-bar {
   border: 1px solid var(--card-border);
 }
 
+.article-figure img {
+  display: block;
+  background: var(--card-bg);
+}
+
 .article-figure figcaption {
-  margin-top: 10px;
-  font-size: 13px;
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--primary);
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--text-muted);
+}
+
+/* ---------- FAQ ---------- */
+
+/* Questions are real <h3> elements; the rule above each one separates the
+   entries without turning the section into a wall of cards. The answer keeps
+   a comfortable measure and sits tight under its question. */
+.article-h3.is-faq-question {
+  margin: 32px 0 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--card-border);
+  font-size: clamp(17.5px, 1.9vw, 19.5px);
+  line-height: 1.45;
+  color: var(--text-heading);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.article-h3.is-faq-question + .article-p {
+  margin-bottom: 0;
+  max-width: 68ch;
+  line-height: 1.75;
+  color: var(--text-body-secondary);
+}
+
+@media (max-width: 640px) {
+  .article-h3.is-faq-question {
+    margin-top: 24px;
+    padding-top: 16px;
+    font-size: 17.5px;
+  }
+
+  .article-figure {
+    margin: 26px 0 28px;
+  }
+
+  .article-figure figcaption {
+    padding-left: 12px;
+    font-size: 13px;
+  }
 }
 
 .article-featured figcaption {
@@ -778,7 +826,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .article-table-scroll:focus-visible {
-  outline: 2px solid var(--accent-green);
+  outline: 2px solid var(--secondary);
   outline-offset: 2px;
 }
 
@@ -797,8 +845,8 @@ body.light-theme .blog-breadcrumb-bar {
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--accent-gold);
-  background: rgba(201, 168, 76, 0.08);
+  color: var(--primary);
+  background: var(--tag-bg);
   border-bottom: 1px solid var(--card-border);
   white-space: nowrap;
 }
