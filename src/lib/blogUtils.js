@@ -49,9 +49,14 @@ export function toIsoDateTime(isoDate) {
   return `${isoDate}T00:00:00.000Z`;
 }
 
-/** Stable, URL-safe anchor id from a heading's text. */
+/**
+ * Stable, URL-safe anchor id from a heading's text.
+ * Leading ordinals are dropped so "4. Allocating budget" anchors to
+ * "#allocating-budget" rather than "#4-allocating-budget".
+ */
 export function slugifyHeading(text) {
   return String(text)
+    .replace(/^\s*\d+[.)]\s+/, "")
     .toLowerCase()
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9\s-]/g, "")
@@ -85,6 +90,14 @@ export function blockPlainText(block) {
       return (block.items || []).map(strip).join(" ");
     case "figure":
       return strip(block.caption || "");
+    case "table":
+      return [
+        ...(block.head || []),
+        ...(block.rows || []).flat(),
+        block.caption || "",
+      ]
+        .map(strip)
+        .join(" ");
     case "cta":
       return strip([block.heading, block.text].filter(Boolean).join(" "));
     default:
@@ -114,8 +127,13 @@ export function getReadingTime(body) {
 /**
  * Table of contents from h2/h3 blocks.
  * Duplicate headings get a numeric suffix so anchors stay unique.
+ *
+ * `depth` defaults to 2 (h2 only). A long article with many h3s — FAQ
+ * questions, for instance — produces a sidebar list nobody can scan, so
+ * subheadings are opt-in rather than automatic. Heading ids are still
+ * generated for every level by buildHeadingIds().
  */
-export function buildTableOfContents(body) {
+export function buildTableOfContents(body, { depth = 2 } = {}) {
   if (!Array.isArray(body)) return [];
 
   const used = new Map();
@@ -132,7 +150,10 @@ export function buildTableOfContents(body) {
     used.set(base, seen + 1);
     const id = seen === 0 ? base : `${base}-${seen + 1}`;
 
-    items.push({ id, text, level: block.type === "h2" ? 2 : 3 });
+    const level = block.type === "h2" ? 2 : 3;
+    if (level > depth) return;
+
+    items.push({ id, text, level });
   });
 
   return items;

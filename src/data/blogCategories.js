@@ -32,7 +32,7 @@ export const blogCategories = [
       "Search, Performance Max and Local Services Ads for US residential HVAC contractors: what clicks cost, how budget should be allocated, and which campaign structures hold up under seasonality.",
     topics: [
       { id: "costs-and-budgets", name: "Costs & Budgets" },
-      { id: "campaign-structure", name: "Campaign Structure" },
+      { id: "google-ads-strategy", name: "Google Ads Strategy & Campaign Management" },
     ],
   },
   {

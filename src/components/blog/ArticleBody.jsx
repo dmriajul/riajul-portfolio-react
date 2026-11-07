@@ -100,6 +100,67 @@ export default function ArticleBody({ blocks }) {
             );
           }
 
+          case "table": {
+            const head = block.head || [];
+            const rows = block.rows || [];
+            if (head.length === 0 && rows.length === 0) return null;
+
+            return (
+              <figure key={key} className="article-table-figure">
+                {/* Scrollable on narrow screens so a 3-column table never
+                    forces the whole page to scroll sideways. */}
+                <div
+                    className="article-table-scroll"
+                    tabIndex={0}
+                    role="group"
+                    aria-label="Scrollable table"
+                  >
+                  <table className="article-table">
+                    {head.length > 0 && (
+                      <thead>
+                        <tr>
+                          {head.map((cell, cellIndex) => (
+                            <th key={`${key}-h-${cellIndex}`} scope="col">
+                              <InlineText text={cell} />
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                    )}
+                    <tbody>
+                      {rows.map((row, rowIndex) => (
+                        <tr key={`${key}-r-${rowIndex}`}>
+                          {row.map((cell, cellIndex) => {
+                            // First cell of each row is the row header: it
+                            // names the line item, so pairing is announced
+                            // correctly instead of reading as loose cells.
+                            if (cellIndex === 0) {
+                              return (
+                                <th key={`${key}-r-${rowIndex}-${cellIndex}`} scope="row">
+                                  <InlineText text={cell} />
+                                </th>
+                              );
+                            }
+                            return (
+                              <td key={`${key}-r-${rowIndex}-${cellIndex}`}>
+                                <InlineText text={cell} />
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {block.caption && (
+                  <figcaption className="article-table-caption">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          }
+
           case "figure":
             return (
               <figure key={key} className="article-figure">

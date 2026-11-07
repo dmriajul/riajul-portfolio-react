@@ -9,7 +9,8 @@ import BlogFilterBar from "../../components/blog/BlogFilterBar";
 import JsonLd from "../../components/blog/JsonLd";
 import useSeo from "../../hooks/useSeo";
 import { blogCategories, getCategoryBySlug } from "../../data/blogCategories";
-import { draftPosts } from "../../data/blogDrafts";
+// Resolved by vite.config.js: empty module in production builds.
+import { draftPosts } from "@blog-drafts";
 import { getPublishedPosts, isPublished } from "../../data/blogPosts";
 import { DRAFT_PREVIEW_ENABLED } from "../../lib/blogEnv";
 import {

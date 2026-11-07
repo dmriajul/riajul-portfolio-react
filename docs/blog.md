@@ -46,14 +46,43 @@ The full schema and every body block type are documented at the top of that file
 
 ## Drafts
 
-`src/data/blogDrafts.js` holds the test fixture used to exercise the template. Drafts:
+`src/data/blogDrafts.js` holds unpublished articles and the template test fixture. Drafts:
 
 - are never prerendered, so `/blog/<draft-slug>` falls through to the not-found page in production;
 - are never listed on `/blog/` in a production build;
 - are never in the sitemap;
 - render only when `import.meta.env.DEV` (or a build made with `VITE_BLOG_PREVIEW_DRAFTS=1`) and then carry `noindex` plus a visible "Draft preview" banner.
 
-The QA flag exists so the article template can be reviewed locally before anything is published. **Never set it in a production deploy.**
+### Why drafts cannot leak
+
+A runtime flag alone is not enough: the data module would still be imported into the client bundle and shipped to every visitor, so the full text would sit in a public JavaScript file even though the route rendered "not found".
+
+`vite.config.js` therefore aliases `@blog-drafts`:
+
+| Build | Resolves to |
+|---|---|
+| `npm run dev` | `src/data/blogDrafts.js` |
+| `VITE_BLOG_PREVIEW_DRAFTS=1 npm run build` | `src/data/blogDrafts.js` |
+| any other build | `src/data/blogDrafts.empty.js` (exports `draftPosts = []`) |
+
+The exclusion is a build-time fact rather than a tree-shaking accident. Verify it by grepping a phrase from a draft against `dist/` — it must not appear in any `.js`, `.css` or `.html` file.
+
+The Node scripts (`scripts/prerender.mjs`, `scripts/generate-sitemap.mjs`) import the real data file directly, so their "a draft must never reach the sitemap" assertions still run against the actual drafts.
+
+### Previewing a draft
+
+```bash
+npm run dev
+# then open http://localhost:3000/blog/<draft-slug>
+```
+
+To review the prerendered output instead, build with the flag and delete the artefacts afterwards:
+
+```bash
+VITE_BLOG_PREVIEW_DRAFTS=1 npx vite build --ssr src/entry-server.jsx --outDir .preview-ssr
+```
+
+**Never set `VITE_BLOG_PREVIEW_DRAFTS` in a production deploy.** A production build ignores it; the deploy should never carry it into this project's environment variables either.
 
 ## Metadata and structured data
 
@@ -81,5 +110,6 @@ Built once in `src/lib/blogSeo.js` and used by both layers, so the static HTML a
 - **`/blog/<slug>/` and `/blog/<slug>` both resolve** to the same file. Canonical is the non-trailing-slash form. No redirect is configured, because setting `trailingSlash` globally would change the existing `/services/*` URLs.
 - **Trailing-slash form of the index** (`/blog`) serves the same file with the same canonical.
 - **Not tested against a real crawler.** No Googlebot fetch or Search Console inspection has been run. "Crawlable" here means the content is present in the HTML the server returns (verified by reading the built files), not that Google has indexed anything.
+- **Draft `noindex` is applied client-side.** Published articles get their `robots` tag written into the prerendered HTML; drafts are never prerendered, so the tag is set on render instead. It only matters for a preview build, which is not deployed.
 - **Browser rendering not observed** — no browser binary is available in this environment. Layout is verified structurally (CSS breakpoints at 1080 / 860 / 640 / 420 px) and through server-rendered markup, not visually.
 - **Prerendered pages are re-rendered by the client on load** (`createRoot`, not `hydrateRoot`). Content is identical, but the theme state (localStorage) makes hydration-safe matching unreliable, so a client render was chosen deliberately over a hydration mismatch.

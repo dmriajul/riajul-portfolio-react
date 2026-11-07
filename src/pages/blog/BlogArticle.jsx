@@ -8,7 +8,8 @@ import JsonLd from "../../components/blog/JsonLd";
 import RelatedArticles from "../../components/blog/RelatedArticles";
 import TableOfContents from "../../components/blog/TableOfContents";
 import useSeo from "../../hooks/useSeo";
-import { draftPosts } from "../../data/blogDrafts";
+// Resolved by vite.config.js: empty module in production builds.
+import { draftPosts } from "@blog-drafts";
 import {
   getPublishedPostBySlug,
   getPostTaxonomy,
@@ -143,6 +144,9 @@ function ArticleView({ post }) {
                   loading="eager"
                   decoding="async"
                 />
+                {post.featuredImage.caption && (
+                  <figcaption>{post.featuredImage.caption}</figcaption>
+                )}
               </figure>
             )}
 

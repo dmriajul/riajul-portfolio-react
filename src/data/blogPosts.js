@@ -39,8 +39,10 @@
  *   publishedAt: "2026-11-07",        // required, YYYY-MM-DD
  *   updatedAt: "2026-11-20",          // optional, YYYY-MM-DD
  *   author: "khandokar-riajul-islam", // optional, defaults to the site owner
- *   featuredImage: { src, alt, width, height }, // optional
- *   seo: { title, description },      // optional overrides (canonical is always derived)
+ *   featuredImage: { src, alt, width, height, caption }, // optional
+ *   seo: { title, description, ogImage }, // optional overrides (canonical is always derived)
+ *                                     // ogImage: 1200x630 social crop; the featured
+ *                                     // image keeps its 16:9 ratio for schema.org
  *   related: ["other-slug"],          // optional, published slugs only
  *   body: [ block, block, ... ]       // required for a published article
  * }
@@ -53,6 +55,7 @@
  *   { type: "ol", items: ["...", "..."] }
  *   { type: "blockquote", text: "...", cite: "..." }
  *   { type: "callout", variant: "note" | "warning", title: "...", text: "..." }
+ *   { type: "table", head: ["Col A", "Col B"], rows: [["a", "b"]], caption: "..." }
  *   { type: "figure", src: "/images/x.webp", alt: "...", caption: "..." }
  *   { type: "cta", heading: "...", text: "...", label: "...", href: "..." }
  *

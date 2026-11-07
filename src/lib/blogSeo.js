@@ -73,7 +73,9 @@ export function buildArticleMeta(post) {
     title,
     description,
     canonical: blogArticleUrl(post.slug),
-    image: resolveImage(post.featuredImage?.src),
+    // Social card prefers an explicit 1200x630 crop; schema.org keeps the
+    // 16:9 featured image, which is also an accepted Article image ratio.
+    image: resolveImage(post.seo?.ogImage || post.featuredImage?.src),
     type: "article",
     noindex: post.status !== "published",
     publishedTime: toIsoDateTime(post.publishedAt),
