@@ -89,10 +89,6 @@ function GrowthFramework() {
                   decoding="async"
                 />
               </picture>
-              <div className="framework-image-badge">
-                <span className="badge-pulse"></span>
-                <span>Live Acquisition Architecture</span>
-              </div>
             </div>
           </motion.div>
 
