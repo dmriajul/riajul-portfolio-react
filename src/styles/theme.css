@@ -405,6 +405,132 @@ body.light-theme .mobile-menu a:hover {
   color: #0f766e !important;
 }
 
+/* Services dropdown in light mode */
+[data-theme="light"] .nav-dropdown-trigger,
+body.light-theme .nav-dropdown-trigger {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger:hover,
+[data-theme="light"] .nav-dropdown.is-open .nav-dropdown-trigger,
+[data-theme="light"] .nav-dropdown.is-active .nav-dropdown-trigger,
+body.light-theme .nav-dropdown-trigger:hover,
+body.light-theme .nav-dropdown.is-open .nav-dropdown-trigger,
+body.light-theme .nav-dropdown.is-active .nav-dropdown-trigger {
+  color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger::after,
+body.light-theme .nav-dropdown-trigger::after {
+  background: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-menu,
+body.light-theme .nav-dropdown-menu {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link,
+body.light-theme .nav-links .nav-dropdown-link {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link:hover,
+[data-theme="light"] .nav-links .nav-dropdown-link:focus-visible,
+body.light-theme .nav-links .nav-dropdown-link:hover,
+body.light-theme .nav-links .nav-dropdown-link:focus-visible {
+  background: rgba(15, 118, 110, 0.08) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link.is-current,
+body.light-theme .nav-links .nav-dropdown-link.is-current {
+  background: rgba(15, 118, 110, 0.1) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-link-desc,
+body.light-theme .nav-dropdown-link-desc {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+[data-theme="light"] .nav-dropdown-group + .nav-dropdown-group,
+body.light-theme .nav-dropdown-group + .nav-dropdown-group {
+  border-left-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .nav-dropdown-group-title,
+body.light-theme .nav-dropdown-group-title {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
+[data-theme="light"] .nav-dropdown-group-note,
+[data-theme="light"] .nav-dropdown-link-desc,
+body.light-theme .nav-dropdown-group-note,
+body.light-theme .nav-dropdown-link-desc {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+[data-theme="light"] .nav-dropdown-foot,
+body.light-theme .nav-dropdown-foot {
+  border-top-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-foot-link,
+body.light-theme .nav-links .nav-dropdown-foot-link {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-foot-link:hover,
+[data-theme="light"] .nav-links .nav-dropdown-foot-link:focus-visible,
+body.light-theme .nav-links .nav-dropdown-foot-link:hover,
+body.light-theme .nav-links .nav-dropdown-foot-link:focus-visible {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .mobile-services-group-title,
+body.light-theme .mobile-services-group-title {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
+[data-theme="light"] .mobile-services-toggle,
+body.light-theme .mobile-services-toggle {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .mobile-services-toggle:hover,
+[data-theme="light"] .mobile-services.is-active .mobile-services-toggle,
+body.light-theme .mobile-services-toggle:hover,
+body.light-theme .mobile-services.is-active .mobile-services-toggle {
+  color: #0f766e !important;
+}
+
+[data-theme="light"] .mobile-menu .mobile-services-link,
+body.light-theme .mobile-menu .mobile-services-link {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger:focus-visible,
+[data-theme="light"] .nav-links .nav-dropdown-link:focus-visible,
+[data-theme="light"] .mobile-services-toggle:focus-visible,
+body.light-theme .nav-dropdown-trigger:focus-visible,
+body.light-theme .nav-links .nav-dropdown-link:focus-visible,
+body.light-theme .mobile-services-toggle:focus-visible {
+  outline-color: #0f766e !important;
+}
+
 [data-theme="light"] .mobile-book-btn,
 body.light-theme .mobile-book-btn {
   border-color: #0f766e !important;
@@ -1232,6 +1358,38 @@ body.light-theme .footer-links a:hover {
   -webkit-text-fill-color: #0f766e !important;
 }
 
+[data-theme="light"] .footer-industry-title,
+body.light-theme .footer-industry-title {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
+[data-theme="light"] .footer-industry-link,
+body.light-theme .footer-industry-link {
+  color: #1e293b !important;
+  -webkit-text-fill-color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .footer-industry-link:hover,
+[data-theme="light"] .footer-industry-link:focus-visible,
+body.light-theme .footer-industry-link:hover,
+body.light-theme .footer-industry-link:focus-visible {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .footer-industry-link:focus-visible,
+body.light-theme .footer-industry-link:focus-visible {
+  outline-color: #0f766e !important;
+}
+
+[data-theme="light"] .footer-industry-link.is-current,
+body.light-theme .footer-industry-link.is-current {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
 [data-theme="light"] .social-icons a,
 body.light-theme .social-icons a {
   background: #ffffff !important;
@@ -1655,6 +1813,469 @@ body.light-theme .service-cta-card h2 {
   color: #04110f !important;
   -webkit-text-fill-color: #04110f !important;
   font-weight: 800 !important;
+}
+
+/* =====================================================
+   INDUSTRY LANDING PAGES IN LIGHT MODE
+   Only the classes added for /industries/hvac are listed here;
+   reused service-detail classes are already handled above.
+===================================================== */
+
+[data-theme="light"] .industry-section-alt,
+body.light-theme .industry-section-alt {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .industry-hero-intro p,
+body.light-theme .industry-hero-intro p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .industry-tertiary,
+body.light-theme .industry-tertiary {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .industry-summary h2,
+[data-theme="light"] .industry-about h2,
+[data-theme="light"] .hvac-inquiry-copy h2,
+body.light-theme .industry-summary h2,
+body.light-theme .industry-about h2,
+body.light-theme .hvac-inquiry-copy h2 {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+}
+
+[data-theme="light"] .industry-summary p,
+[data-theme="light"] .industry-about p,
+[data-theme="light"] .hvac-inquiry-copy > p,
+body.light-theme .industry-summary p,
+body.light-theme .industry-about p,
+body.light-theme .hvac-inquiry-copy > p {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .industry-fit-card,
+[data-theme="light"] .industry-point,
+[data-theme="light"] .scope-card,
+[data-theme="light"] .metric-scope-card,
+[data-theme="light"] .hvac-inquiry-cta,
+body.light-theme .industry-fit-card,
+body.light-theme .industry-point,
+body.light-theme .scope-card,
+body.light-theme .metric-scope-card,
+body.light-theme .hvac-inquiry-cta {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme="light"] .industry-point,
+body.light-theme .industry-point {
+  border-left: 2px solid #0f766e !important;
+}
+
+[data-theme="light"] .scope-card.is-included,
+body.light-theme .scope-card.is-included {
+  border-top-color: #0f766e !important;
+}
+
+[data-theme="light"] .scope-card.is-needs,
+body.light-theme .scope-card.is-needs {
+  border-top-color: #c9a84c !important;
+}
+
+[data-theme="light"] .scope-card.is-unverifiable,
+body.light-theme .scope-card.is-unverifiable {
+  border-top-color: #94a3b8 !important;
+}
+
+[data-theme="light"] .industry-fit-card h3,
+[data-theme="light"] .industry-point h3,
+[data-theme="light"] .scope-card h3,
+[data-theme="light"] .metric-scope-card h3,
+body.light-theme .industry-fit-card h3,
+body.light-theme .industry-point h3,
+body.light-theme .scope-card h3,
+body.light-theme .metric-scope-card h3 {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+}
+
+[data-theme="light"] .industry-fit-card li,
+[data-theme="light"] .scope-card li,
+[data-theme="light"] .metric-scope-card li,
+body.light-theme .industry-fit-card li,
+body.light-theme .scope-card li,
+body.light-theme .metric-scope-card li {
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
+}
+
+[data-theme="light"] .industry-fit-card p,
+[data-theme="light"] .industry-point p,
+[data-theme="light"] .scope-card-note,
+[data-theme="light"] .metric-scope-card.is-limited p,
+[data-theme="light"] .hvac-inquiry-cta-label,
+[data-theme="light"] .hvac-form-note,
+[data-theme="light"] .hvac-inquiry-points li,
+body.light-theme .industry-fit-card p,
+body.light-theme .industry-point p,
+body.light-theme .scope-card-note,
+body.light-theme .metric-scope-card.is-limited p,
+body.light-theme .hvac-inquiry-cta-label,
+body.light-theme .hvac-form-note,
+body.light-theme .hvac-inquiry-points li {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .industry-callout,
+body.light-theme .industry-callout {
+  background: rgba(15, 118, 110, 0.06) !important;
+  border-color: rgba(15, 118, 110, 0.25) !important;
+  border-left-color: #0f766e !important;
+}
+
+[data-theme="light"] .industry-callout p,
+body.light-theme .industry-callout p {
+  color: #044e45 !important;
+  -webkit-text-fill-color: #044e45 !important;
+}
+
+[data-theme="light"] .scope-card li::before,
+body.light-theme .scope-card li::before {
+  background: #0f766e !important;
+}
+
+[data-theme="light"] .industry-meta,
+body.light-theme .industry-meta {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .hvac-field label,
+body.light-theme .hvac-field label {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .hvac-form select option,
+body.light-theme .hvac-form select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hvac-form-status,
+body.light-theme .hvac-form-status {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .hvac-form-status.is-success,
+body.light-theme .hvac-form-status.is-success {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: #16a34a !important;
+  color: #15803d !important;
+}
+
+[data-theme="light"] .hvac-form-status.is-error,
+body.light-theme .hvac-form-status.is-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border-color: #dc2626 !important;
+  color: #b91c1c !important;
+}
+
+[data-theme="light"] .industry-related-heading,
+body.light-theme .industry-related-heading {
+  color: #64748b !important;
+}
+
+/* ---------- Evidence-led sections added for /industries/hvac ---------- */
+
+[data-theme="light"] .hvac-hero-flow,
+body.light-theme .hvac-hero-flow {
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.08), rgba(201, 168, 76, 0.08)) !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-flow-node,
+body.light-theme .hvac-flow-node {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-flow-copy strong,
+[data-theme="light"] .hvac-challenge-card h3,
+[data-theme="light"] .hvac-approach-side h3,
+[data-theme="light"] .hvac-principles > h3,
+[data-theme="light"] .hvac-principle h4,
+[data-theme="light"] .hvac-workflow-lane-head h3,
+[data-theme="light"] .hvac-workflow-steps strong,
+[data-theme="light"] .hvac-workflow-outcome strong,
+[data-theme="light"] .hvac-playbook-head h3,
+[data-theme="light"] .hvac-playbook-points .industry-point h4,
+[data-theme="light"] .hvac-investment-item h3,
+[data-theme="light"] .hvac-exclusions > h3,
+[data-theme="light"] .hvac-factors > h3,
+[data-theme="light"] .hvac-proof-head h3,
+[data-theme="light"] .hvac-limits h3,
+[data-theme="light"] .hvac-why-card h3,
+[data-theme="light"] .hvac-about-heading,
+[data-theme="light"] .hvac-cycle-step h3,
+[data-theme="light"] .hvac-report-head strong,
+[data-theme="light"] .hvac-report-table tbody th,
+body.light-theme .hvac-flow-copy strong,
+body.light-theme .hvac-challenge-card h3,
+body.light-theme .hvac-approach-side h3,
+body.light-theme .hvac-principles > h3,
+body.light-theme .hvac-principle h4,
+body.light-theme .hvac-workflow-lane-head h3,
+body.light-theme .hvac-workflow-steps strong,
+body.light-theme .hvac-workflow-outcome strong,
+body.light-theme .hvac-playbook-head h3,
+body.light-theme .hvac-playbook-points .industry-point h4,
+body.light-theme .hvac-investment-item h3,
+body.light-theme .hvac-exclusions > h3,
+body.light-theme .hvac-factors > h3,
+body.light-theme .hvac-proof-head h3,
+body.light-theme .hvac-limits h3,
+body.light-theme .hvac-why-card h3,
+body.light-theme .hvac-about-heading,
+body.light-theme .hvac-cycle-step h3,
+body.light-theme .hvac-report-head strong,
+body.light-theme .hvac-report-table tbody th {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+[data-theme="light"] .hvac-flow-copy span,
+[data-theme="light"] .hvac-challenge-card p,
+[data-theme="light"] .hvac-approach-side.is-response p,
+[data-theme="light"] .hvac-workflow-steps span,
+[data-theme="light"] .hvac-workflow-outcome span,
+[data-theme="light"] .hvac-playbook-head p,
+[data-theme="light"] .hvac-investment-item p,
+[data-theme="light"] .hvac-proof-note,
+[data-theme="light"] .hvac-guarantee p,
+[data-theme="light"] .hvac-factors li,
+[data-theme="light"] .hvac-arch-col li,
+[data-theme="light"] .hvac-report-table th,
+[data-theme="light"] .hvac-report-table td,
+[data-theme="light"] .hvac-report-meta dd,
+body.light-theme .hvac-flow-copy span,
+body.light-theme .hvac-challenge-card p,
+body.light-theme .hvac-approach-side.is-response p,
+body.light-theme .hvac-workflow-steps span,
+body.light-theme .hvac-workflow-outcome span,
+body.light-theme .hvac-playbook-head p,
+body.light-theme .hvac-investment-item p,
+body.light-theme .hvac-proof-note,
+body.light-theme .hvac-guarantee p,
+body.light-theme .hvac-factors li,
+body.light-theme .hvac-arch-col li,
+body.light-theme .hvac-report-table th,
+body.light-theme .hvac-report-table td,
+body.light-theme .hvac-report-meta dd {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .hvac-challenge-card,
+[data-theme="light"] .hvac-principle,
+[data-theme="light"] .hvac-workflow-lane,
+[data-theme="light"] .hvac-playbook,
+[data-theme="light"] .hvac-arch-col,
+[data-theme="light"] .hvac-investment-item,
+[data-theme="light"] .hvac-proof-card,
+[data-theme="light"] .hvac-why-card,
+[data-theme="light"] .hvac-credentials,
+[data-theme="light"] .hvac-factors,
+[data-theme="light"] .hvac-cycle-step,
+[data-theme="light"] .hvac-report-card,
+body.light-theme .hvac-challenge-card,
+body.light-theme .hvac-principle,
+body.light-theme .hvac-workflow-lane,
+body.light-theme .hvac-playbook,
+body.light-theme .hvac-arch-col,
+body.light-theme .hvac-investment-item,
+body.light-theme .hvac-proof-card,
+body.light-theme .hvac-why-card,
+body.light-theme .hvac-credentials,
+body.light-theme .hvac-factors,
+body.light-theme .hvac-cycle-step,
+body.light-theme .hvac-report-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme="light"] .hvac-approach-row,
+body.light-theme .hvac-approach-row {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-workflow-converge,
+body.light-theme .hvac-workflow-converge {
+  background: rgba(15, 118, 110, 0.05) !important;
+  border-color: rgba(15, 118, 110, 0.3) !important;
+}
+
+[data-theme="light"] .hvac-workflow-steps li,
+[data-theme="light"] .hvac-workflow-outcome,
+[data-theme="light"] .hvac-proof-figures div,
+body.light-theme .hvac-workflow-steps li,
+body.light-theme .hvac-workflow-outcome,
+body.light-theme .hvac-proof-figures div {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-exclusions,
+[data-theme="light"] .hvac-limits,
+[data-theme="light"] .hvac-arch-outside,
+body.light-theme .hvac-exclusions,
+body.light-theme .hvac-limits,
+body.light-theme .hvac-arch-outside {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-guarantee,
+body.light-theme .hvac-guarantee {
+  background: rgba(239, 68, 68, 0.05) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+[data-theme="light"] .hvac-guarantee h3,
+body.light-theme .hvac-guarantee h3 {
+  color: #b91c1c !important;
+  -webkit-text-fill-color: #b91c1c !important;
+}
+
+[data-theme="light"] .hvac-challenge-signal,
+[data-theme="light"] .hvac-proof-category,
+[data-theme="light"] .hvac-limits li,
+[data-theme="light"] .hvac-why-card p,
+[data-theme="light"] .hvac-cycle-step p,
+[data-theme="light"] .hvac-exclusion p,
+[data-theme="light"] .hvac-credentials p,
+[data-theme="light"] .hvac-pricing-note,
+[data-theme="light"] .hvac-report-foot,
+[data-theme="light"] .hvac-figure figcaption,
+[data-theme="light"] .hvac-arch-outside li,
+[data-theme="light"] .hvac-arch-outside h3,
+[data-theme="light"] .hvac-report-kicker,
+[data-theme="light"] .hvac-report-meta dt,
+[data-theme="light"] .hvac-report-table thead th,
+[data-theme="light"] .hvac-workflow-note,
+body.light-theme .hvac-challenge-signal,
+body.light-theme .hvac-proof-category,
+body.light-theme .hvac-limits li,
+body.light-theme .hvac-why-card p,
+body.light-theme .hvac-cycle-step p,
+body.light-theme .hvac-exclusion p,
+body.light-theme .hvac-credentials p,
+body.light-theme .hvac-pricing-note,
+body.light-theme .hvac-report-foot,
+body.light-theme .hvac-figure figcaption,
+body.light-theme .hvac-arch-outside li,
+body.light-theme .hvac-arch-outside h3,
+body.light-theme .hvac-report-kicker,
+body.light-theme .hvac-report-meta dt,
+body.light-theme .hvac-report-table thead th,
+body.light-theme .hvac-workflow-note {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+[data-theme="light"] .hvac-exclusion h4,
+[data-theme="light"] .hvac-proof-figures dd,
+[data-theme="light"] .hvac-credentials li,
+[data-theme="light"] .hvac-proof-label span,
+body.light-theme .hvac-exclusion h4,
+body.light-theme .hvac-proof-figures dd,
+body.light-theme .hvac-credentials li,
+body.light-theme .hvac-proof-label span {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
+[data-theme="light"] .hvac-credentials li,
+[data-theme="light"] .hvac-proof-label span,
+body.light-theme .hvac-credentials li,
+body.light-theme .hvac-proof-label span {
+  background: rgba(201, 168, 76, 0.12) !important;
+  border-color: rgba(159, 129, 52, 0.4) !important;
+}
+
+[data-theme="light"] .hvac-approach-stage,
+[data-theme="light"] .hvac-cycle-cadence,
+[data-theme="light"] .hvac-proof-link,
+[data-theme="light"] .hvac-challenge-signal span,
+body.light-theme .hvac-approach-stage,
+body.light-theme .hvac-cycle-cadence,
+body.light-theme .hvac-proof-link,
+body.light-theme .hvac-challenge-signal span {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .hvac-approach-stage,
+[data-theme="light"] .hvac-cycle-cadence,
+body.light-theme .hvac-approach-stage,
+body.light-theme .hvac-cycle-cadence {
+  background: rgba(15, 118, 110, 0.08) !important;
+  border-color: rgba(15, 118, 110, 0.3) !important;
+}
+
+[data-theme="light"] .hvac-proof-link,
+body.light-theme .hvac-proof-link {
+  border-bottom-color: rgba(15, 118, 110, 0.35) !important;
+}
+
+[data-theme="light"] .hvac-why-check,
+body.light-theme .hvac-why-check {
+  background: rgba(15, 118, 110, 0.1) !important;
+  border-color: rgba(15, 118, 110, 0.35) !important;
+  color: #0f766e !important;
+}
+
+[data-theme="light"] .hvac-report-badge,
+body.light-theme .hvac-report-badge {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+  background: #c9a84c !important;
+}
+
+[data-theme="light"] .hvac-challenge-signal,
+[data-theme="light"] .hvac-pricing-note,
+[data-theme="light"] .hvac-report-foot,
+body.light-theme .hvac-challenge-signal,
+body.light-theme .hvac-pricing-note,
+body.light-theme .hvac-report-foot {
+  border-top-color: #e2e8f0 !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-challenge-signal,
+body.light-theme .hvac-challenge-signal {
+  border-top: 1px dashed #e2e8f0 !important;
+}
+
+[data-theme="light"] .hvac-fit-intro,
+body.light-theme .hvac-fit-intro {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .hvac-report-table th,
+[data-theme="light"] .hvac-report-table td,
+body.light-theme .hvac-report-table th,
+body.light-theme .hvac-report-table td {
+  border-bottom-color: #e2e8f0 !important;
 }
 
 /* Floating Metric Badges in Light Mode */

@@ -39,6 +39,7 @@ deliberately **out of scope** for PR 1.
 | `/` | `siteSeo.title` | `siteSeo.description` | `https://portfolio.riajultech.com/` | `index, follow…` |
 | `/services/<known>` | `<Service> \| Khandokar Riajul Islam Portfolio` | unique per service (tagline, or a sentence-safe trim, ≤160 chars) | `…/services/<slug>` | `index, follow…` |
 | `/services/<unknown>` | `Service Not Found \| …` | explanatory | **removed** (also removes `og:url`) | `noindex, follow` |
+| `/industries/hvac` | `HVAC Marketing for USA Contractors \| Google Ads and Meta Ads` (60 chars) | unique (159 chars) | `…/industries/hvac` | `index, follow…` |
 
 `canonical: null` is the explicit “this route has no canonical” signal: both the `link[rel=canonical]`
 and the `og:url` meta are removed so an unknown route never advertises the homepage or the

@@ -69,3 +69,7 @@ Machine-readable structured data (schema.org Person, ProfessionalService, OfferC
 - [Local SEO & ORM](/services/local-seo-orm): Google Business Profile optimization, Google Maps 3-Pack visibility, citation cleanup, and structured 5-star review funnels for Australia & UAE practices.
 - [Analytics & Tracking (GA4 & GTM)](/services/analytics): Server-side tracking, Conversions API, custom events, and Looker Studio reporting dashboards.
 - [Conversion Optimization (CRO)](/services/cro): Landing page UX audits, value proposition framing, A/B testing, and friction reduction.
+
+## Industry Pages
+
+- [Residential HVAC Marketing (United States)](/industries/hvac): Performance marketing for US residential HVAC contractors, covering Google Ads, Meta Ads, GA4 and Google Tag Manager conversion setup, and landing page optimization. Booking a call is the primary call to action, with a separate HVAC inquiry form as the secondary option. The page states plainly which work is included, which parts require client access or third party tools such as call tracking, and which outcomes cannot be verified without CRM or offline conversion data.

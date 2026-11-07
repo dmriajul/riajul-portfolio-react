@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import Home from "./pages/Home";
 import ServiceDetail from "./pages/ServiceDetail";
+import IndustryHvac from "./pages/IndustryHvac";
 
 // Helper component to manage smooth scrolling on route and hash changes
 function ScrollManager() {
@@ -40,6 +41,9 @@ function App() {
           <Route path="/services/social-media-marketing" element={<ServiceDetail />} />
           <Route path="/services/social-media-manager" element={<ServiceDetail />} />
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
+
+          {/* Industry Landing Pages */}
+          <Route path="/industries/hvac" element={<IndustryHvac />} />
 
           {/* Catch-all redirect to Home */}
           <Route path="*" element={<Home />} />
