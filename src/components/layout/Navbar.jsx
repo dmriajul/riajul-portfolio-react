@@ -296,6 +296,16 @@ function Navbar() {
           </li>
 
           <li>
+            <Link
+              to="/blog/"
+              className={`nav-blog-link${isBlogRoute ? " is-current" : ""}`}
+              aria-current={isBlogRoute ? "page" : undefined}
+            >
+              Blog
+            </Link>
+          </li>
+
+          <li>
             <a href="/#about" onClick={(e) => handleNavClick("about", e)}>
               About
             </a>
@@ -414,16 +424,6 @@ function Navbar() {
           </li>
 
           <li>
-            <Link
-              to="/blog/"
-              className={`nav-blog-link${isBlogRoute ? " is-current" : ""}`}
-              aria-current={isBlogRoute ? "page" : undefined}
-            >
-              Blog
-            </Link>
-          </li>
-
-          <li>
             <a href="/#contact" onClick={(e) => handleNavClick("contact", e)}>
               Contact
             </a>
@@ -477,6 +477,15 @@ function Navbar() {
         >
           Home
         </a>
+
+        <Link
+          to="/blog/"
+          className={`mobile-blog-link${isBlogRoute ? " is-current" : ""}`}
+          aria-current={isBlogRoute ? "page" : undefined}
+          onClick={closeMenu}
+        >
+          Blog
+        </Link>
 
         <a
           href="/#about"
@@ -603,15 +612,6 @@ function Navbar() {
         >
           Testimonials
         </a>
-
-        <Link
-          to="/blog/"
-          className={`mobile-blog-link${isBlogRoute ? " is-current" : ""}`}
-          aria-current={isBlogRoute ? "page" : undefined}
-          onClick={closeMenu}
-        >
-          Blog
-        </Link>
 
         <a
           href="/#contact"
