@@ -1657,15 +1657,6 @@ body.light-theme .service-cta-card h2 {
   font-weight: 800 !important;
 }
 
-/* Hero Status Pill in Light Mode */
-[data-theme="light"] .hero-status-pill,
-body.light-theme .hero-status-pill {
-  background: rgba(15, 118, 110, 0.08) !important;
-  border-color: rgba(15, 118, 110, 0.3) !important;
-  color: #0f766e !important;
-  -webkit-text-fill-color: #0f766e !important;
-}
-
 /* Floating Metric Badges in Light Mode */
 [data-theme="light"] .floating-metric-badge,
 body.light-theme .floating-metric-badge,

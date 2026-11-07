@@ -33,12 +33,6 @@ function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          {/* Status Badge: Available for Global Remote Work */}
-          <div className="hero-status-pill">
-            <span className="status-pulse-dot"></span>
-            <span>AVAILABLE FOR GLOBAL REMOTE & CONTRACT ROLES</span>
-          </div>
-
           {/* Primary H1 Headline */}
           <h1 className="hero-h1">
             Performance Marketing Specialist &{" "}
