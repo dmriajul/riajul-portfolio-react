@@ -900,18 +900,18 @@ body.light-theme .blog-breadcrumb-bar {
   border-top: 1px solid var(--card-border);
 }
 
+/* The card already sets the column, so the answer fills it: same type size as
+   the body, slightly tighter leading, muted for a quieter secondary tone. */
 .article-faq-answer .article-p {
   margin: 0 0 14px;
-  max-width: 68ch;
   line-height: 1.75;
   color: var(--text-body-secondary);
 }
 
 .article-faq-answer .article-list {
-  max-width: 68ch;
   margin: 0 0 14px;
-  font-size: 15.5px;
   line-height: 1.7;
+  color: var(--text-body-secondary);
 }
 
 .article-faq-answer > *:last-child {
@@ -930,10 +930,6 @@ body.light-theme .blog-breadcrumb-bar {
 
   .article-faq-question {
     font-size: 16px;
-  }
-
-  .article-faq-answer .article-list {
-    font-size: 15px;
   }
 
   .article-figure {
