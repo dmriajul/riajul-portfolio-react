@@ -10,9 +10,11 @@ export default function TableOfContents({ items }) {
 
   return (
     <nav className="article-toc" aria-labelledby="article-toc-title">
-      <h2 className="article-toc-title" id="article-toc-title">
+      {/* A label, not a section: as a paragraph it stays out of the article's
+          heading outline, while aria-labelledby still names the navigation. */}
+      <p className="article-toc-title" id="article-toc-title">
         On this page
-      </h2>
+      </p>
 
       <ol className="article-toc-list">
         {items.map((item) => (

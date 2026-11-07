@@ -49,7 +49,8 @@
  *
  * BODY BLOCKS (no raw HTML is accepted anywhere):
  *   { type: "h2", text: "..." }
- *   { type: "h3", text: "...", faq: true }        faq: styles the heading as an FAQ question
+ *   { type: "h3", text: "...", faq: true }        an FAQ question; it and the blocks
+ *                                                after it become one accordion entry
  *   { type: "p",  text: "..." }                        supports [link](/path), **bold**, `code`
  *   { type: "ul", items: ["...", "..."] }
  *   { type: "ol", items: ["...", "..."] }

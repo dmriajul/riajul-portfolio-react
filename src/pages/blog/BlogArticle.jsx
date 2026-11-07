@@ -56,7 +56,7 @@ function ArticleView({ post }) {
   );
 
   return (
-    <div className="service-detail-page blog-page">
+    <div className="service-detail-page blog-page blog-article-page">
       <Navbar />
 
       <main id="main-content" className="service-detail-content blog-main">
@@ -66,7 +66,7 @@ function ArticleView({ post }) {
         <BlogBreadcrumbs items={trail} backTo="/blog/" backLabel="Back to Blog" />
 
         {isDraft && (
-          <div className="container">
+          <div className="container blog-draft-banner-row">
             <p className="blog-draft-banner" role="note">
               Draft preview — this article is unpublished. It is set to{" "}
               <code>noindex</code>, is not in the sitemap, and will not be

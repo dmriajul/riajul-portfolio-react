@@ -425,10 +425,6 @@ body.light-theme .blog-breadcrumb-bar {
   padding: 44px 0 10px;
 }
 
-.blog-article-hero .container {
-  max-width: 900px;
-}
-
 .blog-article-title {
   font-size: clamp(30px, 3.8vw, 46px);
   line-height: 1.18;
@@ -437,6 +433,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .blog-article-excerpt {
+  max-width: 68ch;
   font-size: 17.5px;
   line-height: 1.75;
   color: var(--text-body);
@@ -509,6 +506,25 @@ body.light-theme .blog-breadcrumb-bar {
   padding: 1px 6px;
   border-radius: 6px;
   background: rgba(8, 28, 25, 0.5);
+}
+
+/* ---------- Article page shell ---------- */
+
+/* Breadcrumb trail, title block and article body share one column, so every
+   left edge lines up, and the column itself is capped: at the full container
+   width the body ran to roughly 110 characters a line on a desktop monitor.
+   The sidebar sits inside the same column. */
+.blog-article-page {
+  --article-shell: 1040px;
+}
+
+.blog-article-page .blog-breadcrumb-bar > .container,
+.blog-article-page .blog-draft-banner-row,
+.blog-article-page .blog-article-hero > .container,
+.blog-article-page .article-layout {
+  width: min(92%, var(--article-shell));
+  max-width: var(--article-shell);
+  margin-inline: auto;
 }
 
 /* ---------- Article layout ---------- */
@@ -644,6 +660,12 @@ body.light-theme .blog-breadcrumb-bar {
   scroll-margin-top: 110px;
 }
 
+/* A section that opens directly with a subsection should not carry the full
+   heading gap twice. */
+.article-h2 + .article-h3 {
+  margin-top: 18px;
+}
+
 .article-p {
   margin: 0 0 20px;
 }
@@ -659,16 +681,29 @@ body.light-theme .blog-breadcrumb-bar {
   border-color: var(--primary);
 }
 
+/* Normal flow rather than flex: a flex container blockifies its items and
+   browsers then disagree about the ::marker box, which is how bulleted lists
+   end up flat. Spacing between items is set on the items instead. */
 .article-list {
   margin: 0 0 22px;
   padding-left: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
+}
+
+.article-list li {
+  display: list-item;
+}
+
+.article-list li + li {
+  margin-top: 9px;
 }
 
 .article-list li::marker {
   color: var(--primary);
+  font-weight: 600;
+}
+
+.article-list.is-ordered {
+  padding-left: 26px;
 }
 
 .article-quote {
@@ -763,34 +798,142 @@ body.light-theme .blog-breadcrumb-bar {
   color: var(--text-muted);
 }
 
-/* ---------- FAQ ---------- */
+/* ---------- FAQ accordion ---------- */
 
-/* Questions are real <h3> elements; the rule above each one separates the
-   entries without turning the section into a wall of cards. The answer keeps
-   a comfortable measure and sits tight under its question. */
-.article-h3.is-faq-question {
-  margin: 32px 0 10px;
-  padding-top: 18px;
-  border-top: 1px solid var(--card-border);
-  font-size: clamp(17.5px, 1.9vw, 19.5px);
-  line-height: 1.45;
-  color: var(--text-heading);
-  letter-spacing: -0.005em;
-  text-wrap: balance;
+/* Six independent questions, so no numbering. Each one is a <details>: the
+   answer is in the HTML whether the item is open or closed, several can be
+   open at once, and the expanded state is exposed to assistive technology by
+   the browser. The question stays a real <h3>. */
+.article-faq-item {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  transition: border-color var(--transition-fast);
 }
 
-.article-h3.is-faq-question + .article-p {
-  margin-bottom: 0;
+.article-faq-item + .article-faq-item {
+  margin-top: 12px;
+}
+
+.article-faq-item[open] {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.article-faq-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--transition-fast);
+}
+
+/* The round toggle replaces the default disclosure triangle. */
+.article-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-faq-summary::marker {
+  content: "";
+}
+
+.article-faq-summary:hover {
+  background: rgba(15, 118, 110, 0.07);
+}
+
+.article-faq-summary:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: -2px;
+}
+
+.article-faq-question {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(16.5px, 1.7vw, 18px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--text-heading);
+  text-wrap: balance;
+  scroll-margin-top: 110px;
+}
+
+.article-faq-toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+/* Chevron: points down while collapsed, up while open. */
+.article-faq-toggle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 1.75px solid var(--primary);
+  border-bottom: 1.75px solid var(--primary);
+  transform: translate(-50%, -70%) rotate(45deg);
+  transition: transform var(--transition-fast);
+}
+
+.article-faq-item[open] .article-faq-toggle {
+  border-color: var(--primary);
+  background: var(--tag-bg);
+}
+
+.article-faq-item[open] .article-faq-toggle::before {
+  transform: translate(-50%, -30%) rotate(-135deg);
+}
+
+.article-faq-answer {
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--card-border);
+}
+
+.article-faq-answer .article-p {
+  margin: 0 0 14px;
   max-width: 68ch;
   line-height: 1.75;
   color: var(--text-body-secondary);
 }
 
+.article-faq-answer .article-list {
+  max-width: 68ch;
+  margin: 0 0 14px;
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+.article-faq-answer > *:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 640px) {
-  .article-h3.is-faq-question {
-    margin-top: 24px;
-    padding-top: 16px;
-    font-size: 17.5px;
+  .article-faq-summary {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .article-faq-answer {
+    padding: 12px 14px 16px;
+  }
+
+  .article-faq-question {
+    font-size: 16px;
+  }
+
+  .article-faq-answer .article-list {
+    font-size: 15px;
   }
 
   .article-figure {
@@ -1049,6 +1192,12 @@ body.light-theme .blog-breadcrumb-bar {
 ========================================== */
 
 @media (max-width: 1080px) {
+  /* The sidebar moves above the body here, so the shell narrows with it
+     rather than letting the text run the full container width. */
+  .blog-article-page {
+    --article-shell: 700px;
+  }
+
   .article-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 34px;
