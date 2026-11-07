@@ -1,9 +1,10 @@
 /**
  * Draft preview switch.
  *
- * Drafts and the test fixture are renderable ONLY when:
+ * Drafts are renderable ONLY when:
  *   - the Vite dev server is running (import.meta.env.DEV), or
- *   - the build was made with VITE_BLOG_PREVIEW_DRAFTS=1 (local QA only).
+ *   - the build was made with VITE_BLOG_PREVIEW_DRAFTS=1, or
+ *   - this is a Vercel Preview deployment (VERCEL_ENV === "preview").
  *
  * A normal production build has neither, so a draft slug renders the
  * "article not found" page, drafts never reach the listing, and the

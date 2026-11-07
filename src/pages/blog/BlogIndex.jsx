@@ -112,10 +112,10 @@ export default function BlogIndex() {
 
             {DRAFT_PREVIEW_ENABLED && drafts.length > 0 && (
               <p className="blog-draft-notice" role="note">
-                Draft preview build — {drafts.length} unpublished fixture
-                {drafts.length === 1 ? " is" : "s are"} listed below for local QA
-                only. These are excluded from the production listing, the sitemap
-                and the prerendered HTML.
+                Draft preview build — {drafts.length} unpublished draft
+                {drafts.length === 1 ? " is" : "s are"} listed below for review.
+                Drafts are excluded from the production listing, the production
+                prerender and the sitemap, and render with noindex.
               </p>
             )}
           </div>

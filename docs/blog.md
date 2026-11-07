@@ -46,7 +46,7 @@ The full schema and every body block type are documented at the top of that file
 
 ## Drafts
 
-`src/data/blogDrafts.js` holds unpublished articles and the template test fixture. Drafts:
+`src/data/blogDrafts.js` holds unpublished articles. Drafts:
 
 - are never prerendered, so `/blog/<draft-slug>` falls through to the not-found page in production;
 - are never listed on `/blog/` in a production build;
