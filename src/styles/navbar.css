@@ -98,6 +98,11 @@ body.light-theme .nav-scroll-progress {
     transition: none;
   }
 
+  .nav-dropdown-menu,
+  .nav-dropdown-caret {
+    transition: none;
+  }
+
   .nav-scroll-progress-bar::after {
     animation: none;
   }
@@ -504,10 +509,12 @@ body.light-theme .nav-scroll-progress {
 }
 
 /* ==========================================
-   INDUSTRY SERVICES DROPDOWN (DESKTOP)
-   One trigger, one panel, links rendered from
-   src/data/industryNavData.js. Adding a future
-   industry page needs no change here.
+   SERVICES DROPDOWN (DESKTOP)
+   One trigger, one compact two-column panel:
+   marketing services on the left, industry
+   pages on the right. Content comes from
+   src/data/navMenuData.js, so a new service or
+   industry is a data change only.
 ========================================== */
 
 .nav-dropdown {
@@ -518,13 +525,14 @@ body.light-theme .nav-scroll-progress {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   padding: 0;
   background: none;
   border: none;
   font-family: inherit;
   font-size: 15px;
   font-weight: 600;
+  line-height: 1.2;
   color: #ffffff;
   cursor: pointer;
   position: relative;
@@ -555,56 +563,107 @@ body.light-theme .nav-scroll-progress {
 }
 
 .nav-dropdown-caret {
-  font-size: 10px;
-  transition: transform 0.25s ease;
+  font-size: 9px;
+  opacity: 0.75;
+  transition: transform 0.22s ease;
 }
 
 .nav-dropdown.is-open .nav-dropdown-caret {
   transform: rotate(180deg);
 }
 
+/* Panel: right-aligned to the trigger so it can never overflow the viewport
+   at the 861px to 1100px widths where the nav is at its tightest. */
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 18px);
-  left: 50%;
-  min-width: 288px;
-  margin: 0;
+  top: calc(100% + 14px);
+  right: -10px;
+  width: 470px;
+  max-width: calc(100vw - 28px);
   padding: 8px;
-  list-style: none;
+  margin: 0;
   background: rgba(8, 28, 25, 0.98);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.26);
   border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(-50%) translateY(-6px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+/* Invisible bridge across the gap, so the pointer can travel from the
+   trigger into the panel without the panel closing. */
+.nav-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
 }
 
 .nav-dropdown.is-open .nav-dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
-/* Reset the horizontal underline styles inherited from .nav-links a */
+.nav-dropdown-groups {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 2px;
+}
+
+.nav-dropdown-group {
+  min-width: 0;
+  padding: 6px;
+}
+
+.nav-dropdown-group + .nav-dropdown-group {
+  border-left: 1px solid rgba(201, 168, 76, 0.16);
+  padding-left: 10px;
+}
+
+.nav-dropdown-group-title {
+  margin: 4px 0 7px;
+  padding: 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+.nav-dropdown-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Reset the horizontal underline inherited from .nav-links a */
 .nav-links .nav-dropdown-link {
   position: static;
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 11px 14px;
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 14.5px;
-  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.35;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.16s ease, color 0.16s ease;
 }
 
 .nav-links .nav-dropdown-link::after {
@@ -618,44 +677,89 @@ body.light-theme .nav-scroll-progress {
 }
 
 .nav-links .nav-dropdown-link.is-current {
+  background: rgba(201, 168, 76, 0.1);
   color: #e3c772;
-  background: rgba(201, 168, 76, 0.08);
+}
+
+.nav-dropdown-group.is-industry .nav-dropdown-link {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.nav-dropdown-link-label {
+  font-weight: 600;
 }
 
 .nav-dropdown-link-desc {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 500;
   line-height: 1.45;
+  color: #8b9a97;
+}
+
+.nav-dropdown-group-note {
+  margin: 8px 8px 2px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #7f8f8c;
+}
+
+.nav-dropdown-foot {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2px;
+  padding: 7px 6px 3px;
+  border-top: 1px solid rgba(201, 168, 76, 0.14);
+}
+
+.nav-links .nav-dropdown-foot-link {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
   color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+
+.nav-links .nav-dropdown-foot-link::after {
+  display: none;
+}
+
+.nav-links .nav-dropdown-foot-link:hover,
+.nav-links .nav-dropdown-foot-link:focus-visible {
+  color: #e3c772;
 }
 
 /* Visible focus states for keyboard users */
 .nav-dropdown-trigger:focus-visible,
 .nav-links .nav-dropdown-link:focus-visible,
-.mobile-industries-toggle:focus-visible,
-.mobile-menu .mobile-industries-link:focus-visible {
+.nav-links .nav-dropdown-foot-link:focus-visible,
+.mobile-services-toggle:focus-visible,
+.mobile-menu .mobile-services-link:focus-visible {
   outline: 2px solid #c9a84c;
-  outline-offset: 3px;
+  outline-offset: 2px;
   border-radius: 6px;
 }
 
 /* ==========================================
-   INDUSTRY SERVICES GROUP (MOBILE DRAWER)
+   SERVICES GROUP (MOBILE DRAWER)
 ========================================== */
 
-.mobile-industries {
+.mobile-services {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
 }
 
-.mobile-industries-toggle {
+.mobile-services-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   padding: 4px 0;
   background: none;
   border: none;
@@ -667,36 +771,85 @@ body.light-theme .nav-scroll-progress {
   transition: color 0.3s ease;
 }
 
-.mobile-industries-toggle:hover,
-.mobile-industries.is-active .mobile-industries-toggle {
+.mobile-services-toggle:hover,
+.mobile-services.is-active .mobile-services-toggle {
   color: #c9a84c;
 }
 
-.mobile-industries.is-active .nav-dropdown-caret {
+.mobile-services.is-active .nav-dropdown-caret {
   color: #c9a84c;
 }
 
-.mobile-industries-submenu {
+.mobile-services-submenu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* display:flex above would otherwise beat the hidden attribute */
-.mobile-industries-submenu[hidden] {
+.mobile-services-submenu[hidden] {
   display: none;
 }
 
-.mobile-menu .mobile-industries-link {
-  font-size: 16px;
-  font-weight: 600;
-  color: #e3c772;
+.mobile-services-group-title {
+  margin: 10px 0 2px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
 }
 
-.mobile-menu .mobile-industries-link.is-current {
+.mobile-menu .mobile-services-link {
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #e3c772;
+  padding: 3px 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.mobile-menu .mobile-services-link.is-current {
   color: #c9a84c;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+/* ---------- Tight desktop widths ---------- */
+
+@media (max-width: 1240px) and (min-width: 861px) {
+  .nav-dropdown-trigger {
+    font-size: 14px;
+    gap: 4px;
+  }
+
+  .nav-dropdown-menu {
+    width: 440px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 861px) {
+  .nav-dropdown-trigger {
+    font-size: 13px;
+  }
+
+  .nav-dropdown-menu {
+    width: 420px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 861px) {
+  .nav-dropdown-menu {
+    width: 380px;
+  }
+
+  .nav-links .nav-dropdown-link {
+    font-size: 13px;
+  }
 }

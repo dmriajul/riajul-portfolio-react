@@ -2,7 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import profile from "../../assets/profile.webp";
 import ThemeToggle from "../common/ThemeToggle";
-import { industryNavLinks } from "../../data/industryNavData";
+import {
+  serviceNavLinks,
+  industryNavLinks,
+  servicesMenu,
+} from "../../data/navMenuData";
 
 import {
   FaCalendarAlt,
@@ -15,18 +19,21 @@ import {
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // Industry dropdown: one open state for desktop, one for the mobile drawer.
-  const [industryOpen, setIndustryOpen] = useState(false);
-  const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false);
+  // Services dropdown: one open state for desktop, one for the mobile drawer.
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const progressBarRef = useRef(null);
-  const industryRef = useRef(null);
-  const industryTriggerRef = useRef(null);
-  const industryMenuRef = useRef(null);
+  const servicesRef = useRef(null);
+  const servicesTriggerRef = useRef(null);
+  const servicesMenuRef = useRef(null);
+  const closeTimerRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // A page inside /industries/* marks the nav item as current.
-  const isIndustryRoute = location.pathname.startsWith("/industries");
+  // A service page or an industry page keeps the Services item marked as current.
+  const isServicesRoute =
+    location.pathname.startsWith("/services") ||
+    location.pathname.startsWith("/industries");
 
   useEffect(() => {
     let ticking = false;
@@ -89,20 +96,27 @@ function Navbar() {
     };
   }, [menuOpen]);
 
-  // Click outside, or Escape anywhere, closes the desktop drop-down.
+  // Clear a pending close timer if the navbar unmounts mid-transition.
   useEffect(() => {
-    if (!industryOpen) return;
+    return () => {
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+    };
+  }, []);
+
+  // Click outside, or Escape anywhere, closes the desktop dropdown.
+  useEffect(() => {
+    if (!servicesOpen) return;
 
     const handlePointerDown = (event) => {
-      if (industryRef.current && !industryRef.current.contains(event.target)) {
-        setIndustryOpen(false);
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setServicesOpen(false);
       }
     };
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        setIndustryOpen(false);
-        if (industryTriggerRef.current) industryTriggerRef.current.focus();
+        setServicesOpen(false);
+        if (servicesTriggerRef.current) servicesTriggerRef.current.focus();
       }
     };
 
@@ -115,36 +129,87 @@ function Navbar() {
       document.removeEventListener("touchstart", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [industryOpen]);
+  }, [servicesOpen]);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setMobileIndustryOpen(false);
-  };
-
-  // ArrowDown on the trigger opens the menu and moves focus into it.
-  const handleIndustryTriggerKeyDown = (event) => {
-    if (event.key === "ArrowDown" || event.key === "Down") {
-      event.preventDefault();
-      setIndustryOpen(true);
-      window.requestAnimationFrame(() => {
-        const firstLink = industryMenuRef.current?.querySelector("a");
-        if (firstLink) firstLink.focus();
-      });
+  const cancelScheduledClose = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
     }
   };
 
+  const openServices = () => {
+    cancelScheduledClose();
+    setServicesOpen(true);
+  };
+
+  const closeServices = () => {
+    cancelScheduledClose();
+    setServicesOpen(false);
+  };
+
+  // Hover close is delayed so the pointer can cross the gap into the panel.
+  const scheduleServicesClose = () => {
+    cancelScheduledClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      closeTimerRef.current = null;
+      setServicesOpen(false);
+    }, 180);
+  };
+
+  const handleServicesPointerEnter = (event) => {
+    if (event.pointerType === "touch") return;
+    openServices();
+  };
+
+  const handleServicesPointerLeave = (event) => {
+    if (event.pointerType === "touch") return;
+    scheduleServicesClose();
+  };
+
+  // Click works on its own, so the menu never depends on hover.
+  const handleServicesToggle = () => {
+    cancelScheduledClose();
+    setServicesOpen((open) => !open);
+  };
+
+  // Keyboard focus leaving the item closes the panel.
+  const handleServicesBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      closeServices();
+    }
+  };
+
+  // ArrowDown / ArrowUp on the trigger open the panel and move focus into it.
+  const handleServicesTriggerKeyDown = (event) => {
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+
+    event.preventDefault();
+    openServices();
+    const moveToLast = event.key === "ArrowUp";
+
+    window.requestAnimationFrame(() => {
+      const links = Array.from(
+        servicesMenuRef.current?.querySelectorAll("a") || []
+      );
+      if (!links.length) return;
+      (moveToLast ? links[links.length - 1] : links[0]).focus();
+    });
+  };
+
   // Arrow keys move between items; Escape closes and returns focus to the trigger.
-  const handleIndustryMenuKeyDown = (event) => {
-    const links = Array.from(industryMenuRef.current?.querySelectorAll("a") || []);
+  const handleServicesMenuKeyDown = (event) => {
+    const links = Array.from(
+      servicesMenuRef.current?.querySelectorAll("a") || []
+    );
     if (!links.length) return;
 
     const index = links.indexOf(document.activeElement);
 
     if (event.key === "Escape") {
       event.preventDefault();
-      setIndustryOpen(false);
-      if (industryTriggerRef.current) industryTriggerRef.current.focus();
+      closeServices();
+      if (servicesTriggerRef.current) servicesTriggerRef.current.focus();
       return;
     }
 
@@ -161,6 +226,11 @@ function Navbar() {
       event.preventDefault();
       links[links.length - 1].focus();
     }
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
   };
 
   const handleNavClick = (sectionId, e) => {
@@ -194,6 +264,9 @@ function Navbar() {
       }, 300);
     }
   };
+
+  const linkClass = (to, base) =>
+    location.pathname === to ? `${base} is-current` : base;
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -236,56 +309,104 @@ function Navbar() {
             </a>
           </li>
 
-          <li>
-            <a href="/#services" onClick={(e) => handleNavClick("services", e)}>
-              Services
-            </a>
-          </li>
-
           <li
-            className={`nav-dropdown${industryOpen ? " is-open" : ""}${
-              isIndustryRoute ? " is-active" : ""
+            className={`nav-dropdown${servicesOpen ? " is-open" : ""}${
+              isServicesRoute ? " is-active" : ""
             }`}
-            ref={industryRef}
+            ref={servicesRef}
+            onPointerEnter={handleServicesPointerEnter}
+            onPointerLeave={handleServicesPointerLeave}
+            onBlur={handleServicesBlur}
           >
             <button
               type="button"
-              ref={industryTriggerRef}
+              ref={servicesTriggerRef}
               className="nav-dropdown-trigger"
-              aria-expanded={industryOpen}
-              aria-controls="industries-dropdown"
+              aria-expanded={servicesOpen}
+              aria-controls="services-dropdown"
               aria-haspopup="true"
-              onClick={() => setIndustryOpen((open) => !open)}
-              onKeyDown={handleIndustryTriggerKeyDown}
+              onClick={handleServicesToggle}
+              onKeyDown={handleServicesTriggerKeyDown}
             >
-              <span>Industry Services</span>
+              <span>{servicesMenu.trigger}</span>
               <FaChevronDown className="nav-dropdown-caret" aria-hidden="true" />
             </button>
 
-            <ul
-              id="industries-dropdown"
-              ref={industryMenuRef}
+            <div
+              id="services-dropdown"
+              ref={servicesMenuRef}
               className="nav-dropdown-menu"
-              onKeyDown={handleIndustryMenuKeyDown}
+              onKeyDown={handleServicesMenuKeyDown}
             >
-              {industryNavLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className={`nav-dropdown-link${
-                      location.pathname === link.to ? " is-current" : ""
-                    }`}
-                    aria-current={location.pathname === link.to ? "page" : undefined}
-                    onClick={() => setIndustryOpen(false)}
+              <div className="nav-dropdown-groups">
+                <div className="nav-dropdown-group">
+                  <p
+                    className="nav-dropdown-group-title"
+                    id="nav-marketing-group"
                   >
-                    <span className="nav-dropdown-link-label">{link.label}</span>
-                    {link.description && (
-                      <span className="nav-dropdown-link-desc">{link.description}</span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    {servicesMenu.marketingTitle}
+                  </p>
+                  <ul aria-labelledby="nav-marketing-group">
+                    {serviceNavLinks.map((link) => (
+                      <li key={link.to}>
+                        <Link
+                          to={link.to}
+                          className={linkClass(link.to, "nav-dropdown-link")}
+                          aria-current={
+                            location.pathname === link.to ? "page" : undefined
+                          }
+                          onClick={closeServices}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="nav-dropdown-group is-industry">
+                  <p className="nav-dropdown-group-title" id="nav-industry-group">
+                    {servicesMenu.industryTitle}
+                  </p>
+                  <ul aria-labelledby="nav-industry-group">
+                    {industryNavLinks.map((link) => (
+                      <li key={link.to}>
+                        <Link
+                          to={link.to}
+                          className={linkClass(link.to, "nav-dropdown-link")}
+                          aria-current={
+                            location.pathname === link.to ? "page" : undefined
+                          }
+                          onClick={closeServices}
+                        >
+                          <span className="nav-dropdown-link-label">
+                            {link.label}
+                          </span>
+                          {link.description && (
+                            <span className="nav-dropdown-link-desc">
+                              {link.description}
+                            </span>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="nav-dropdown-group-note">
+                    {servicesMenu.industryNote}
+                  </p>
+                </div>
+              </div>
+
+              <div className="nav-dropdown-foot">
+                <a
+                  href="/#services"
+                  className="nav-dropdown-foot-link"
+                  onClick={(e) => handleNavClick("services", e)}
+                >
+                  {servicesMenu.allServicesLabel}
+                </a>
+              </div>
+            </div>
           </li>
 
           <li>
@@ -364,47 +485,66 @@ function Navbar() {
           Projects
         </a>
 
-        <a
-          href="/#services"
-          onClick={(e) => handleNavClick("services", e)}
-        >
-          Services
-        </a>
-
         <div
-          className={`mobile-industries${
-            isIndustryRoute ? " is-active" : ""
+          className={`mobile-services${
+            isServicesRoute ? " is-active" : ""
           }`}
         >
           <button
             type="button"
-            className="mobile-industries-toggle"
-            aria-expanded={mobileIndustryOpen}
-            aria-controls="mobile-industries-menu"
-            onClick={() => setMobileIndustryOpen((open) => !open)}
+            className="mobile-services-toggle"
+            aria-expanded={mobileServicesOpen}
+            aria-controls="mobile-services-menu"
+            onClick={() => setMobileServicesOpen((open) => !open)}
           >
-            <span>Industry Services</span>
+            <span>{servicesMenu.trigger}</span>
             <FaChevronDown className="nav-dropdown-caret" aria-hidden="true" />
           </button>
 
           <div
-            id="mobile-industries-menu"
-            className="mobile-industries-submenu"
-            hidden={!mobileIndustryOpen}
+            id="mobile-services-menu"
+            className="mobile-services-submenu"
+            hidden={!mobileServicesOpen}
           >
+            <p className="mobile-services-group-title">
+              {servicesMenu.marketingTitle}
+            </p>
+
+            {serviceNavLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={closeMenu}
+                aria-current={location.pathname === link.to ? "page" : undefined}
+                className={linkClass(link.to, "mobile-services-link")}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <p className="mobile-services-group-title">
+              {servicesMenu.industryTitle}
+            </p>
+
             {industryNavLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={closeMenu}
                 aria-current={location.pathname === link.to ? "page" : undefined}
-                className={
-                  location.pathname === link.to ? "mobile-industries-link is-current" : "mobile-industries-link"
-                }
+                className={linkClass(link.to, "mobile-services-link")}
               >
                 {link.label}
               </Link>
             ))}
+
+            <a
+              href="/#services"
+              className="mobile-services-link"
+              onClick={(e) => handleNavClick("services", e)}
+            >
+              {servicesMenu.allServicesLabel}
+            </a>
           </div>
         </div>
 
