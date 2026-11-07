@@ -79,6 +79,10 @@ function Footer() {
           <a href="/#contact" onClick={(e) => handleNavClick("contact", e)}>
             Contact
           </a>
+
+          <Link to="/blog/" className="footer-blog-link">
+            Blog
+          </Link>
         </div>
 
         {/* Industry pages. Driven by the shared nav data, so a new industry

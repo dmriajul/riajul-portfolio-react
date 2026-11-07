@@ -151,7 +151,7 @@ body.light-theme .nav-scroll-progress {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -160,10 +160,10 @@ body.light-theme .nav-scroll-progress {
 /* Large laptops (1025px - 1240px): keep the full desktop nav, just tighten it */
 @media (max-width: 1240px) and (min-width: 1025px) {
   .nav-links {
-    gap: 16px;
+    gap: 13px;
   }
   .nav-links a {
-    font-size: 14px;
+    font-size: 13.5px;
   }
   .nav-actions {
     gap: 8px;
@@ -934,4 +934,35 @@ body.light-theme .nav-scroll-progress {
   .nav-links .nav-dropdown-link {
     font-size: 13px;
   }
+}
+
+
+/* ==========================================
+   BLOG NAV ITEM
+   Top-level destination, so it needs the same
+   current-page treatment the dropdown links get.
+========================================== */
+
+.nav-links .nav-blog-link.is-current {
+  color: #c9a84c;
+}
+
+.nav-links .nav-blog-link.is-current::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: #c9a84c;
+  transform: translateX(-50%);
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.mobile-menu .mobile-blog-link.is-current {
+  color: #c9a84c;
 }

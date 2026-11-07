@@ -35,6 +35,10 @@ function Navbar() {
     location.pathname.startsWith("/services") ||
     location.pathname.startsWith("/industries");
 
+  // The Blog has its own top-level destination rather than living inside the
+  // Services dropdown, so it stays discoverable without opening a menu.
+  const isBlogRoute = location.pathname.startsWith("/blog");
+
   useEffect(() => {
     let ticking = false;
     let rafId = null;
@@ -410,6 +414,16 @@ function Navbar() {
           </li>
 
           <li>
+            <Link
+              to="/blog/"
+              className={`nav-blog-link${isBlogRoute ? " is-current" : ""}`}
+              aria-current={isBlogRoute ? "page" : undefined}
+            >
+              Blog
+            </Link>
+          </li>
+
+          <li>
             <a href="/#contact" onClick={(e) => handleNavClick("contact", e)}>
               Contact
             </a>
@@ -589,6 +603,15 @@ function Navbar() {
         >
           Testimonials
         </a>
+
+        <Link
+          to="/blog/"
+          className={`mobile-blog-link${isBlogRoute ? " is-current" : ""}`}
+          aria-current={isBlogRoute ? "page" : undefined}
+          onClick={closeMenu}
+        >
+          Blog
+        </Link>
 
         <a
           href="/#contact"

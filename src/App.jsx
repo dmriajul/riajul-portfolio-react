@@ -4,6 +4,9 @@ import { ThemeProvider } from "./context/ThemeContext";
 import Home from "./pages/Home";
 import ServiceDetail from "./pages/ServiceDetail";
 import IndustryHvac from "./pages/IndustryHvac";
+import BlogIndex from "./pages/blog/BlogIndex";
+import BlogArticle from "./pages/blog/BlogArticle";
+import BlogNotFound from "./pages/blog/BlogNotFound";
 
 // Helper component to manage smooth scrolling on route and hash changes
 function ScrollManager() {
@@ -27,10 +30,17 @@ function ScrollManager() {
   return null;
 }
 
-function App() {
+/**
+ * Router-agnostic application tree.
+ *
+ * Exported separately so the prerender script can render exactly the same
+ * tree inside a MemoryRouter in Node. Keeping one tree means the static
+ * HTML and the browser result describe the same page.
+ */
+export function AppShell() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <>
         <ScrollManager />
         <Routes>
           {/* Main Home Page */}
@@ -45,10 +55,15 @@ function App() {
           {/* Industry Landing Pages */}
           <Route path="/industries/hvac" element={<IndustryHvac />} />
 
+          {/* Blog — index, articles, and a real not-found page for /blog/* */}
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
+          <Route path="/blog/*" element={<BlogNotFound />} />
+
           {/* Catch-all redirect to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
-      </BrowserRouter>
+      </>
 
       {/* Floating WhatsApp Button */}
       <a
@@ -72,4 +87,10 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
+  );
+}

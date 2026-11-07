@@ -33,6 +33,14 @@
       "destination": "/.well-known/$1"
     },
     {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/blog/404/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
