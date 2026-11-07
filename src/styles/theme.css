@@ -1657,6 +1657,183 @@ body.light-theme .service-cta-card h2 {
   font-weight: 800 !important;
 }
 
+/* =====================================================
+   INDUSTRY LANDING PAGES IN LIGHT MODE
+   Only the classes added for /industries/hvac are listed here;
+   reused service-detail classes are already handled above.
+===================================================== */
+
+[data-theme="light"] .industry-section-alt,
+body.light-theme .industry-section-alt {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .industry-hero-intro p,
+body.light-theme .industry-hero-intro p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .industry-tertiary,
+body.light-theme .industry-tertiary {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .industry-summary h2,
+[data-theme="light"] .industry-about h2,
+[data-theme="light"] .hvac-inquiry-copy h2,
+body.light-theme .industry-summary h2,
+body.light-theme .industry-about h2,
+body.light-theme .hvac-inquiry-copy h2 {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+}
+
+[data-theme="light"] .industry-summary p,
+[data-theme="light"] .industry-about p,
+[data-theme="light"] .hvac-inquiry-copy > p,
+body.light-theme .industry-summary p,
+body.light-theme .industry-about p,
+body.light-theme .hvac-inquiry-copy > p {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .industry-fit-card,
+[data-theme="light"] .industry-point,
+[data-theme="light"] .scope-card,
+[data-theme="light"] .metric-scope-card,
+[data-theme="light"] .hvac-inquiry-cta,
+body.light-theme .industry-fit-card,
+body.light-theme .industry-point,
+body.light-theme .scope-card,
+body.light-theme .metric-scope-card,
+body.light-theme .hvac-inquiry-cta {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme="light"] .industry-point,
+body.light-theme .industry-point {
+  border-left: 2px solid #0f766e !important;
+}
+
+[data-theme="light"] .scope-card.is-included,
+body.light-theme .scope-card.is-included {
+  border-top-color: #0f766e !important;
+}
+
+[data-theme="light"] .scope-card.is-needs,
+body.light-theme .scope-card.is-needs {
+  border-top-color: #c9a84c !important;
+}
+
+[data-theme="light"] .scope-card.is-unverifiable,
+body.light-theme .scope-card.is-unverifiable {
+  border-top-color: #94a3b8 !important;
+}
+
+[data-theme="light"] .industry-fit-card h3,
+[data-theme="light"] .industry-point h3,
+[data-theme="light"] .scope-card h3,
+[data-theme="light"] .metric-scope-card h3,
+body.light-theme .industry-fit-card h3,
+body.light-theme .industry-point h3,
+body.light-theme .scope-card h3,
+body.light-theme .metric-scope-card h3 {
+  color: #04110f !important;
+  -webkit-text-fill-color: #04110f !important;
+}
+
+[data-theme="light"] .industry-fit-card li,
+[data-theme="light"] .scope-card li,
+[data-theme="light"] .metric-scope-card li,
+body.light-theme .industry-fit-card li,
+body.light-theme .scope-card li,
+body.light-theme .metric-scope-card li {
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
+}
+
+[data-theme="light"] .industry-fit-card p,
+[data-theme="light"] .industry-point p,
+[data-theme="light"] .scope-card-note,
+[data-theme="light"] .metric-scope-card.is-limited p,
+[data-theme="light"] .hvac-inquiry-cta-label,
+[data-theme="light"] .hvac-form-note,
+[data-theme="light"] .hvac-inquiry-points li,
+body.light-theme .industry-fit-card p,
+body.light-theme .industry-point p,
+body.light-theme .scope-card-note,
+body.light-theme .metric-scope-card.is-limited p,
+body.light-theme .hvac-inquiry-cta-label,
+body.light-theme .hvac-form-note,
+body.light-theme .hvac-inquiry-points li {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+[data-theme="light"] .industry-callout,
+body.light-theme .industry-callout {
+  background: rgba(15, 118, 110, 0.06) !important;
+  border-color: rgba(15, 118, 110, 0.25) !important;
+  border-left-color: #0f766e !important;
+}
+
+[data-theme="light"] .industry-callout p,
+body.light-theme .industry-callout p {
+  color: #044e45 !important;
+  -webkit-text-fill-color: #044e45 !important;
+}
+
+[data-theme="light"] .scope-card li::before,
+body.light-theme .scope-card li::before {
+  background: #0f766e !important;
+}
+
+[data-theme="light"] .industry-meta,
+body.light-theme .industry-meta {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .hvac-field label,
+body.light-theme .hvac-field label {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .hvac-form select option,
+body.light-theme .hvac-form select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hvac-form-status,
+body.light-theme .hvac-form-status {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .hvac-form-status.is-success,
+body.light-theme .hvac-form-status.is-success {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: #16a34a !important;
+  color: #15803d !important;
+}
+
+[data-theme="light"] .hvac-form-status.is-error,
+body.light-theme .hvac-form-status.is-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border-color: #dc2626 !important;
+  color: #b91c1c !important;
+}
+
+[data-theme="light"] .industry-related-heading,
+body.light-theme .industry-related-heading {
+  color: #64748b !important;
+}
+
 /* Floating Metric Badges in Light Mode */
 [data-theme="light"] .floating-metric-badge,
 body.light-theme .floating-metric-badge,

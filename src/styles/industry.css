@@ -1,0 +1,640 @@
+/* =====================================================
+   INDUSTRY LANDING PAGES
+   Used by /industries/hvac. Builds on serviceDetail.css
+   so the emerald + gold identity, typography and spacing
+   match the existing service pages without redefining them.
+===================================================== */
+
+/* ---------- Hero ---------- */
+
+.industry-hero-intro {
+  max-width: 780px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.industry-hero-intro p {
+  font-size: 17px;
+  color: #d1d5db;
+  line-height: 1.8;
+  margin: 0 0 14px;
+}
+
+.industry-hero-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.industry-tertiary {
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0 auto 42px;
+}
+
+.industry-tertiary a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #25d366;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.industry-tertiary a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Generic section shell ---------- */
+
+.industry-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.industry-section-alt {
+  background: #081c19;
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.industry-summary {
+  max-width: 840px;
+  margin: 0 auto 48px;
+}
+
+.industry-summary h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 14px 0 20px;
+}
+
+.industry-summary p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #d1d5db;
+  margin: 0 0 16px;
+}
+
+.industry-summary p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Audience fit ---------- */
+
+.industry-fit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.industry-fit-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.industry-fit-card h3 {
+  font-size: 19px;
+  color: #e3c772;
+  margin: 0 0 18px;
+}
+
+.industry-fit-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.industry-fit-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #d1d5db;
+}
+
+.industry-fit-card li svg {
+  color: #14b8a6;
+  flex-shrink: 0;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.industry-fit-card.is-muted {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.industry-fit-card.is-muted h3 {
+  color: #d1d5db;
+}
+
+.industry-fit-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ---------- Point grids (Google Ads / Meta / CRO) ---------- */
+
+.industry-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.industry-point {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-left: 2px solid rgba(201, 168, 76, 0.45);
+  border-radius: 16px;
+  padding: 26px 28px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-point:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  border-left-color: #c9a84c;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.industry-point h3 {
+  font-size: 17px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.industry-point p {
+  font-size: 15px;
+  line-height: 1.72;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ---------- Included / needs tool / unverifiable ---------- */
+
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.scope-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-width: 3px;
+  border-radius: 18px;
+  padding: 28px 26px;
+  backdrop-filter: blur(8px);
+}
+
+.scope-card.is-included {
+  border-top-color: #14b8a6;
+}
+
+.scope-card.is-needs {
+  border-top-color: #c9a84c;
+}
+
+.scope-card.is-unverifiable {
+  border-top-color: #64748b;
+}
+
+.scope-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.scope-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.is-included .scope-card-icon {
+  background: rgba(20, 184, 166, 0.15);
+  color: #14b8a6;
+}
+
+.is-needs .scope-card-icon {
+  background: rgba(201, 168, 76, 0.15);
+  color: #e3c772;
+}
+
+.is-unverifiable .scope-card-icon {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+.scope-card h3 {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 0;
+}
+
+.scope-card-note {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.scope-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scope-card li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #d1d5db;
+}
+
+.scope-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.6);
+}
+
+.industry-callout {
+  background: rgba(201, 168, 76, 0.07);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-left: 3px solid #c9a84c;
+  border-radius: 14px;
+  padding: 22px 26px;
+}
+
+.industry-callout p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #e3c772;
+}
+
+/* ---------- Reporting scope ---------- */
+
+.metric-scope-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.metric-scope-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.metric-scope-card h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.metric-scope-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.metric-scope-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #d1d5db;
+}
+
+.metric-scope-card li svg {
+  color: #14b8a6;
+  flex-shrink: 0;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.metric-scope-card.is-limited {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(201, 168, 76, 0.5);
+}
+
+.metric-scope-card.is-limited h3 {
+  color: #e3c772;
+}
+
+.metric-scope-card.is-limited p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ---------- Experience block ---------- */
+
+.industry-about {
+  max-width: 860px;
+}
+
+.industry-about h2 {
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 14px 0 20px;
+}
+
+.industry-about p {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #d1d5db;
+  margin: 0 0 16px;
+}
+
+.industry-about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 20px;
+}
+
+.industry-meta {
+  font-size: 13px !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+}
+
+/* ---------- Inquiry form section ---------- */
+
+.hvac-inquiry-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.hvac-inquiry-copy h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  color: #ffffff;
+  margin: 14px 0 16px;
+  line-height: 1.28;
+}
+
+.hvac-inquiry-copy > p {
+  font-size: 16px;
+  line-height: 1.78;
+  color: #d1d5db;
+  margin: 0 0 24px;
+}
+
+.hvac-inquiry-cta {
+  background: rgba(201, 168, 76, 0.07);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+
+.hvac-inquiry-cta-label {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin: 0 0 16px;
+}
+
+.hvac-inquiry-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hvac-inquiry-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #9ca3af;
+}
+
+.hvac-inquiry-points svg {
+  color: #14b8a6;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* ---------- HVAC form ---------- */
+
+.hvac-form {
+  padding: 30px;
+}
+
+.hvac-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.hvac-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.hvac-field label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #9ca3af;
+}
+
+.hvac-form select {
+  width: 100%;
+  padding: 14px 18px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  color: var(--input-text);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #c9a84c 50%),
+    linear-gradient(135deg, #c9a84c 50%, transparent 50%);
+  background-position: calc(100% - 20px) center, calc(100% - 14px) center;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.hvac-form select:focus {
+  border-color: #c9a84c;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.hvac-form select option {
+  background: #081c19;
+  color: #ffffff;
+}
+
+.hvac-form-note {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 0;
+  text-align: center;
+}
+
+.hvac-form-status {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+}
+
+/* Empty live region: present for assistive tech, visually invisible until it has text */
+.hvac-form-status:empty {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.hvac-form-status.is-success {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.hvac-form-status.is-error {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* ---------- Related services strip ---------- */
+
+.industry-related-heading {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* ---------- Final CTA tweaks ---------- */
+
+.industry-whatsapp {
+  color: #25d366 !important;
+  border-color: rgba(37, 211, 102, 0.4) !important;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hvac-inquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .industry-fit-grid,
+  .metric-scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-section {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .industry-section {
+    padding: 56px 0;
+  }
+
+  .industry-summary {
+    margin-bottom: 34px;
+  }
+
+  .industry-fit-card,
+  .metric-scope-card {
+    padding: 26px 22px;
+  }
+
+  .industry-point {
+    padding: 22px 22px;
+  }
+
+  .industry-points {
+    grid-template-columns: 1fr;
+  }
+
+  .hvac-form {
+    padding: 24px 20px;
+  }
+
+  .hvac-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-callout {
+    padding: 20px 20px;
+  }
+}
