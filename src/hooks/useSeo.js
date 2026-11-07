@@ -4,8 +4,10 @@ import { useEffect } from "react";
  * Per-route SEO metadata.
  *
  * ⚠️ CLIENT-SIDE ONLY. These tags are written to <head> in a useEffect after
- * React mounts. That is enough for rendered crawlers (Googlebot) and for the
- * tab title, but it is NOT enough for:
+ * React mounts. Crawlers that execute JavaScript are EXPECTED to pick them up,
+ * but that expectation has NOT been verified for this site (no Googlebot fetch
+ * or Search Console URL Inspection has been run). It is definitely NOT enough
+ * for:
  *   - social/link scrapers that do not execute JavaScript (LinkedIn, X, Slack,
  *     Facebook, WhatsApp) — they read whatever index.html shipped;
  *   - the initial HTML response, which always carries the homepage tags.
@@ -14,8 +16,10 @@ import { useEffect } from "react";
  * its own <head>). That is deliberately out of scope for this PR. See
  * docs/seo-metadata.md for the limitation and the migration note.
  *
- * NOTE: tags are still applied client-side. This is a correctness fix for
- * rendered crawlers and share previews, not a substitute for prerendering.
+ * Summary: this fixes the rendered document (tab title, DevTools <head>) and is
+ * expected — not proven — to help crawlers that execute JavaScript. It does
+ * nothing for scrapers that do not, and it is not a substitute for per-route
+ * HTML.
  */
 
 export const SITE_URL = "https://portfolio.riajultech.com";
