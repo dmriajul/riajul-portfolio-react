@@ -405,6 +405,88 @@ body.light-theme .mobile-menu a:hover {
   color: #0f766e !important;
 }
 
+/* Industry Services dropdown in light mode */
+[data-theme="light"] .nav-dropdown-trigger,
+body.light-theme .nav-dropdown-trigger {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger:hover,
+[data-theme="light"] .nav-dropdown.is-open .nav-dropdown-trigger,
+[data-theme="light"] .nav-dropdown.is-active .nav-dropdown-trigger,
+body.light-theme .nav-dropdown-trigger:hover,
+body.light-theme .nav-dropdown.is-open .nav-dropdown-trigger,
+body.light-theme .nav-dropdown.is-active .nav-dropdown-trigger {
+  color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger::after,
+body.light-theme .nav-dropdown-trigger::after {
+  background: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-menu,
+body.light-theme .nav-dropdown-menu {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link,
+body.light-theme .nav-links .nav-dropdown-link {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link:hover,
+[data-theme="light"] .nav-links .nav-dropdown-link:focus-visible,
+body.light-theme .nav-links .nav-dropdown-link:hover,
+body.light-theme .nav-links .nav-dropdown-link:focus-visible {
+  background: rgba(15, 118, 110, 0.08) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-links .nav-dropdown-link.is-current,
+body.light-theme .nav-links .nav-dropdown-link.is-current {
+  background: rgba(15, 118, 110, 0.1) !important;
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-link-desc,
+body.light-theme .nav-dropdown-link-desc {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+[data-theme="light"] .mobile-industries-toggle,
+body.light-theme .mobile-industries-toggle {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .mobile-industries-toggle:hover,
+[data-theme="light"] .mobile-industries.is-active .mobile-industries-toggle,
+body.light-theme .mobile-industries-toggle:hover,
+body.light-theme .mobile-industries.is-active .mobile-industries-toggle {
+  color: #0f766e !important;
+}
+
+[data-theme="light"] .mobile-menu .mobile-industries-link,
+body.light-theme .mobile-menu .mobile-industries-link {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .nav-dropdown-trigger:focus-visible,
+[data-theme="light"] .nav-links .nav-dropdown-link:focus-visible,
+[data-theme="light"] .mobile-industries-toggle:focus-visible,
+body.light-theme .nav-dropdown-trigger:focus-visible,
+body.light-theme .nav-links .nav-dropdown-link:focus-visible,
+body.light-theme .mobile-industries-toggle:focus-visible {
+  outline-color: #0f766e !important;
+}
+
 [data-theme="light"] .mobile-book-btn,
 body.light-theme .mobile-book-btn {
   border-color: #0f766e !important;
