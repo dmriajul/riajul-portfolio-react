@@ -36,6 +36,27 @@
   padding-bottom: 20px;
 }
 
+/* The trail and the "Back to Blog" pill share one flex row with
+   `justify-content: space-between`. As soon as the current-page crumb is long,
+   the row runs out of width: the crumb is squeezed into a narrow column beside
+   "Home / Blog", indented from the page edge and wrapped over two-to-four
+   lines, with the pill pushed underneath. Stacking the two and letting the
+   trail wrap keeps every item flush with the article H1.
+   Blog-scoped on purpose: service pages keep their own breadcrumb layout. */
+@media (max-width: 1080px) {
+  .blog-breadcrumb-bar .breadcrumb-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .blog-breadcrumb-bar .breadcrumb-links {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    line-height: 1.45;
+  }
+}
+
 .blog-page {
   padding-bottom: 0;
 }
@@ -998,6 +1019,27 @@ body.light-theme .blog-breadcrumb-bar {
   border-radius: var(--radius);
   background: var(--card-bg);
   -webkit-overflow-scrolling: touch;
+  /* Where a platform paints a scrollbar, paint a visible one: several tables
+     hold three columns at a 440px minimum width, so they do scroll sideways. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) transparent;
+}
+
+/* Below ~480px every article table is wider than the column that holds it.
+   A one-line hint above the table says so before the reader meets the cut-off
+   edge — no gradient, nothing to be wrong once the table is scrolled. The
+   scroll container keeps its tabindex, role="group" and
+   aria-label="Scrollable table", so the same information reaches assistive
+   technology without a canned hint. */
+@media (max-width: 480px) {
+  .article-table-figure::before {
+    content: "Swipe sideways to see every column →";
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--text-muted);
+  }
 }
 
 .article-table-scroll:focus-visible {

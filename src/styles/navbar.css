@@ -392,7 +392,7 @@ body.light-theme .nav-scroll-progress {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
   max-width: 280px;
   padding: 12px 24px;
@@ -408,6 +408,17 @@ body.light-theme .nav-scroll-progress {
 .mobile-book-btn:hover {
   background: #c9a84c;
   color: #081c19;
+}
+
+/* `.mobile-menu a` is one class plus one element and therefore outranks the
+   class alone, so it forced `display: block` and the calendar icon and label
+   fell back to inline — no gap, the glyph touching the "B". Restore the flex
+   row (and the 8px gap) at the higher specificity. */
+.mobile-menu .mobile-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 /* ==========================================
