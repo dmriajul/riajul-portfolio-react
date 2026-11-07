@@ -1358,6 +1358,38 @@ body.light-theme .footer-links a:hover {
   -webkit-text-fill-color: #0f766e !important;
 }
 
+[data-theme="light"] .footer-industry-title,
+body.light-theme .footer-industry-title {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
+[data-theme="light"] .footer-industry-link,
+body.light-theme .footer-industry-link {
+  color: #1e293b !important;
+  -webkit-text-fill-color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .footer-industry-link:hover,
+[data-theme="light"] .footer-industry-link:focus-visible,
+body.light-theme .footer-industry-link:hover,
+body.light-theme .footer-industry-link:focus-visible {
+  color: #0f766e !important;
+  -webkit-text-fill-color: #0f766e !important;
+}
+
+[data-theme="light"] .footer-industry-link:focus-visible,
+body.light-theme .footer-industry-link:focus-visible {
+  outline-color: #0f766e !important;
+}
+
+[data-theme="light"] .footer-industry-link.is-current,
+body.light-theme .footer-industry-link.is-current {
+  color: #9f8134 !important;
+  -webkit-text-fill-color: #9f8134 !important;
+}
+
 [data-theme="light"] .social-icons a,
 body.light-theme .social-icons a {
   background: #ffffff !important;

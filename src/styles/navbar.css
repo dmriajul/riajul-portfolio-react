@@ -744,31 +744,39 @@ body.light-theme .nav-scroll-progress {
 }
 
 /* ==========================================
-   SERVICES GROUP (MOBILE DRAWER)
+   SERVICES ACCORDION (MOBILE DRAWER)
+   A dedicated tap-to-expand group, not a scaled
+   down desktop panel: 44px touch targets, two
+   labelled sections, and left-aligned rows that
+   never scroll sideways.
 ========================================== */
 
 .mobile-services {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   width: 100%;
+  max-width: 100%;
 }
 
 .mobile-services-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  padding: 4px 0;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 8px;
   background: none;
   border: none;
+  border-radius: 10px;
   font-family: inherit;
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease, background 0.2s ease;
 }
 
 .mobile-services-toggle:hover,
@@ -776,18 +784,26 @@ body.light-theme .nav-scroll-progress {
   color: #c9a84c;
 }
 
-.mobile-services.is-active .nav-dropdown-caret {
+.mobile-services-toggle .nav-dropdown-caret {
+  font-size: 11px;
+  opacity: 0.8;
+  transition: transform 0.22s ease;
+}
+
+.mobile-services-toggle[aria-expanded="true"] .nav-dropdown-caret {
+  transform: rotate(180deg);
   color: #c9a84c;
 }
 
 .mobile-services-submenu {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  align-items: stretch;
+  gap: 10px;
   width: 100%;
   max-width: 100%;
-  overflow-wrap: break-word;
+  padding: 2px 0 6px;
+  overflow-wrap: anywhere;
 }
 
 /* display:flex above would otherwise beat the hidden attribute */
@@ -795,8 +811,30 @@ body.light-theme .nav-scroll-progress {
   display: none;
 }
 
+.mobile-services-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  min-width: 0;
+}
+
+.mobile-services-group + .mobile-services-group {
+  padding-top: 10px;
+  border-top: 1px solid rgba(201, 168, 76, 0.16);
+}
+
+.mobile-services-group ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .mobile-services-group-title {
-  margin: 10px 0 2px;
+  margin: 0 0 4px;
+  padding-left: 14px;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -804,20 +842,64 @@ body.light-theme .nav-scroll-progress {
   color: #c9a84c;
 }
 
+/* 44px rows: comfortable tap targets, one line per link where possible */
 .mobile-menu .mobile-services-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 10px;
   font-size: 15.5px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
   color: #e3c772;
-  padding: 3px 0;
-  max-width: 100%;
-  text-align: center;
+  text-align: left;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.mobile-menu .mobile-services-link:hover,
+.mobile-menu .mobile-services-link:focus-visible {
+  background: rgba(201, 168, 76, 0.08);
 }
 
 .mobile-menu .mobile-services-link.is-current {
   color: #c9a84c;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.mobile-menu .mobile-services-link.is-foot {
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 2px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.mobile-menu .mobile-services-link.is-foot:hover,
+.mobile-menu .mobile-services-link.is-foot:focus-visible {
+  color: #c9a84c;
+  background: none;
+}
+
+@media (max-width: 480px) {
+  .mobile-menu .mobile-services-link {
+    font-size: 15px;
+  }
+
+  .mobile-services-toggle {
+    font-size: 17px;
+  }
+
+  .mobile-services-group-title {
+    font-size: 10px;
+  }
 }
 
 /* ---------- Tight desktop widths ---------- */

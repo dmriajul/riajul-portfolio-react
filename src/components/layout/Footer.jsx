@@ -4,9 +4,10 @@ import {
   FaXTwitter,
   FaGlobe,
 } from "react-icons/fa6";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import personalData from "../../data/personalData";
+import { industryNavLinks, servicesMenu } from "../../data/navMenuData";
 
 function Footer() {
   const location = useLocation();
@@ -78,6 +79,27 @@ function Footer() {
           <a href="/#contact" onClick={(e) => handleNavClick("contact", e)}>
             Contact
           </a>
+        </div>
+
+        {/* Industry pages. Driven by the shared nav data, so a new industry
+            landing page appears here without touching this component. */}
+        <div className="footer-industry">
+          <h4 className="footer-industry-title">{servicesMenu.industryTitle}</h4>
+          <ul className="footer-industry-list">
+            {industryNavLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className={`footer-industry-link${
+                    location.pathname === link.to ? " is-current" : ""
+                  }`}
+                  aria-current={location.pathname === link.to ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Social / Connect */}

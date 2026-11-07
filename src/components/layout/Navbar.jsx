@@ -506,41 +506,69 @@ function Navbar() {
             className="mobile-services-submenu"
             hidden={!mobileServicesOpen}
           >
-            <p className="mobile-services-group-title">
-              {servicesMenu.marketingTitle}
-            </p>
-
-            {serviceNavLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={closeMenu}
-                aria-current={location.pathname === link.to ? "page" : undefined}
-                className={linkClass(link.to, "mobile-services-link")}
+            <div
+              className="mobile-services-group"
+              role="group"
+              aria-labelledby="mobile-services-marketing"
+            >
+              <p
+                className="mobile-services-group-title"
+                id="mobile-services-marketing"
               >
-                {link.label}
-              </Link>
-            ))}
+                {servicesMenu.marketingTitle}
+              </p>
 
-            <p className="mobile-services-group-title">
-              {servicesMenu.industryTitle}
-            </p>
+              <ul>
+                {serviceNavLinks.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      onClick={closeMenu}
+                      aria-current={
+                        location.pathname === link.to ? "page" : undefined
+                      }
+                      className={linkClass(link.to, "mobile-services-link")}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            {industryNavLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={closeMenu}
-                aria-current={location.pathname === link.to ? "page" : undefined}
-                className={linkClass(link.to, "mobile-services-link")}
+            <div
+              className="mobile-services-group is-industry"
+              role="group"
+              aria-labelledby="mobile-services-industries"
+            >
+              <p
+                className="mobile-services-group-title"
+                id="mobile-services-industries"
               >
-                {link.label}
-              </Link>
-            ))}
+                {servicesMenu.industryTitle}
+              </p>
+
+              <ul>
+                {industryNavLinks.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      onClick={closeMenu}
+                      aria-current={
+                        location.pathname === link.to ? "page" : undefined
+                      }
+                      className={linkClass(link.to, "mobile-services-link")}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <a
               href="/#services"
-              className="mobile-services-link"
+              className="mobile-services-link is-foot"
               onClick={(e) => handleNavClick("services", e)}
             >
               {servicesMenu.allServicesLabel}
