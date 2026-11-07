@@ -356,9 +356,10 @@ img {
     padding-inline: 18px;
   }
 
+  /* No inset here: the navbar takes .container's width and gutter, so it
+     stays on the same left edge as the page content at this width. */
   .navbar .container {
     height: 70px;
-    padding: 0 16px;
   }
 
   .logo img {

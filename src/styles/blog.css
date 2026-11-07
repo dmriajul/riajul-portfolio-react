@@ -8,12 +8,36 @@
 
 /* ---------- Shared shell ---------- */
 
+/* The built cascade resolves .container from global.css: min(92%, 1240px),
+   and min(94%, 1240px) below 769px. On a 320px phone that is a 9.6px gutter,
+   which reads as content almost touching the screen edge. This floor keeps
+   the blog pages at 16px from each side without changing any other section,
+   and only overrides where the percentage would be tighter than 16px. */
+@media (max-width: 768px) {
+  .blog-page .container {
+    width: min(94%, calc(100% - 32px), 1240px);
+  }
+}
+
 .blog-main {
   padding-bottom: 0;
 }
 
 .blog-breadcrumb-bar {
   background: rgba(8, 28, 25, 0.6);
+}
+
+/* body already offsets the fixed navbar (86px), so the service-page 110px
+   top padding stacked into a ~196px band of empty bar above the crumbs on
+   both blog pages. 32px / 20px keeps the bar close to the navbar and gives
+   the hero below it a consistent 20px + hero-padding gap. */
+.blog-page .blog-breadcrumb-bar {
+  padding-top: 32px;
+  padding-bottom: 20px;
+}
+
+.blog-page {
+  padding-bottom: 0;
 }
 
 [data-theme="light"] .blog-breadcrumb-bar,
@@ -30,7 +54,7 @@ body.light-theme .blog-breadcrumb-bar {
 /* ---------- Index hero ---------- */
 
 .blog-index-hero {
-  padding: 56px 0 12px;
+  padding: 48px 0 12px;
   text-align: center;
 }
 
@@ -43,6 +67,7 @@ body.light-theme .blog-breadcrumb-bar {
   line-height: 1.15;
   color: var(--text-heading);
   margin: 18px 0 18px;
+  text-wrap: balance;
 }
 
 .blog-index-intro {
@@ -68,7 +93,7 @@ body.light-theme .blog-breadcrumb-bar {
 /* ---------- Filter bar ---------- */
 
 .blog-index-body {
-  padding: 40px 0 80px;
+  padding: 32px 0 64px;
 }
 
 .blog-filter {
@@ -422,7 +447,7 @@ body.light-theme .blog-breadcrumb-bar {
 /* ---------- Article header ---------- */
 
 .blog-article-hero {
-  padding: 44px 0 10px;
+  padding: 40px 0 10px;
 }
 
 .blog-article-title {
@@ -430,6 +455,7 @@ body.light-theme .blog-breadcrumb-bar {
   line-height: 1.18;
   color: var(--text-heading);
   margin: 14px 0 16px;
+  text-wrap: balance;
 }
 
 .blog-article-excerpt {
@@ -513,7 +539,13 @@ body.light-theme .blog-breadcrumb-bar {
 /* Breadcrumb trail, title block and article body share one column, so every
    left edge lines up, and the column itself is capped: at the full container
    width the body ran to roughly 110 characters a line on a desktop monitor.
-   The sidebar sits inside the same column. */
+   The sidebar sits inside the same column.
+
+   Only the max-width is overridden here; width, centring and gutter come from
+   .container, so the article column starts on exactly the same left edge as
+   the breadcrumb, the navbar and the footer at every breakpoint. The column
+   used to carry its own `width: min(92%, ...)`, which drifted 1.6-3px from
+   the page edge on phones and duplicated the responsive logic. */
 .blog-article-page {
   --article-shell: 1040px;
 }
@@ -522,9 +554,7 @@ body.light-theme .blog-breadcrumb-bar {
 .blog-article-page .blog-draft-banner-row,
 .blog-article-page .blog-article-hero > .container,
 .blog-article-page .article-layout {
-  width: min(92%, var(--article-shell));
   max-width: var(--article-shell);
-  margin-inline: auto;
 }
 
 /* ---------- Article layout ---------- */
@@ -534,7 +564,7 @@ body.light-theme .blog-breadcrumb-bar {
   grid-template-columns: minmax(0, 1fr) 296px;
   gap: 52px;
   align-items: start;
-  padding: 44px 0 84px;
+  padding: 36px 0 64px;
 }
 
 .article-main {
@@ -638,6 +668,7 @@ body.light-theme .blog-breadcrumb-bar {
   font-size: 16.5px;
   line-height: 1.85;
   color: var(--text-body);
+  overflow-wrap: break-word;
 }
 
 .article-body > *:first-child {
@@ -650,6 +681,7 @@ body.light-theme .blog-breadcrumb-bar {
   color: var(--text-heading);
   margin: 44px 0 16px;
   scroll-margin-top: 110px;
+  text-wrap: balance;
 }
 
 .article-h3 {
@@ -658,6 +690,7 @@ body.light-theme .blog-breadcrumb-bar {
   color: var(--text-subheading);
   margin: 32px 0 12px;
   scroll-margin-top: 110px;
+  text-wrap: pretty;
 }
 
 /* A section that opens directly with a subsection should not carry the full
@@ -668,6 +701,7 @@ body.light-theme .blog-breadcrumb-bar {
 
 .article-p {
   margin: 0 0 20px;
+  text-wrap: pretty;
 }
 
 .article-body a {
@@ -685,7 +719,7 @@ body.light-theme .blog-breadcrumb-bar {
    browsers then disagree about the ::marker box, which is how bulleted lists
    end up flat. Spacing between items is set on the items instead. */
 .article-list {
-  margin: 0 0 22px;
+  margin: 0 0 20px;
   padding-left: 22px;
 }
 
@@ -707,7 +741,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .article-quote {
-  margin: 28px 0;
+  margin: 32px 0;
   padding: 18px 24px;
   border-left: 3px solid var(--primary);
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -731,7 +765,7 @@ body.light-theme .blog-breadcrumb-bar {
 .article-callout {
   display: flex;
   gap: 14px;
-  margin: 26px 0;
+  margin: 32px 0;
   padding: 18px 20px;
   border-radius: var(--radius);
   border: 1px solid var(--card-border);
@@ -774,7 +808,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .article-figure {
-  margin: 32px 0 34px;
+  margin: 32px 0;
 }
 
 .article-figure img {
@@ -933,7 +967,7 @@ body.light-theme .blog-breadcrumb-bar {
   }
 
   .article-figure {
-    margin: 26px 0 28px;
+    margin: 26px 0;
   }
 
   .article-figure figcaption {
@@ -953,11 +987,13 @@ body.light-theme .blog-breadcrumb-bar {
 /* ---------- Data tables ---------- */
 
 .article-table-figure {
-  margin: 30px 0;
+  margin: 32px 0;
 }
 
 .article-table-scroll {
+  max-width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   background: var(--card-bg);
@@ -1047,7 +1083,7 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 .article-cta {
-  margin: 40px 0;
+  margin: 36px 0;
   padding: 26px 28px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
@@ -1074,7 +1110,7 @@ body.light-theme .blog-breadcrumb-bar {
 .article-author-box {
   display: flex;
   gap: 16px;
-  margin-top: 52px;
+  margin-top: 48px;
   padding: 24px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
@@ -1123,7 +1159,7 @@ body.light-theme .blog-breadcrumb-bar {
 /* ---------- Related ---------- */
 
 .blog-related {
-  padding: 10px 0 84px;
+  padding: 10px 0 64px;
 }
 
 /* ---------- Not found ---------- */
@@ -1221,6 +1257,7 @@ body.light-theme .blog-breadcrumb-bar {
   .article-toc-item,
   .article-toc-item.is-nested {
     padding-left: 0;
+    padding-block: 5px;
     font-size: 13px;
   }
 }
@@ -1236,7 +1273,7 @@ body.light-theme .blog-breadcrumb-bar {
   }
 
   .blog-article-hero {
-    padding-top: 34px;
+    padding-top: 32px;
   }
 
   .blog-article-meta {
@@ -1258,6 +1295,25 @@ body.light-theme .blog-breadcrumb-bar {
   .blog-chip {
     font-size: 13px;
     padding: 7px 13px;
+    /* WCAG 2.5.5: a filter chip is a real tap target on a phone. */
+    min-height: 44px;
+  }
+
+  .article-figure,
+  .article-table-figure,
+  .article-quote,
+  .article-callout {
+    margin: 26px 0;
+  }
+
+  .article-cta {
+    margin: 30px 0;
+    padding: 22px 20px;
+  }
+
+  .blog-index-aside {
+    margin-top: 40px;
+    padding: 22px 20px;
   }
 
   .blog-index-intro,
@@ -1283,6 +1339,17 @@ body.light-theme .blog-breadcrumb-bar {
 }
 
 @media (max-width: 420px) {
+  /* Both headings were pinned to their clamp() minimum here, which is a
+     desktop size: 34px for the index H1 and 30px for the article H1 wrapped
+     into four and five lines on a 320px screen. */
+  .blog-index-title {
+    font-size: 30px;
+  }
+
+  .blog-article-title {
+    font-size: 27px;
+  }
+
   .blog-card-body {
     padding: 18px 18px 20px;
   }
