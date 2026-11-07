@@ -37,6 +37,10 @@
       "destination": "/blog/index.html"
     },
     {
+      "source": "/blog/hvac-google-ads-guide",
+      "destination": "/blog/hvac-google-ads-guide/index.html"
+    },
+    {
       "source": "/blog/(.*)",
       "destination": "/blog/404/index.html"
     },
