@@ -288,7 +288,7 @@ export const draftPosts = [
       { type: "h3", faq: true, text: "Do I need Local Services Ads as well as search ads?" },
       { type: "p", text: "Not necessarily, and the two do different jobs. Local Services, now moving into Google Ads as Performance Max campaigns with pay-per-lead goals, targets people searching by service category in your service area and charges per valid lead. Search campaigns let you choose the services, terms and landing pages you appear for, and charge per click. Plenty of contractors eventually run both, but the sensible order is to get the phone answered reliably and the tracking clean first. Budget them separately, because a cost per lead and a cost per click cannot be compared, and blending the two hides which one is working." },
       { type: "h2", text: "About this guide" },
-      { type: "p", text: "Written by Khandokar Riajul Islam. **No HVAC client case study is published, and none is implied here.** All benchmark figures are third-party, dated and attributed, and the operational guidance is general paid-media practice applied to residential HVAC rather than a report of campaign results." },
+      { type: "p", text: "Written by Khandokar Riajul Islam, a performance marketing specialist with more than five years of experience in paid search, paid social and analytics. **No HVAC client case study is published, and none is implied here.** All benchmark figures are third-party, dated and attributed, and the operational guidance is general paid-media practice applied to residential HVAC rather than a report of campaign results." },
     ],
   },
 ];
