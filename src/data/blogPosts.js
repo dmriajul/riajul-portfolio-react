@@ -50,7 +50,7 @@
  * BODY BLOCKS (no raw HTML is accepted anywhere):
  *   { type: "h2", text: "..." }
  *   { type: "h3", text: "..." }
- *   { type: "p",  text: "..." }                        supports [link](/path) and **bold**
+ *   { type: "p",  text: "..." }                        supports [link](/path), **bold**, `code`
  *   { type: "ul", items: ["...", "..."] }
  *   { type: "ol", items: ["...", "..."] }
  *   { type: "blockquote", text: "...", cite: "..." }

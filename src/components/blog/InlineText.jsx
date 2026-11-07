@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
  *   [label](/internal-path)   → client-side <Link>
  *   [label](https://...)      → external <a> with rel="noopener noreferrer"
  *   **bold**                  → <strong>
+ *   `code`                    → <code> (used for campaign names)
  */
 // Source string, not a shared RegExp object: `exec` mutates `lastIndex`, and
 // a module-level regex would carry that state between renders.
-const INLINE_SOURCE = "\\[([^\\]]+)\\]\\(([^)\\s]+)\\)|\\*\\*([^*]+)\\*\\*";
+const INLINE_SOURCE =
+  "\\[([^\\]]+)\\]\\(([^)\\s]+)\\)|\\*\\*([^*]+)\\*\\*|`([^`]+)`";
 
 function isInternal(href) {
   return href.startsWith("/") || href.startsWith("#");
@@ -32,7 +34,7 @@ export default function InlineText({ text, linkClassName }) {
       nodes.push(source.slice(cursor, match.index));
     }
 
-    const [, label, href, bold] = match;
+    const [, label, href, bold, code] = match;
 
     if (href !== undefined) {
       if (isInternal(href)) {
@@ -54,8 +56,10 @@ export default function InlineText({ text, linkClassName }) {
           </a>
         );
       }
-    } else {
+    } else if (bold !== undefined) {
       nodes.push(<strong key={`b${key++}`}>{bold}</strong>);
+    } else {
+      nodes.push(<code key={`c${key++}`}>{code}</code>);
     }
 
     cursor = pattern.lastIndex;

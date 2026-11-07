@@ -5,7 +5,9 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  // dist-ssr and .preview-ssr are build outputs: linting minified bundles
+  // reported 9 permanent errors that had nothing to do with source.
+  globalIgnores(['dist', 'dist-ssr', '.preview-ssr']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
