@@ -638,3 +638,1408 @@
     padding: 20px 20px;
   }
 }
+
+/* =====================================================
+   EVIDENCE-LED ADDITIONS
+   Sections and diagrams added so the page answers the
+   questions a contractor actually asks: what is broken,
+   what do I get, what is the evidence, why you, what
+   happens next. Everything below reuses the forest green,
+   gold and teal tokens from variables.css.
+===================================================== */
+
+/* ---------- Shared figure shell ---------- */
+
+.hvac-figure {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.hvac-figure figcaption {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #8b9a97;
+  text-align: center;
+}
+
+/* ---------- Hero system flow ---------- */
+
+.hvac-hero-flow {
+  margin-top: 48px;
+  padding: 26px 24px 20px;
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.12), rgba(201, 168, 76, 0.06));
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 22px;
+}
+
+.hvac-flow-rail {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hvac-flow-node {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 14px 16px;
+  background: rgba(4, 17, 15, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 14px;
+}
+
+.hvac-flow-index {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #c9a84c;
+  padding-top: 2px;
+}
+
+.hvac-flow-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hvac-flow-copy strong {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.hvac-flow-copy span {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #9ca3af;
+}
+
+.hvac-flow-arrow {
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  width: 16px;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.5);
+  transform: translateY(-50%);
+}
+
+.hvac-flow-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid rgba(201, 168, 76, 0.7);
+  border-right: 1px solid rgba(201, 168, 76, 0.7);
+  transform: rotate(45deg);
+}
+
+/* ---------- Challenges ---------- */
+
+.hvac-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hvac-challenge-card {
+  position: relative;
+  padding: 30px 26px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hvac-challenge-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 168, 76, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hvac-challenge-index {
+  display: inline-block;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+  margin-bottom: 14px;
+}
+
+.hvac-challenge-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.hvac-challenge-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin: 0 0 16px;
+}
+
+.hvac-challenge-signal {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #9ca3af;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(201, 168, 76, 0.2);
+  margin: 0;
+}
+
+.hvac-challenge-signal span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5eead4;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.hvac-fit-intro {
+  max-width: 760px;
+  margin: 40px auto 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #d1d5db;
+  text-align: center;
+}
+
+.hvac-fit-grid {
+  max-width: 1120px;
+  margin-top: 24px;
+}
+
+/* ---------- Approach: problem to response ---------- */
+
+.hvac-approach-map {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hvac-approach-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) 48px minmax(0, 1.6fr);
+  align-items: center;
+  gap: 4px;
+  padding: 24px 26px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 18px;
+}
+
+.hvac-approach-side h3 {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 6px 0 0;
+}
+
+.hvac-approach-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.hvac-approach-arrow {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.65));
+  margin: 0 10px;
+}
+
+.hvac-approach-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid rgba(201, 168, 76, 0.8);
+  border-right: 1px solid rgba(201, 168, 76, 0.8);
+  transform: rotate(45deg);
+}
+
+.hvac-approach-side.is-response {
+  padding-left: 22px;
+  border-left: 2px solid rgba(15, 118, 110, 0.5);
+}
+
+.hvac-approach-side.is-response p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin: 8px 0 0;
+}
+
+.hvac-approach-stage {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5eead4;
+  background: rgba(15, 118, 110, 0.18);
+  border: 1px solid rgba(15, 118, 110, 0.35);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 700;
+}
+
+/* ---------- Principles ---------- */
+
+.hvac-principles {
+  max-width: 1080px;
+  margin: 56px auto 0;
+}
+
+.hvac-principles > h3 {
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+
+.hvac-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.hvac-principle {
+  padding: 24px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 16px;
+}
+
+.hvac-principle-index {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+}
+
+.hvac-principle h4 {
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 10px 0 8px;
+}
+
+.hvac-principle p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ---------- Channel workflow ---------- */
+
+.hvac-workflow {
+  margin-top: 56px;
+}
+
+.hvac-workflow-lanes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.hvac-workflow-lane {
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 20px;
+  border-top: 3px solid rgba(201, 168, 76, 0.6);
+}
+
+.hvac-workflow-lane.is-meta {
+  border-top-color: rgba(15, 118, 110, 0.75);
+}
+
+.hvac-workflow-lane-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hvac-workflow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c9a84c;
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+  flex: none;
+}
+
+.hvac-workflow-lane.is-meta .hvac-workflow-dot {
+  background: #14b8a6;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.15);
+}
+
+.hvac-workflow-lane-head h3 {
+  font-size: 17px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hvac-workflow-note {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 8px 0 18px;
+}
+
+.hvac-workflow-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  counter-reset: step;
+}
+
+.hvac-workflow-steps li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  background: rgba(4, 17, 15, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 12px;
+}
+
+.hvac-workflow-step-num {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #04110f;
+  background: rgba(201, 168, 76, 0.85);
+}
+
+.hvac-workflow-lane.is-meta .hvac-workflow-step-num {
+  background: rgba(20, 184, 166, 0.85);
+}
+
+.hvac-workflow-steps strong {
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.hvac-workflow-steps span {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #9ca3af;
+}
+
+.hvac-workflow-converge {
+  margin-top: 20px;
+  padding: 22px 24px;
+  border: 1px dashed rgba(201, 168, 76, 0.3);
+  border-radius: 20px;
+  background: rgba(15, 118, 110, 0.05);
+}
+
+.hvac-workflow-converge-label {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.hvac-workflow-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hvac-workflow-outcome {
+  position: relative;
+  padding: 14px 16px;
+  background: rgba(4, 17, 15, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 14px;
+}
+
+.hvac-workflow-outcome strong {
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.hvac-workflow-outcome span {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #9ca3af;
+}
+
+.hvac-workflow-outcome-arrow {
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid rgba(201, 168, 76, 0.7);
+  border-right: 1px solid rgba(201, 168, 76, 0.7);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ---------- Playbooks ---------- */
+
+.hvac-playbook {
+  max-width: 1120px;
+  margin: 0 auto 28px;
+  padding: 30px 30px 26px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 22px;
+}
+
+.hvac-playbook:last-of-type {
+  margin-bottom: 36px;
+}
+
+.hvac-playbook-head {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.hvac-playbook-index {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #c9a84c;
+  padding-top: 6px;
+}
+
+.hvac-playbook-head h3 {
+  font-size: 21px;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.hvac-playbook-head p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.hvac-playbook-points {
+  gap: 14px;
+}
+
+.hvac-playbook-points .industry-point {
+  padding: 18px 20px;
+}
+
+.hvac-playbook-points .industry-point h4 {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.hvac-playbook-points .industry-point p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ---------- Tracking architecture ---------- */
+
+.hvac-arch {
+  margin-bottom: 40px;
+}
+
+.hvac-arch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.hvac-arch-col {
+  position: relative;
+  padding: 24px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 18px;
+}
+
+.hvac-arch-col h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #c9a84c;
+  margin: 0 0 16px;
+}
+
+.hvac-arch-col ul,
+.hvac-arch-outside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hvac-arch-col li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.hvac-arch-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: rgba(201, 168, 76, 0.7);
+}
+
+.hvac-arch-connector {
+  position: absolute;
+  right: -19px;
+  top: 42px;
+  width: 12px;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.55);
+}
+
+.hvac-arch-connector::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid rgba(201, 168, 76, 0.8);
+  border-right: 1px solid rgba(201, 168, 76, 0.8);
+  transform: rotate(45deg);
+}
+
+.hvac-arch-outside {
+  margin-top: 20px;
+  padding: 22px 24px;
+  border: 1px dashed rgba(201, 168, 76, 0.25);
+  border-radius: 18px;
+  background: rgba(4, 17, 15, 0.4);
+}
+
+.hvac-arch-outside h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin: 0 0 14px;
+}
+
+.hvac-arch-outside ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.hvac-arch-outside li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9ca3af;
+  padding: 7px 14px;
+  border: 1px dashed rgba(156, 163, 175, 0.35);
+  border-radius: 999px;
+}
+
+/* ---------- Investment ---------- */
+
+.hvac-investment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hvac-investment-item {
+  padding: 26px 26px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-left: 3px solid rgba(201, 168, 76, 0.55);
+  border-radius: 16px;
+}
+
+.hvac-investment-num {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+}
+
+.hvac-investment-item h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 10px 0 10px;
+}
+
+.hvac-investment-item p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.hvac-exclusions {
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding: 30px;
+  background: rgba(4, 17, 15, 0.5);
+  border: 1px solid rgba(156, 163, 175, 0.2);
+  border-radius: 22px;
+}
+
+.hvac-exclusions > h3,
+.hvac-factors > h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+
+.hvac-exclusions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hvac-exclusion h4 {
+  font-size: 15px;
+  color: #e3c772;
+  margin: 0 0 8px;
+}
+
+.hvac-exclusion p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.hvac-guarantee {
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: 26px 28px;
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 20px;
+}
+
+.hvac-guarantee h3 {
+  font-size: 18px;
+  color: #fca5a5;
+  margin: 0 0 12px;
+}
+
+.hvac-guarantee p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.hvac-factors {
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: 26px 28px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 20px;
+}
+
+.hvac-factors ul {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+}
+
+.hvac-factors li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.hvac-factors li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(20, 184, 166, 0.8);
+}
+
+.hvac-pricing-note {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(201, 168, 76, 0.18);
+}
+
+/* ---------- Proof / evidence ---------- */
+
+.hvac-proof-label {
+  max-width: 1120px;
+  margin: 0 auto 20px;
+}
+
+.hvac-proof-label span {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #e3c772;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 999px;
+  padding: 7px 16px;
+}
+
+.hvac-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hvac-proof-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 26px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 20px;
+}
+
+.hvac-proof-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.hvac-proof-head h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hvac-proof-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.hvac-proof-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 18px;
+}
+
+.hvac-proof-figures div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 14px 16px;
+  background: rgba(4, 17, 15, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 14px;
+}
+
+.hvac-proof-figures dd {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e3c772;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hvac-proof-figures dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.hvac-proof-note {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin: 0 0 18px;
+}
+
+.hvac-proof-link {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5eead4;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(94, 234, 212, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hvac-proof-link:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hvac-proof-link:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.hvac-limits {
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: 26px 28px;
+  background: rgba(4, 17, 15, 0.45);
+  border: 1px solid rgba(156, 163, 175, 0.2);
+  border-radius: 20px;
+}
+
+.hvac-limits h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.hvac-limits ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hvac-limits li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+.hvac-limits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 1px;
+  background: #9ca3af;
+}
+
+/* ---------- Why work with me ---------- */
+
+.hvac-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hvac-why-card {
+  position: relative;
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 18px;
+}
+
+.hvac-why-check {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(15, 118, 110, 0.22);
+  border: 1px solid rgba(20, 184, 166, 0.45);
+  color: #5eead4;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.hvac-why-card h3 {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.hvac-why-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.hvac-credentials {
+  max-width: 1120px;
+  margin: 28px auto 0;
+  padding: 24px 26px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 18px;
+}
+
+.hvac-credentials-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hvac-credentials ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.hvac-credentials li {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e3c772;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.hvac-credentials p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.hvac-positioning {
+  max-width: 1120px;
+  margin: 24px auto 0;
+}
+
+.hvac-about-heading {
+  font-size: 24px;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.industry-about.hvac-about-block,
+#about.industry-about {
+  margin-top: 40px;
+}
+
+/* ---------- Optimisation cycle ---------- */
+
+.hvac-cycle {
+  margin-top: 48px;
+}
+
+.hvac-cycle-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hvac-cycle-step {
+  position: relative;
+  padding: 20px 20px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 16px;
+}
+
+.hvac-cycle-cadence {
+  display: inline-block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #5eead4;
+  background: rgba(15, 118, 110, 0.18);
+  border: 1px solid rgba(15, 118, 110, 0.35);
+  border-radius: 999px;
+  padding: 3px 9px;
+  margin-bottom: 14px;
+}
+
+.hvac-cycle-index {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(201, 168, 76, 0.22);
+}
+
+.hvac-cycle-step h3 {
+  font-size: 15.5px;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.hvac-cycle-step p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.hvac-cycle-center {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 14px 20px;
+  border: 1px dashed rgba(201, 168, 76, 0.28);
+  border-radius: 999px;
+  text-align: center;
+}
+
+.hvac-cycle-center strong {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c9a84c;
+}
+
+.hvac-cycle-center span {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* ---------- Report preview ---------- */
+
+.hvac-report {
+  margin-top: 40px;
+}
+
+.hvac-report-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 26px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 20px;
+}
+
+.hvac-report-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.14);
+}
+
+.hvac-report-kicker {
+  display: block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.hvac-report-head strong {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.hvac-report-badge {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #04110f;
+  background: #c9a84c;
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.hvac-report-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.hvac-report-meta dt {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.hvac-report-meta dd {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 4px 0 0;
+}
+
+.hvac-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.hvac-report-table th,
+.hvac-report-table td {
+  padding: 10px 8px;
+  text-align: right;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  color: #d1d5db;
+  font-weight: 400;
+}
+
+.hvac-report-table thead th {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  border-bottom-color: rgba(201, 168, 76, 0.25);
+}
+
+.hvac-report-table th:first-child,
+.hvac-report-table td:first-child {
+  text-align: left;
+}
+
+.hvac-report-table tbody th {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hvac-report-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 46px;
+  margin-bottom: 16px;
+}
+
+.hvac-report-bars span {
+  display: block;
+  height: 100%;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.45), rgba(201, 168, 76, 0.08));
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: none;
+}
+
+.hvac-report-foot {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(201, 168, 76, 0.16);
+}
+
+/* ---------- Section rhythm ---------- */
+
+#challenges,
+#approach,
+#playbooks,
+#investment,
+#proof,
+#why-me {
+  scroll-margin-top: 96px;
+}
+
+/* ---------- Responsive additions ---------- */
+
+@media (max-width: 1024px) {
+  .hvac-why-grid,
+  .hvac-principles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hvac-cycle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hvac-arch-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hvac-arch-connector {
+    display: none;
+  }
+
+  .hvac-approach-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hvac-approach-arrow {
+    display: none;
+  }
+
+  .hvac-approach-side.is-response {
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hvac-workflow-lanes,
+  .hvac-workflow-outcomes,
+  .hvac-investment-grid,
+  .hvac-proof-grid,
+  .hvac-exclusions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hvac-workflow-outcome-arrow {
+    display: none;
+  }
+
+  .hvac-flow-arrow {
+    display: none;
+  }
+
+  .hvac-factors ul {
+    grid-template-columns: 1fr;
+  }
+
+  .hvac-playbook {
+    padding: 24px 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hvac-hero-flow {
+    padding: 18px 16px 14px;
+    margin-top: 34px;
+  }
+
+  .hvac-flow-node {
+    flex: 1 1 100%;
+  }
+
+  .hvac-challenge-card,
+  .hvac-investment-item,
+  .hvac-why-card,
+  .hvac-principle {
+    padding: 22px 20px;
+  }
+
+  .hvac-workflow-converge,
+  .hvac-exclusions,
+  .hvac-guarantee,
+  .hvac-factors,
+  .hvac-limits,
+  .hvac-credentials {
+    padding: 22px 20px;
+  }
+
+  .hvac-report-card {
+    padding: 20px 16px 16px;
+  }
+
+  .hvac-report-table {
+    font-size: 11.5px;
+  }
+
+  .hvac-report-table th,
+  .hvac-report-table td {
+    padding: 8px 4px;
+  }
+
+  .hvac-report-meta {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hvac-playbook-head {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hvac-proof-figures dd {
+    font-size: 22px;
+  }
+
+  .hvac-cycle-grid {
+    grid-template-columns: 1fr;
+  }
+}

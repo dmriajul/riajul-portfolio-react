@@ -4,17 +4,30 @@ import { motion } from "framer-motion";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import HvacInquiryForm from "../components/hvac/HvacInquiryForm";
+import {
+  SystemFlow,
+  ChannelWorkflow,
+  TrackingArchitecture,
+  OptimizationCycle,
+  ReportPreview,
+} from "../components/hvac/HvacVisuals";
 import personalData from "../data/personalData";
 import useSeo, { SITE_URL } from "../hooks/useSeo";
 import {
   hvacMeta,
   hvacHero,
+  hvacHeroFlow,
   hvacSummary,
+  hvacChallenges,
+  hvacApproach,
   hvacCapabilities,
   hvacGoogleAds,
   hvacMetaAds,
   hvacTracking,
   hvacCro,
+  hvacInvestment,
+  hvacProof,
+  hvacWhyMe,
   hvacProcess,
   hvacDeliverables,
   hvacMetrics,
@@ -101,6 +114,32 @@ const scopeIcon = {
   unverifiable: <FaQuestionCircle />,
 };
 
+/* One playbook block per channel: heading, intro, and the existing points. */
+function Playbook({ index, heading, intro, points }) {
+  return (
+    <motion.div className="hvac-playbook" {...fadeUp}>
+      <div className="hvac-playbook-head">
+        <span className="hvac-playbook-index" aria-hidden="true">
+          {index}
+        </span>
+        <div>
+          <h3>{heading}</h3>
+          <p>{intro}</p>
+        </div>
+      </div>
+
+      <div className="industry-points hvac-playbook-points">
+        {points.map((point) => (
+          <div className="industry-point" key={point.title}>
+            <h4>{point.title}</h4>
+            <p>{point.body}</p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 function IndustryHvac() {
   const [openFaq, setOpenFaq] = useState(0);
 
@@ -154,7 +193,7 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            HERO
+            1. HERO AND VALUE PROPOSITION
         ========================================== */}
         <section className="service-hero-section">
           <div className="container">
@@ -208,25 +247,41 @@ function IndustryHvac() {
                   </div>
                 ))}
               </div>
+
+              <SystemFlow flow={hvacHeroFlow} />
             </motion.div>
           </div>
         </section>
 
         {/* ==========================================
-            WHAT THIS SERVICE COVERS
+            2. THE PROBLEM: WHAT USUALLY BREAKS
         ========================================== */}
-        <section className="industry-section">
+        <section className="industry-section industry-section-alt" id="challenges">
           <div className="container">
             <motion.div className="industry-summary" {...fadeUp}>
-              <span className="section-tag">Scope</span>
-              <h2>{hvacSummary.heading}</h2>
-
-              {hvacSummary.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              <span className="section-tag">The problem</span>
+              <h2>{hvacChallenges.heading}</h2>
+              <p>{hvacChallenges.intro}</p>
             </motion.div>
 
-            <div className="industry-fit-grid">
+            <div className="hvac-challenge-grid">
+              {hvacChallenges.items.map((item, index) => (
+                <motion.article className="hvac-challenge-card" key={item.title} {...fadeUp}>
+                  <span className="hvac-challenge-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                  <p className="hvac-challenge-signal">
+                    <span>Usually looks like</span> {item.signal}
+                  </p>
+                </motion.article>
+              ))}
+            </div>
+
+            <p className="hvac-fit-intro">{hvacSummary.fitIntro}</p>
+
+            <div className="industry-fit-grid hvac-fit-grid">
               <motion.div className="industry-fit-card" {...fadeUp}>
                 <h3>{hvacSummary.audienceHeading}</h3>
                 <ul>
@@ -247,16 +302,65 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            CAPABILITIES
+            3. THE APPROACH: PROBLEM TO RESPONSE
+        ========================================== */}
+        <section className="industry-section" id="approach">
+          <div className="container">
+            <motion.div className="industry-summary" {...fadeUp}>
+              <span className="section-tag">The approach</span>
+              <h2>{hvacApproach.heading}</h2>
+              <p>{hvacApproach.intro}</p>
+            </motion.div>
+
+            <div className="hvac-approach-map">
+              {hvacApproach.rows.map((row) => (
+                <motion.div className="hvac-approach-row" key={row.problem} {...fadeUp}>
+                  <div className="hvac-approach-side is-problem">
+                    <span className="hvac-approach-label">The problem</span>
+                    <h3>{row.problem}</h3>
+                  </div>
+
+                  <span className="hvac-approach-arrow" aria-hidden="true" />
+
+                  <div className="hvac-approach-side is-response">
+                    <span className="hvac-approach-stage">{row.stage}</span>
+                    <p>{row.response}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div className="hvac-principles" {...fadeUp}>
+              <h3>{hvacApproach.principleHeading}</h3>
+              <div className="hvac-principles-grid">
+                {hvacApproach.principles.map((principle, index) => (
+                  <div className="hvac-principle" key={principle.title}>
+                    <span className="hvac-principle-index" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h4>{principle.title}</h4>
+                    <p>{principle.body}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <ChannelWorkflow />
+          </div>
+        </section>
+
+        {/* ==========================================
+            4. SERVICES AND CAPABILITIES
         ========================================== */}
         <section className="capabilities-section" id="capabilities">
           <div className="container">
             <motion.div className="section-header" {...fadeUp}>
-              <span className="section-tag">Services Provided</span>
+              <span className="section-tag">Services provided</span>
               <h2>What I Build and Manage</h2>
               <p>
-                Six workstreams that make up the service. Tracking and landing pages are part of
-                the scope, not an afterthought.
+                Six workstreams that make up the service. Tracking and landing pages are part of the
+                scope, not an afterthought. The sections below show how each channel is run, what the
+                investment covers, and what it does not.
               </p>
             </motion.div>
 
@@ -280,59 +384,63 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            GOOGLE ADS
+            5. CHANNEL PLAYBOOKS
         ========================================== */}
-        <section className="industry-section industry-section-alt">
+        <section className="industry-section industry-section-alt" id="playbooks">
           <div className="container">
             <motion.div className="industry-summary" {...fadeUp}>
-              <span className="section-tag">Google Ads</span>
-              <h2>{hvacGoogleAds.heading}</h2>
-              <p>{hvacGoogleAds.intro}</p>
+              <span className="section-tag">Channel playbooks</span>
+              <h2>How each channel is actually run</h2>
+              <p>
+                The detail behind the six workstreams, channel by channel. Everything here is inside
+                the service; the investment section sets out what sits outside it.
+              </p>
             </motion.div>
 
-            <div className="industry-points">
-              {hvacGoogleAds.points.map((point) => (
-                <motion.div className="industry-point" key={point.title} {...fadeUp}>
-                  <h3>{point.title}</h3>
-                  <p>{point.body}</p>
-                </motion.div>
-              ))}
-            </div>
+            <Playbook
+              index="01"
+              heading={hvacGoogleAds.heading}
+              intro={hvacGoogleAds.intro}
+              points={hvacGoogleAds.points}
+            />
+
+            <Playbook
+              index="02"
+              heading={hvacMetaAds.heading}
+              intro={hvacMetaAds.intro}
+              points={hvacMetaAds.points}
+            />
+
+            <Playbook
+              index="03"
+              heading={hvacCro.heading}
+              intro={hvacCro.intro}
+              points={hvacCro.points}
+            />
+
+            <motion.div className="industry-callout" {...fadeUp}>
+              <p>
+                What this service covers, in one line: paid search and paid social built for
+                residential HVAC, with the tracking and landing pages that make the results
+                accountable. Everything in the three playbooks above is inside the service. The
+                investment section below shows what is not.
+              </p>
+            </motion.div>
           </div>
         </section>
 
         {/* ==========================================
-            META ADS
+            6. TRACKING AND MEASUREMENT
         ========================================== */}
-        <section className="industry-section">
+        <section className="industry-section" id="tracking">
           <div className="container">
             <motion.div className="industry-summary" {...fadeUp}>
-              <span className="section-tag">Meta Ads</span>
-              <h2>{hvacMetaAds.heading}</h2>
-              <p>{hvacMetaAds.intro}</p>
-            </motion.div>
-
-            <div className="industry-points">
-              {hvacMetaAds.points.map((point) => (
-                <motion.div className="industry-point" key={point.title} {...fadeUp}>
-                  <h3>{point.title}</h3>
-                  <p>{point.body}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ==========================================
-            TRACKING / MEASUREMENT SCOPE
-        ========================================== */}
-        <section className="industry-section industry-section-alt" id="tracking">
-          <div className="container">
-            <motion.div className="industry-summary" {...fadeUp}>
-              <span className="section-tag">Tracking &amp; Measurement</span>
+              <span className="section-tag">Tracking &amp; measurement</span>
               <h2>{hvacTracking.heading}</h2>
               <p>{hvacTracking.intro}</p>
             </motion.div>
+
+            <TrackingArchitecture />
 
             <div className="scope-grid">
               {hvacTracking.columns.map((column) => (
@@ -362,35 +470,178 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            LANDING PAGES / CRO
+            7. WHAT THE INVESTMENT COVERS
         ========================================== */}
-        <section className="industry-section">
+        <section className="industry-section industry-section-alt" id="investment">
           <div className="container">
             <motion.div className="industry-summary" {...fadeUp}>
-              <span className="section-tag">Landing Pages &amp; CRO</span>
-              <h2>{hvacCro.heading}</h2>
-              <p>{hvacCro.intro}</p>
+              <span className="section-tag">Investment</span>
+              <h2>{hvacInvestment.heading}</h2>
+              <p>{hvacInvestment.intro}</p>
             </motion.div>
 
-            <div className="industry-points">
-              {hvacCro.points.map((point) => (
-                <motion.div className="industry-point" key={point.title} {...fadeUp}>
-                  <h3>{point.title}</h3>
-                  <p>{point.body}</p>
+            <div className="hvac-investment-grid">
+              {hvacInvestment.includes.map((item, index) => (
+                <motion.div className="hvac-investment-item" key={item.title} {...fadeUp}>
+                  <span className="hvac-investment-num" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
                 </motion.div>
               ))}
             </div>
+
+            <motion.div className="hvac-exclusions" {...fadeUp}>
+              <h3>{hvacInvestment.notIncludedHeading}</h3>
+              <div className="hvac-exclusions-grid">
+                {hvacInvestment.notIncluded.map((item) => (
+                  <div className="hvac-exclusion" key={item.title}>
+                    <h4>{item.title}</h4>
+                    <p>{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div className="hvac-guarantee" {...fadeUp}>
+              <h3>{hvacInvestment.guaranteeHeading}</h3>
+              <p>{hvacInvestment.guarantee}</p>
+            </motion.div>
+
+            <motion.div className="hvac-factors" {...fadeUp}>
+              <h3>{hvacInvestment.factorsHeading}</h3>
+              <ul>
+                {hvacInvestment.factors.map((factor) => (
+                  <li key={factor}>{factor}</li>
+                ))}
+              </ul>
+              <p className="hvac-pricing-note">{hvacInvestment.pricingNote}</p>
+            </motion.div>
           </div>
         </section>
 
         {/* ==========================================
-            PROCESS
+            8. DOCUMENTED EXPERIENCE AND PROOF
+        ========================================== */}
+        <section className="industry-section" id="proof">
+          <div className="container">
+            <motion.div className="industry-summary" {...fadeUp}>
+              <span className="section-tag">Documented experience</span>
+              <h2>{hvacProof.heading}</h2>
+              <p>{hvacProof.intro}</p>
+            </motion.div>
+
+            <div className="hvac-proof-label">
+              <span>{hvacProof.label}</span>
+            </div>
+
+            <div className="hvac-proof-grid">
+              {hvacProof.studies.map((study) => (
+                <motion.article className="hvac-proof-card" key={study.client} {...fadeUp}>
+                  <div className="hvac-proof-head">
+                    <h3>{study.client}</h3>
+                    <span className="hvac-proof-category">{study.category}</span>
+                  </div>
+
+                  <dl className="hvac-proof-figures">
+                    {study.figures.map((figure) => (
+                      <div key={figure.label}>
+                        <dt>{figure.label}</dt>
+                        <dd>{figure.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <p className="hvac-proof-note">{study.note}</p>
+
+                  <Link to={study.to} className="hvac-proof-link">
+                    {study.linkLabel}
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div className="industry-callout" {...fadeUp}>
+              <p>{hvacProof.disclaimer}</p>
+            </motion.div>
+
+            <motion.div className="hvac-limits" {...fadeUp}>
+              <h3>{hvacProof.limitsHeading}</h3>
+              <ul>
+                {hvacProof.limits.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            9. WHY WORK WITH ME
+        ========================================== */}
+        <section className="industry-section industry-section-alt" id="why-me">
+          <div className="container">
+            <motion.div className="industry-summary" {...fadeUp}>
+              <span className="section-tag">Why me</span>
+              <h2>{hvacWhyMe.heading}</h2>
+              <p>{hvacWhyMe.intro}</p>
+            </motion.div>
+
+            <div className="hvac-why-grid">
+              {hvacWhyMe.reasons.map((reason) => (
+                <motion.article className="hvac-why-card" key={reason.title} {...fadeUp}>
+                  <span className="hvac-why-check" aria-hidden="true">
+                    <FaCheck />
+                  </span>
+                  <h3>{reason.title}</h3>
+                  <p>{reason.body}</p>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div className="hvac-credentials" {...fadeUp}>
+              <span className="hvac-credentials-label">Certifications</span>
+              <ul>
+                {hvacWhyMe.credentials.map((credential) => (
+                  <li key={credential}>{credential}</li>
+                ))}
+              </ul>
+              <p>{hvacWhyMe.credentialsNote}</p>
+            </motion.div>
+
+            <motion.div className="industry-callout hvac-positioning" {...fadeUp}>
+              <p>{hvacWhyMe.positioning}</p>
+            </motion.div>
+
+            <motion.div className="industry-about" id="about" {...fadeUp}>
+              <h3 className="hvac-about-heading">{hvacAbout.headingWho}</h3>
+
+              {hvacAbout.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+
+              <div className="industry-about-links">
+                {hvacAbout.links.map((link) => (
+                  <Link to={link.to} key={link.to} className="other-service-pill">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <p className="industry-meta">Last updated: {hvacMeta.lastUpdated}</p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            10. PROCESS AND DELIVERABLES
         ========================================== */}
         <section className="process-section" id="process">
           <div className="container">
             <motion.div className="section-header" {...fadeUp}>
               <span className="section-tag">Process</span>
-              <h2>How the Work Runs</h2>
+              <h2>What Happens After You Get In Touch</h2>
               <p>
                 Four stages, in this order. Measurement comes before spend, which is why the first
                 two weeks are usually quiet on the reporting side.
@@ -406,6 +657,8 @@ function IndustryHvac() {
                 </motion.div>
               ))}
             </div>
+
+            <OptimizationCycle />
           </div>
         </section>
 
@@ -440,7 +693,7 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            HOW PERFORMANCE IS MEASURED
+            REPORTING: HOW PERFORMANCE IS MEASURED
         ========================================== */}
         <section className="industry-section industry-section-alt" id="measurement">
           <div className="container">
@@ -467,86 +720,13 @@ function IndustryHvac() {
                 <p>{hvacMetrics.notMeasurable}</p>
               </motion.div>
             </div>
+
+            <ReportPreview />
           </div>
         </section>
 
         {/* ==========================================
-            WHO YOU WOULD WORK WITH
-        ========================================== */}
-        <section className="industry-section" id="about">
-          <div className="container">
-            <motion.div className="industry-about" {...fadeUp}>
-              <span className="section-tag">Experience</span>
-              <h2>{hvacAbout.headingWho}</h2>
-
-              {hvacAbout.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-
-              <div className="industry-about-links">
-                {hvacAbout.links.map((link) => (
-                  <Link to={link.to} key={link.to} className="other-service-pill">
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <p className="industry-meta">Last updated: {hvacMeta.lastUpdated}</p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ==========================================
-            HVAC INQUIRY FORM
-        ========================================== */}
-        <section className="industry-section industry-section-alt" id="hvac-inquiry">
-          <div className="container">
-            <div className="hvac-inquiry-layout">
-              <motion.div className="hvac-inquiry-copy" {...fadeUp}>
-                <span className="section-tag">Secondary Option</span>
-                <h2>Send an HVAC Inquiry</h2>
-                <p>
-                  Use this form if you would rather get a written reply first. Tell me the service
-                  area and what you sell, and I will reply with how I would approach the account.
-                </p>
-
-                <div className="hvac-inquiry-cta">
-                  <p className="hvac-inquiry-cta-label">
-                    Booking a call is faster. It is also the best way to see whether this is a fit
-                    before either of us spends time on proposals.
-                  </p>
-                  <a
-                    href={personalData.calendly}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-primary"
-                  >
-                    <FaCalendarAlt /> Book a 30-Min Call
-                  </a>
-                </div>
-
-                <ul className="hvac-inquiry-points">
-                  <li>
-                    <FaCheck /> Replies within one business day
-                  </li>
-                  <li>
-                    <FaCheck /> No sales sequence, no newsletter
-                  </li>
-                  <li>
-                    <FaCheck /> Calendly shows open times in your timezone
-                  </li>
-                </ul>
-              </motion.div>
-
-              <motion.div className="hvac-inquiry-form-wrap" {...fadeUp}>
-                <HvacInquiryForm />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ==========================================
-            FAQ
+            FAQ AND LIMITATIONS
         ========================================== */}
         <section className="faq-section" id="faq">
           <div className="container">
@@ -618,7 +798,56 @@ function IndustryHvac() {
         </section>
 
         {/* ==========================================
-            FINAL CTA
+            SECONDARY CTA: HVAC INQUIRY FORM
+        ========================================== */}
+        <section className="industry-section industry-section-alt" id="hvac-inquiry">
+          <div className="container">
+            <div className="hvac-inquiry-layout">
+              <motion.div className="hvac-inquiry-copy" {...fadeUp}>
+                <span className="section-tag">Secondary option</span>
+                <h2>Send an HVAC Inquiry</h2>
+                <p>
+                  Use this form if you would rather get a written reply first. Tell me the service
+                  area and what you sell, and I will reply with how I would approach the account.
+                </p>
+
+                <div className="hvac-inquiry-cta">
+                  <p className="hvac-inquiry-cta-label">
+                    Booking a call is faster. It is also the best way to see whether this is a fit
+                    before either of us spends time on proposals.
+                  </p>
+                  <a
+                    href={personalData.calendly}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary"
+                  >
+                    <FaCalendarAlt /> Book a 30-Min Call
+                  </a>
+                </div>
+
+                <ul className="hvac-inquiry-points">
+                  <li>
+                    <FaCheck /> Replies within one business day
+                  </li>
+                  <li>
+                    <FaCheck /> No sales sequence, no newsletter
+                  </li>
+                  <li>
+                    <FaCheck /> Calendly shows open times in your timezone
+                  </li>
+                </ul>
+              </motion.div>
+
+              <motion.div className="hvac-inquiry-form-wrap" {...fadeUp}>
+                <HvacInquiryForm />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            PRIMARY CTA
         ========================================== */}
         <section className="service-cta-section">
           <div className="container">

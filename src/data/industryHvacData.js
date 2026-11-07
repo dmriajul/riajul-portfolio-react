@@ -48,6 +48,8 @@ export const hvacSummary = {
     "Teams where the phone still matters most, and where slow replies cost booked work.",
     "Owners who want cost per call and cost per lead by campaign, not just impressions.",
   ],
+  fitIntro:
+    "If two or more of those sound familiar, the rest of this page is written for you.",
   notForHeading: "Who this is not a fit for",
   notFor:
     "Anyone looking for a guaranteed number of leads or booked jobs. Demand, seasonality, pricing, and how fast your team answers the phone all sit outside a media buyer's control.",
@@ -323,6 +325,14 @@ export const hvacFaqs = [
     a: "It depends on your market, your service mix, and how many jobs you can handle. HVAC search competition is high in most US metros, and a budget that only buys a few clicks a day will not produce enough data to optimize. We size the budget together after looking at demand and competition in your service area.",
   },
   {
+    q: "What is included in the management fee, and what is billed separately?",
+    a: "The fee covers the review, the campaign strategy, Google Ads and Meta Ads management, tracking work within the agreed scope, landing page recommendations, weekly optimisation, and the monthly report. Advertising spend goes directly to Google and Meta from your own billing. Call tracking, CRM or dispatch software, hosting, and any other paid tool stay in your name and on your bill.",
+  },
+  {
+    q: "How is the fee set, and is there a package price?",
+    a: "There is no package price listed here. The fee depends on how many accounts are involved, the campaign volume, and whether tracking has to be built from scratch or repaired. It is agreed after the review and before any work starts, in writing, so there is no moving target later.",
+  },
+  {
     q: "Do you need access to my accounts?",
     a: "Yes. I need admin access to Google Ads, GA4, Google Tag Manager, and Meta Business Manager, or a person who can grant it. Without access I cannot verify tracking, and campaigns run on numbers nobody can check.",
   },
@@ -356,15 +366,312 @@ export const hvacRelatedLinks = [
   { label: "All services", to: "/#services" },
 ];
 
+/* ------------------------------------------------------------------
+   Buyer questions, in page order.
+   Each block below answers one question and nothing else, so the page
+   does not repeat the same argument in three sections.
+------------------------------------------------------------------ */
+
+export const hvacHeroFlow = {
+  caption: "What the system looks like end to end. Diagram only, not account data.",
+  steps: [
+    { label: "Search and social demand", detail: "Google search intent, Meta audiences" },
+    { label: "Campaigns by service and intent", detail: "Repair, replacement, maintenance" },
+    { label: "Landing page with one action", detail: "Call or short form" },
+    { label: "GA4 and GTM conversion events", detail: "Tested, imported, matched to spend" },
+    { label: "Monthly report by campaign", detail: "Calls, forms, cost per lead" },
+  ],
+};
+
+export const hvacChallenges = {
+  heading: "Where HVAC advertising usually breaks",
+  intro:
+    "Most contractors who ask me about paid ads are already spending something. The budget is rarely the first problem. These five are.",
+  items: [
+    {
+      title: "Leads arrive, and nobody can say what produced them",
+      body: "Calls come through the site, forms land in an inbox, and both ad platforms claim credit for the same job. Without conversion tracking in GA4 and Tag Manager, next month's budget is decided on numbers nobody has checked.",
+      signal: "No conversion events, or events that were never tested.",
+    },
+    {
+      title: "Spend leaks outside the area you actually drive to",
+      body: "Campaigns set to a state, a metro name, or a radius around the shop. The distance report usually shows money going to towns where no truck will be sent, and to people twenty minutes past your edge of service.",
+      signal: "Broad geo targeting and no location exclusions.",
+    },
+    {
+      title: "The same budget runs in every month of the year",
+      body: "Cooling load peaks in summer, heating in winter, and replacement or maintenance work fills the shoulder months. One flat budget either starves the weeks when people are buying or overpays when they are not.",
+      signal: "One monthly figure, unchanged through the seasons.",
+    },
+    {
+      title: "The ad and the landing page make different promises",
+      body: "The ad offers same day AC repair, the click lands on a homepage that never names the service or the city, and the phone number is three scrolls down. The visit was paid for and the page wastes it.",
+      signal: "Ad to page mismatch, slow mobile load, long forms.",
+    },
+    {
+      title: "Reporting stops at the platform screenshot",
+      body: "Impressions, reach and clicks are easy to export and hard to act on. Cost per call and cost per form by campaign is the number that decides where the next month of spend belongs.",
+      signal: "Reports that show spend instead of leads.",
+    },
+  ],
+};
+
+export const hvacApproach = {
+  heading: "How the work answers each of those problems",
+  intro:
+    "There is a specific response to each problem above, and most of them happen before the first campaign goes live. That is deliberate: measurement first, then spend.",
+  rows: [
+    {
+      problem: "Unknown lead sources",
+      response:
+        "Conversion events for calls and forms in GA4, configured through Tag Manager, tested with real submissions, then imported into Google Ads and reconciled against Meta reporting. One UTM naming standard across both platforms.",
+      stage: "Before launch",
+    },
+    {
+      problem: "Spend outside the service area",
+      response:
+        "Campaigns targeted by the cities and ZIP codes you cover, with negatives for areas you turn down. Location reports reviewed weekly, not quarterly.",
+      stage: "Setup and weekly",
+    },
+    {
+      problem: "A flat budget across the year",
+      response:
+        "A seasonal budget shape agreed up front, so cooling months, heating months and shoulder months each get a different level, with a reforecast before each peak.",
+      stage: "Planning",
+    },
+    {
+      problem: "Ad and page saying different things",
+      response:
+        "Each campaign gets a landing page brief: the same promise as the ad, the service and city stated plainly, one primary action, a phone number reachable with a thumb, and a form short enough to finish in a driveway.",
+      stage: "Before launch and ongoing",
+    },
+    {
+      problem: "Reports that show spend, not leads",
+      response:
+        "A monthly report with calls and forms separated, cost per lead by campaign, month over month movement with seasonality named, and the changes made that month with what they produced.",
+      stage: "Monthly",
+    },
+  ],
+  principleHeading: "Three rules the account runs on",
+  principles: [
+    {
+      title: "Measurement is repaired before spend increases",
+      body: "If tracking is broken, more budget only produces more unattributable leads. Fixing events, imports and naming comes first, even when it delays a launch by a week.",
+    },
+    {
+      title: "One change at a time, written down",
+      body: "Bid changes, new creative, and budget moves are logged with the date. Without that record, month over month movement cannot be explained, only guessed at.",
+    },
+    {
+      title: "Say what the number does not prove",
+      body: "Cost per lead is provable inside the ad accounts. Cost per booked job is not, unless a CRM records the outcome and we can connect it. Reports keep that boundary visible.",
+    },
+  ],
+};
+
+export const hvacInvestment = {
+  heading: "What Your Marketing Investment Covers",
+  intro:
+    "One management fee for the work below. Every item is a deliverable you can point at, and everything outside this list is named as outside it rather than quietly assumed.",
+  includes: [
+    {
+      title: "Business and account review",
+      detail:
+        "A written review of the website, any existing Google Ads and Meta accounts, GA4, Tag Manager, and how leads reach your team today. You keep the findings whether or not we continue.",
+    },
+    {
+      title: "Campaign strategy for your market",
+      detail:
+        "A plan built around your service area, the work you want more of (repair, replacement, or maintenance plans), your install and service capacity, and a realistic monthly budget.",
+    },
+    {
+      title: "Google Ads structure and management",
+      detail:
+        "Search campaigns separated by intent, single-theme ad groups, responsive search ads, negative keyword lists, geo targeting by city or ZIP, and budget pacing that follows demand through the year.",
+    },
+    {
+      title: "Meta Ads where it earns its place",
+      detail:
+        "Retargeting of site visitors and past enquiries, seasonal offers, and creative testing, budgeted separately from search so the two channels stay comparable.",
+    },
+    {
+      title: "GA4, Tag Manager and Meta tracking, within the agreed scope",
+      detail:
+        "Events for form submissions, phone taps and booking clicks, tags and triggers verified in preview mode before publishing, conversion imports, Meta Pixel events, and the Conversions API where the setup supports it. Anything that needs its own hosting or provider is agreed before work starts.",
+    },
+    {
+      title: "Landing page and conversion recommendations",
+      detail:
+        "A prioritised list for every campaign landing page: message match with the ad, one primary action, form length, phone placement, and mobile speed. Implemented directly where I have site access, handed to your developer where I do not.",
+    },
+    {
+      title: "Ongoing monitoring and optimisation",
+      detail:
+        "Weekly search term and budget checks, negative keyword pruning, creative and audience adjustments, and a reforecast before each seasonal peak.",
+    },
+    {
+      title: "Transparent reporting and next steps",
+      detail:
+        "A monthly report with calls and forms separated, cost per lead by campaign, month over month movement with seasonality called out, and a short written list of what I would do next.",
+    },
+  ],
+  notIncludedHeading: "What sits outside the management fee",
+  notIncluded: [
+    {
+      title: "Advertising spend",
+      detail:
+        "Paid directly to Google and Meta from your own billing at your own budget. Ad spend is separate from the management fee and is never taken out of it.",
+    },
+    {
+      title: "Call tracking",
+      detail:
+        "Needs a provider and tracking numbers that you purchase. If you set that up, I will configure and test the integration. I will not describe calls as tracked until it is running.",
+    },
+    {
+      title: "CRM, dispatch and lead management software",
+      detail:
+        "Any CRM, dispatch or lead platform stays in your name and on your bill. If it can export outcomes, we can connect the reporting. If it cannot, reporting stops at the lead.",
+    },
+    {
+      title: "Hosting, page builders and third party tools",
+      detail:
+        "Hosting, plugin or page builder licences, landing page subscriptions, call answering services and any other paid tool are yours. Server side tagging needs somewhere to run, which is agreed before it is promised.",
+    },
+  ],
+  guaranteeHeading: "No guarantee is offered, and here is why",
+  guarantee:
+    "I do not offer a booked job, revenue, lead quality, or return on ad spend guarantee, in writing or verbally. Demand, weather, competitor pricing, install capacity, and how fast your team answers the phone decide most of the outcome. What I control is how the account is built, how the tracking is configured, and how honestly the results are reported. If a guaranteed number of jobs is a requirement, this is not the right service.",
+  factorsHeading: "What the results actually depend on",
+  factors: [
+    "Budget relative to what competitors in your metro are spending",
+    "The season, and how far ahead of it the account was built",
+    "The offer, the pricing, and how clearly both are stated",
+    "The website, especially on a phone",
+    "How quickly enquiries are answered and followed up",
+    "Install and service capacity to handle the calls that do come in",
+  ],
+  pricingNote:
+    "There is no package price on this page. The fee depends on the number of accounts, the campaign volume, and whether tracking has to be built from scratch or repaired, and it is agreed after the review and before any work starts.",
+};
+
+export const hvacProof = {
+  heading: "Documented experience, in other industries",
+  intro:
+    "These are campaign results from the portfolio, recorded on the service pages linked below. All four are e-commerce, retail, or mixed lead generation accounts. None of them is an HVAC campaign.",
+  label: "Results from other industries, not HVAC",
+  studies: [
+    {
+      client: "Foring Group",
+      category: "Multi-channel lead generation",
+      figures: [
+        { label: "Peak account CTR", value: "5.88%" },
+        { label: "Cost per lead", value: "$0.13 to $0.34" },
+      ],
+      note: "Lead generation across Facebook, Instagram and Google, with the account structure, creative testing and conversion tracking handled together.",
+      to: "/services/meta-ads",
+      linkLabel: "See the Meta Ads case study",
+    },
+    {
+      client: "ZR Fashion",
+      category: "Apparel retail, direct messaging",
+      figures: [
+        { label: "Messenger conversations", value: "860+" },
+        { label: "Cost per result", value: "$0.05" },
+      ],
+      note: "Conversational campaigns that moved apparel shoppers into direct message threads with the sales team instead of a product page.",
+      to: "/services/smm",
+      linkLabel: "See the social media case study",
+    },
+    {
+      client: "Salient Shop",
+      category: "E-commerce launch",
+      figures: [
+        { label: "Orders in the first 7 days", value: "344" },
+        { label: "Cost per result", value: "$0.98" },
+      ],
+      note: "Launch window campaign structure with creative and audience testing inside the first week of spend.",
+      to: "/services/meta-ads",
+      linkLabel: "See the Meta Ads case study",
+    },
+    {
+      client: "Rong Bahari",
+      category: "Fashion retail, messaging leads",
+      figures: [
+        { label: "Messaging leads", value: "347" },
+        { label: "Cost per result", value: "$0.027" },
+      ],
+      note: "Conversational ads built to start a conversation rather than send traffic to a catalogue.",
+      to: "/services/smm",
+      linkLabel: "See the social media case study",
+    },
+  ],
+  disclaimer:
+    "These figures come from other clients in other industries, on different budgets, offers and markets. They show how I build and measure campaigns. They are not a forecast, a benchmark, or a promise of what an HVAC account will produce, and they should not be read as one.",
+  limitsHeading: "What I cannot show yet",
+  limits: [
+    "I have not published an HVAC case study, and I will not invent one, including one assembled from unrelated accounts.",
+    "I have no documented HVAC cost per booked job, because that figure needs a contractor's dispatch or CRM data, not an ad platform.",
+    "I have not run HVAC call tracking, so I cannot show tracked call outcomes for this industry. Where call tracking is needed, it is scoped and priced separately.",
+  ],
+};
+
+export const hvacWhyMe = {
+  heading: "Why Work With Me?",
+  intro:
+    "Reasons that can be checked against the rest of this site, rather than adjectives.",
+  reasons: [
+    {
+      title: "More than five years of hands on paid media and measurement work",
+      body: "Paid search, paid social, analytics and conversion work for service businesses, e-commerce stores and B2B sellers, documented across the projects and service pages on this site.",
+    },
+    {
+      title: "Google Ads and Meta Ads managed end to end",
+      body: "Account structure, keyword and audience research, ad copy, creative testing, budget pacing and weekly optimisation. I run the account rather than handing a brief to someone else.",
+    },
+    {
+      title: "GA4, Tag Manager, server side GTM and the Meta Conversions API",
+      body: "Tracking set up and tested, not assumed. Events verified in preview mode, conversions imported, and platform numbers reconciled against GA4 before they are used to justify budget.",
+    },
+    {
+      title: "Conversion work on the page after the click",
+      body: "Message match, one primary action, form length, phone placement, and mobile speed. For local service work the landing page carries as much of the outcome as the ad does.",
+    },
+    {
+      title: "Measurement first, and honest about the limits",
+      body: "Broken tracking is fixed before spend goes up, and numbers that cannot be proven (booked jobs, revenue per campaign without a CRM) are labelled as unproven rather than implied.",
+    },
+    {
+      title: "Direct communication and defined deliverables",
+      body: "You talk to the person doing the work. Every month you get a written summary of what changed, what it produced, and what I would change next, in language you can act on without opening four dashboards.",
+    },
+  ],
+  credentials: [
+    "Google Ads",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Meta Ads",
+  ],
+  credentialsNote:
+    "Certification details are listed on the homepage. Certifications are a starting point, not evidence of results, which is why the section above links to actual campaign numbers.",
+  positioning:
+    "This page is an industry offering, not a claim of HVAC specialisation. I have not spent years inside heating and cooling accounts, and pretending otherwise would be the first dishonest thing on this page. What transfers is the advertising, tracking and conversion work documented on this site, and the discipline of reporting only what the data can support.",
+};
+
 export default {
   hvacMeta,
   hvacHero,
+  hvacHeroFlow,
   hvacSummary,
+  hvacChallenges,
+  hvacApproach,
   hvacCapabilities,
   hvacGoogleAds,
   hvacMetaAds,
   hvacTracking,
   hvacCro,
+  hvacInvestment,
+  hvacProof,
+  hvacWhyMe,
   hvacProcess,
   hvacDeliverables,
   hvacMetrics,
