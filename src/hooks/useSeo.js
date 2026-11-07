@@ -1,4 +1,10 @@
 import { useEffect } from "react";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "../lib/siteConfig";
+
+// Re-exported so every existing `import { SITE_URL } from "../hooks/useSeo"`
+// keeps working while the values live in one place (src/lib/siteConfig.js)
+// that the Node build scripts can import too.
+export { SITE_URL, DEFAULT_OG_IMAGE };
 
 /**
  * Per-route SEO metadata.
@@ -21,10 +27,6 @@ import { useEffect } from "react";
  * nothing for scrapers that do not, and it is not a substitute for per-route
  * HTML.
  */
-
-export const SITE_URL = "https://portfolio.riajultech.com";
-
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/projects/meta-ads-dashboard.jpg`;
 
 const ROBOTS_INDEX =
   "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";

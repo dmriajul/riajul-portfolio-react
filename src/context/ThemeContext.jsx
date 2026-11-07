@@ -4,9 +4,22 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   // Direct two-state theme: 'dark' | 'light'
+  //
+  // Guarded for server rendering: the prerender script renders this tree in
+  // Node, where `localStorage` does not exist. Reading it unguarded would
+  // throw during render and no static HTML would be produced. The try/catch
+  // also covers browsers that block storage in private mode.
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem("riajul_theme_mode") || localStorage.getItem("riajul_theme");
-    return saved === "light" ? "light" : "dark";
+    if (typeof window === "undefined") return "dark";
+
+    try {
+      const saved =
+        localStorage.getItem("riajul_theme_mode") ||
+        localStorage.getItem("riajul_theme");
+      return saved === "light" ? "light" : "dark";
+    } catch {
+      return "dark";
+    }
   });
 
   useEffect(() => {
@@ -24,8 +37,13 @@ export function ThemeProvider({ children }) {
       body.classList.remove("light-theme");
     }
 
-    localStorage.setItem("riajul_theme", theme);
-    localStorage.setItem("riajul_theme_mode", theme);
+    try {
+      localStorage.setItem("riajul_theme", theme);
+      localStorage.setItem("riajul_theme_mode", theme);
+    } catch {
+      // Storage unavailable (private mode / blocked cookies): the theme still
+      // applies for this session, it just will not persist.
+    }
   }, [theme]);
 
   // Direct toggle function like an ON/OFF switch

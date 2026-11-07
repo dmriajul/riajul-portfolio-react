@@ -68,7 +68,13 @@ Be precise about the distinction; do not upgrade a code test into an indexing cl
 4. `curl -s https://portfolio.riajultech.com/services/google-ads | grep -i 'og:title'` → still the
    homepage title. That is the limitation described above, not a regression.
 
-## Future fix (requires separate approval — not started, build pipeline unchanged)
+## Blog routes are exempt from this limitation (implemented)
+
+`/blog/`, `/blog/<slug>` and the blog not-found page **are prerendered**. They ship their own
+`<title>`, description, canonical, OG/Twitter tags and full body HTML — no JavaScript required.
+See `docs/blog.md`. The limitation below still applies to every other route.
+
+## Future fix for the remaining routes (requires separate approval — not started)
 
 Prerender one static HTML file per route at build time so each URL ships its own `<head>`.
 Options, in ascending cost:
@@ -76,6 +82,9 @@ Options, in ascending cost:
 1. **Post-build Node script (no new dependency)** — after `vite build`, read `dist/index.html`,
    inject per-route tags, write `dist/services/<slug>/index.html`, etc. Vercel serves the
    filesystem before applying `rewrites`, so these files win. Zero runtime change.
+   **This is exactly what the blog now does** (`scripts/prerender.mjs`), so the pattern is
+   proven in this repo. Extending it to `/services/*` and `/industries/hvac` is the same work
+   again, but it is deliberately out of scope for the blog PR.
 2. **`vite-plugin-ssg` / `react-snap`** — a dependency and a build-pipeline change.
 3. **Framework migration** (Next/Astro) — explicitly out of scope.
 

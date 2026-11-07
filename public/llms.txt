@@ -73,3 +73,7 @@ Machine-readable structured data (schema.org Person, ProfessionalService, OfferC
 ## Industry Pages
 
 - [Residential HVAC Marketing (United States)](/industries/hvac): Performance marketing for US residential HVAC contractors, covering Google Ads, Meta Ads, GA4 and Google Tag Manager conversion setup, and landing page optimization. Booking a call is the primary call to action, with a separate HVAC inquiry form as the secondary option. The page states plainly which work is included, which parts require client access or third party tools such as call tracking, and which outcomes cannot be verified without CRM or offline conversion data.
+
+## Blog
+
+- [HVAC Marketing Blog](/blog/): Articles on HVAC paid media for US residential HVAC contractors, organised into three clusters — HVAC Google Ads (costs, budgets, campaign structure), HVAC Meta Ads (lead generation, creative and offers), and HVAC Tracking & Conversion Optimization (GA4 and Tag Manager, conversion tracking). No articles are published yet; the index states this plainly rather than listing drafts. Published articles appear at /blog/<slug> and in https://portfolio.riajultech.com/sitemap.xml.
