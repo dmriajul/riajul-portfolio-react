@@ -28,6 +28,15 @@ import { fileURLToPath } from "node:url";
 
 import { getPublishedPosts, validateBlogData } from "../src/data/blogPosts.js";
 import { draftPosts } from "../src/data/blogDrafts.js";
+import { isDraftPreviewBuild } from "./drafts-preview.mjs";
+
+/**
+ * Preview deployments deliberately compile drafts in, so the index page they
+ * render legitimately contains draft URLs. Production builds never do.
+ * Shared with vite.config.js so the alias and this file cannot disagree.
+ * The sitemap guard is unconditional either way.
+ */
+const DRAFT_PREVIEW_BUILD = isDraftPreviewBuild();
 import {
   BLOG_INDEX_META,
   BLOG_NOT_FOUND_META,
@@ -175,14 +184,25 @@ function assertShellIsSafe(html, { label, expect, allowCanonical }) {
     throw new Error(`[prerender] ${label}: rendered body looks empty`);
   }
 
-  for (const draft of draftPosts) {
-    if (html.includes(`/blog/${draft.slug}`)) {
-      throw new Error(`[prerender] ${label}: contains draft URL ${draft.slug}`);
+  // Production guarantee: a draft URL must never survive into an output page.
+  // A preview build is the one case where its presence is the point.
+  if (!DRAFT_PREVIEW_BUILD) {
+    for (const draft of draftPosts) {
+      if (html.includes(`/blog/${draft.slug}`)) {
+        throw new Error(`[prerender] ${label}: contains draft URL ${draft.slug}`);
+      }
     }
   }
 }
 
 async function main() {
+  if (DRAFT_PREVIEW_BUILD) {
+    console.warn(
+      "[prerender] DRAFT PREVIEW BUILD — unpublished drafts are included in this output. " +
+        "Never promote this build to production."
+    );
+  }
+
   // 1. Content validation first: never render invalid data.
   const { errors, warnings } = validateBlogData([
     ...getPublishedPosts(),
@@ -219,6 +239,17 @@ async function main() {
       expect: 'class="blog-index-title"',
     },
     ...posts.map((post) => ({
+      url: `/blog/${post.slug}`,
+      file: `blog/${post.slug}/index.html`,
+      meta: buildArticleMeta(post),
+      expect: 'class="blog-article-title"',
+    })),
+    // Draft routes are prerendered ONLY in a preview build, so reviewers get a
+    // real page (correct title, canonical and noindex in the HTML) instead of
+    // the 404 shell that vercel.json rewrites unlisted /blog/* URLs to.
+    // buildArticleMeta() marks every non-published post noindex, so these pages
+    // still cannot be indexed, and the sitemap below remains published-only.
+    ...(DRAFT_PREVIEW_BUILD ? draftPosts : []).map((post) => ({
       url: `/blog/${post.slug}`,
       file: `blog/${post.slug}/index.html`,
       meta: buildArticleMeta(post),
