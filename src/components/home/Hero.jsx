@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 // Optimized WebP (23 KiB) + JPEG fallback for broader browser support
-import profileWebp from "../../assets/profile.webp";
-import profileJpeg from "../../assets/profile.jpeg";
 import personalData from "../../data/personalData";
 
 import {
@@ -147,9 +145,9 @@ function Hero() {
             </div>
 
             <picture>
-              <source srcSet={profileWebp} type="image/webp" />
+              <source srcSet="/profile.webp?v=2" type="image/webp" />
               <img
-                src={profileJpeg}
+                src="/profile.webp?v=2"
                 alt="Khandokar Riajul Islam: Performance Marketing Specialist & Social Media Manager"
                 width="350"
                 height="400"
