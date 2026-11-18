@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import profile from "../../assets/profile.webp";
 import ThemeToggle from "../common/ThemeToggle";
 import {
   serviceNavLinks,
@@ -282,7 +281,7 @@ function Navbar() {
           onClick={(e) => handleNavClick("hero", e)}
         >
           <img
-            src={profile}
+            src="/profile.webp?v=2"
             alt="Khandokar Riajul Islam"
           />
         </a>
