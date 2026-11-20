@@ -7,6 +7,7 @@ import IndustryHvac from "./pages/IndustryHvac";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogArticle from "./pages/blog/BlogArticle";
 import BlogNotFound from "./pages/blog/BlogNotFound";
+import NotFound from "./pages/NotFound";
 
 // Helper component to manage smooth scrolling on route and hash changes
 function ScrollManager() {
@@ -60,8 +61,10 @@ export function AppShell() {
           <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/blog/*" element={<BlogNotFound />} />
 
-          {/* Catch-all redirect to Home */}
-          <Route path="*" element={<Home />} />
+          {/* Anything else is a real 404: NotFound renders a noindex page
+              and is served with an HTTP 404 status for direct hits (see
+              vercel.json). It must not fall back to the homepage. */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
 

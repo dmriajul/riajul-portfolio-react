@@ -44,6 +44,7 @@ import {
   ROBOTS_INDEX,
   ROBOTS_NOINDEX,
 } from "../src/lib/blogSeo.js";
+import { NOT_FOUND_META } from "../src/lib/notFoundSeo.js";
 import { generateSitemap } from "./generate-sitemap.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -259,6 +260,16 @@ async function main() {
       url: "/blog/404",
       file: "blog/404/index.html",
       meta: BLOG_NOT_FOUND_META,
+      expect: "blog-notfound-title",
+    },
+    // Site-wide 404. Vercel serves dist/404.html with an HTTP 404 status for
+    // any request that matches neither a file nor a rewrite (see vercel.json),
+    // so the body has to exist as a real file — otherwise the platform would
+    // show its own unbranded error page.
+    {
+      url: "/404",
+      file: "404.html",
+      meta: NOT_FOUND_META,
       expect: "blog-notfound-title",
     },
   ];

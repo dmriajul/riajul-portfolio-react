@@ -33,6 +33,14 @@
       "destination": "/.well-known/$1"
     },
     {
+      "source": "/services/(.*)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/industries/hvac",
+      "destination": "/index.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
@@ -43,10 +51,6 @@
     {
       "source": "/blog/(.*)",
       "destination": "/blog/404/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
