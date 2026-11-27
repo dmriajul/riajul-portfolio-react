@@ -449,7 +449,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "The evidence points the same direction: Meta and search are complements, not substitutes. In LocaliQ's home services advertising benchmarks study ([LocaliQ](https://localiq.com/blog/home-services-advertising-benchmarks/)), businesses running Facebook ads alongside search ads showed blended cost per lead reductions of **3–29%** depending on the trade, in a dataset of 4,595 North American client accounts (vendor-reported; the study period and methodology are stated in the page's own Data sources section: LOCALiQ client accounts running search, display, and/or social advertising between May 1, 2020, and June 25, 2021 — and the study's \"averages\" are technically median figures). Treat this as a historical cross-channel observation from that study period, not a current expected result and not a causal guarantee. The same study reported median social cost per click of $0.92–$1.92 across home services categories — a clicks metric from the same historical period, not a leads comparison."
+        "text": "The evidence points the same direction: Meta and search are complements, not substitutes. In LocaliQ's home services advertising benchmarks study ([LocaliQ](https://localiq.com/blog/home-services-advertising-benchmarks/)), businesses running Facebook ads alongside search ads showed blended cost per lead reductions of **3–29%** depending on the trade, in a dataset of 4,595 North American client accounts (vendor-reported; the study period and methodology are stated in the page's own Data sources section: LOCALiQ client accounts running search, display, and/or social advertising between May 1, 2020, and June 25, 2021 — and the study's \"averages\" are technically median figures). Treat this as a historical cross-channel observation from that study period, not a current expected result and not a causal guarantee. The same study reported median social cost per click of $0.92–1.92 across home services categories — a clicks metric from the same historical period, not a leads comparison."
       },
       {
         "type": "p",
@@ -640,7 +640,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "**Illustrative funnel — 100 platform leads at the $42.95 category benchmark (≈ $4,295 spend):**"
+        "text": "**Illustrative funnel — 100 platform leads at the $42.95 category benchmark (≈$4,295 spend):**"
       },
       {
         "type": "table",
@@ -754,7 +754,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "Community experience runs along the same lines, which is worth reading honestly. A [May 2026 r/FacebookAds thread](https://www.reddit.com/r/FacebookAds/comments/1tp2erd/how_are_you_getting_qualified_leads_from_facebook/) from a home-services marketer described \"300+ leads, maybe 10 made it into the CRM as real opportunities,\" with most commenters advocating landing pages or heavily-filtered forms; an [August 2024 thread](https://www.reddit.com/r/FacebookAds/comments/1ewqbug/) raised the same complaint about instant-form intent (individual practitioner reports, not benchmarks). A common pattern in these reports is friction that was never chosen deliberately: remove all friction and you pay for it downstream."
+        "text": "Community experience runs along the same lines, which is worth reading honestly. A [May 2026 r/FacebookAds thread](https://www.reddit.com/r/FacebookAds/comments/1tp2erd/how_are_you_getting_qualified_leads_from_facebook/) from a home-services marketer described \"300+ leads, maybe 10 made it into the CRM as real opportunities,\" with most commenters advocating landing pages or heavily filtered forms; an [August 2024 thread](https://www.reddit.com/r/FacebookAds/comments/1ewqbug/) raised the same complaint about instant-form intent (individual practitioner reports, not benchmarks). A common pattern in these reports is friction that was never chosen deliberately: remove all friction and you pay for it downstream."
       },
       {
         "type": "p",
@@ -886,7 +886,7 @@ export const publishedPosts = [
           "Your CRM connects as a **CRM dataset** through the Conversions API, and each lead's stages flow back with the lead ID — contacted, qualified, quoted, booked.",
           "**Meta's documented fit guidelines** (Meta frames these as \"check if your business is a good fit\" criteria, not universal requirements or guarantees): instant forms (not website-form campaigns); a business Ads Manager account; **at least 200 leads per month** generated into the integration; CRM uploads **at least once daily**; a target stage that occurs **within 28 days** of lead creation; and a target stage converting at roughly **1–40%** of leads.",
           "The performance goal **cannot change after the campaign publishes** — if you plan to switch from lead optimization to Conversion Leads, the documented path is to duplicate the campaign.",
-          "Meta's documented timeline includes a data-validation period and a **2–4 week learning phase** before the optimization is fully live."
+          "Meta's documented timeline includes a data-validation period and a **2–4-week learning phase** before the optimization is fully live."
         ]
       },
       {
@@ -954,7 +954,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "Response speed is the highest-leverage variable in the funnel after lead quality — and it costs nothing but process. The most-cited research on lead response, the **2007 Lead Response Management study** conducted by InsideSales.com (a lead-response software vendor) with Dr. James Oldroyd, then a research fellow at MIT Sloan, found that the **odds of contacting** a web lead were roughly **100 times higher** and the **odds of qualifying** it about **21 times higher** when the first call attempt came within **5 minutes** rather than 30. Read those numbers precisely: they are odds ratios between two response windows — not conversion-rate multipliers, and not a claim that every lead converts 21 times more often. The study drew on three years of data across six companies — 15,000+ leads and 100,000+ call attempts — it did not measure close rates, it is not HVAC-specific, and because it was vendor-conducted industry research rather than an academic publication, treat it as a directional signal about how sharply response odds fall with delay. (The original report is not stably hosted online; scope and figures are corroborated in [Expertise's speed-to-lead statistics audit](https://www.expertise.ai/stats/speed-to-lead-statistics) and [Rework's lead-response-time review](https://resources.rework.com/libraries/lead-management/lead-response-time).)"
+        "text": "Response speed is the highest-leverage variable in the funnel after lead quality — and it costs nothing but process. The most-cited research on lead response, the **2007 Lead Response Management study** conducted by InsideSales.com (a lead-response software vendor) with Dr. James Oldroyd, then a research fellow at MIT Sloan, found that the **odds of contacting** a web lead were roughly **100 times higher** and the **odds of qualifying** it about **21 times higher** when the first call attempt came within **5 minutes** rather than 30. Read those numbers precisely: they are odds ratios between two response windows — not conversion-rate multipliers, and not a claim that every lead converts 21 times more often. The study drew on three years of data across six companies — 15,000+ leads and 100,000+ call attempts — it did not measure close rates; it is not HVAC-specific; and because it was vendor-conducted industry research rather than an academic publication, treat it as a directional signal about how sharply response odds fall with delay. (The original report is not stably hosted online; scope and figures are corroborated in [Expertise's speed-to-lead statistics audit](https://www.expertise.ai/stats/speed-to-lead-statistics) and [Rework's lead-response-time review](https://resources.rework.com/libraries/lead-management/lead-response-time).)"
       },
       {
         "type": "p",
@@ -1117,7 +1117,7 @@ export const publishedPosts = [
           [
             "Leads but CPL far above benchmark",
             "New campaign above learning-phase CPLs, narrow audience, or seasonal competition",
-            "Let the 2–4 week learning phase finish before judging; widen radius or adjust bid strategy",
+            "Let the 2–4-week learning phase finish before judging; widen radius or adjust bid strategy",
             "Cost benchmarks; budget section"
           ],
           [
@@ -1158,7 +1158,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "The closest verified category benchmark is **$42.95 per lead** (median) for Home & Home Improvement leads-objective campaigns (WordStream/LocaliQ, updated September 2026; WordStream labels the figures averages, its methodology identifies them as medians) — a category broader than HVAC, counting platform-submitted leads. HVAC Webmasters reports **$35–55 per lead** for Meta (vendor-reported estimate). At the $42.95 median, a $40/day budget produces roughly 28 platform leads a month, before qualification. Full benchmarks and caveats are in the cost section."
+        "text": "The closest verified category benchmark is **$42.95 per lead** (median) for Home & Home Improvement leads-objective campaigns (WordStream/LocaliQ, updated September 2026; WordStream labels the figures averages; its methodology identifies them as medians) — a category broader than HVAC, counting platform-submitted leads. HVAC Webmasters reports **$35–55 per lead** for Meta (vendor-reported estimate). At the $42.95 median, a $40/day budget produces roughly 28 platform leads a month, before qualification. Full benchmarks and caveats are in the cost section."
       },
       {
         "type": "h3",
@@ -1176,7 +1176,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "Instant forms minimize friction and typically produce more submissions; landing pages are designed to pre-qualify and give you full control. Meta documents three form types — More Volume, Higher Intent (which adds a review step), and Custom. A common pattern: instant forms with qualifiers for cold demand, landing pages for retargeting and high-ticket replacement offers. Note that Meta's Conversion Leads performance goal requires instant forms; website-form campaigns optimize through their own website-event path. Comparison table is in the forms section."
+        "text": "Instant forms minimize friction and typically produce more submissions; landing pages are designed to pre-qualify and give you full control. Meta documents three form types — More Volume, Higher Intent (which adds a review step), and Custom. A common pattern: instant forms with qualifiers for cold demand, landing pages for retargeting and high-ticket replacement offers. Note that Meta's Conversion Leads performance goal requires instant forms; website-form campaigns optimize through their own website-event path. The comparison table is in the forms section."
       },
       {
         "type": "h3",
@@ -1185,7 +1185,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "There is no universal minimum. Worked scenarios at the $42.95 benchmark: $600/month ≈ 14 platform leads, $1,200 ≈ 28, $2,400 ≈ 56. Size the budget from service geography, offer economics, and how many leads your office can call within minutes — then validate against measured CPL after 2–4 weeks. The labeled scenario tables are in the budget section."
+        "text": "There is no universal minimum. Worked scenarios at the $42.95 benchmark: $600/month ≈14 platform leads, $1,200 ≈28, $2,400 ≈56. Size the budget from service geography, offer economics, and how many leads your office can call within minutes — then validate against measured CPL after 2–4 weeks. The labeled scenario tables are in the budget section."
       },
       {
         "type": "h3",
@@ -1251,7 +1251,7 @@ export const publishedPosts = [
       },
       {
         "type": "p",
-        "text": "Written by Khandokar Riajul Islam, a performance marketing specialist with more than five years of experience in paid search, paid social and analytics, including Meta Ads management, GA4/GTM implementation with server-side tracking, Meta Conversions API setups, and conversion rate optimization. **No HVAC client case study is published, and none is implied here.** All benchmark figures are third-party, dated and attributed, the worked calculations show their assumptions, and the operational guidance is general paid-media practice applied to residential HVAC rather than a report of campaign results."
+        "text": "Written by Khandokar Riajul Islam, a performance marketing specialist with more than five years of experience in paid search, paid social and analytics, including Meta Ads management, GA4/GTM implementation with server-side tracking, Meta Conversions API setups, and conversion rate optimization. **No HVAC client case study is published, and none is implied here.** All benchmark figures are third-party, dated and attributed; the worked calculations show their assumptions; and the operational guidance is general paid-media practice applied to residential HVAC rather than a report of campaign results."
       },
       {
         "type": "p",
@@ -1272,7 +1272,7 @@ export const publishedPosts = [
           "Search Engine Land — [Your guide to Meta Ads for lead generation](https://searchengineland.com/meta-ads-lead-gen-what-you-need-to-know-456269) (June 2, 2025; documents Meta's native instant-form SMS verification option, \"Require phone number confirmation via SMS\"; Meta's Business Help Center documents the same feature as \"Enable the SMS verification feature to help improve lead quality\")",
           "Meta for Developers — [Handling Duplicate Pixel and Conversions API Events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events) (updated June 28, 2026; event_id + event_name matching, 48-hour window)",
           "Meta for Developers — [Dataset Quality API](https://developers.facebook.com/docs/marketing-api/conversions-api/dataset-quality-api/) (updated October 21, 2026; Event Match Quality, event coverage, and deduplication diagnostics referenced in the measurement checklist)",
-          "Meta for Developers — [Conversion Leads integration](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration) (updated February 6, 2026; CRM dataset requirements, daily uploads, 28-day window, 1–40% stage rate, 2–4 week learning phase)",
+          "Meta for Developers — [Conversion Leads integration](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration) (updated February 6, 2026; CRM dataset requirements, daily uploads, 28-day window, 1–40% stage rate, 2–4-week learning phase)",
           "Google Analytics Help — [Conversions](https://support.google.com/analytics/answer/9356034) (event → key event → conversion; `generate_lead` example; linked Google Ads account required)"
         ]
       },
